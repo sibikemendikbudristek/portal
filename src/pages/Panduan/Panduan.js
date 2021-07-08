@@ -26,9 +26,7 @@ const Panduan = () => {
                 <div className="row my-5">
                     <div className="col">
                         <h2 className="section-title">2. Daftar dan login sebagai siswa dan guru</h2>
-                        <p className="my-5">Untuk menggunakan SIBI kamu tinggal membukanya di browser seperti
-                        Google Chrome, Mozilla Firefox, Microsoft Edge dan lain-lain yang ada
-                        pada gadget kamu. Sangat mudah bukan?</p>
+                        <p className="my-5">Untuk mendapatkan akses ke SIBI caranya sangat mudah kita cukup mendaftarkan diri dengan mengisi form yang telah disediakan lalu tinggal login sebagai siswa atau guru.</p>
                     </div>
                     <div className="col">
                     
