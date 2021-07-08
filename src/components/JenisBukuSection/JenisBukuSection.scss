@@ -1,0 +1,15 @@
+#JenisBukuSection {
+  background-image: url("../../assets/img/jenis-buku-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  background-color: #0080ca;
+  min-height: 70vh;
+  margin-top: 200px;
+}
+
+@media screen and (max-width: 700px) {
+  #JenisBukuSection {
+    background-image: url("../../assets/img/jenis-buku-bg-small.png");
+  }
+}

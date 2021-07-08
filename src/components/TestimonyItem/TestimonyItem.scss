@@ -1,0 +1,15 @@
+#TestimonyItem {
+  .card {
+    border: none;
+    border-radius: 25px;
+    .username {
+      color: #0080ca;
+    }
+    .testimony-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      padding: 40px;
+    }
+  }
+}

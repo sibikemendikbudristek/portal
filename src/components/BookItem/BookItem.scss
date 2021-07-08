@@ -1,0 +1,25 @@
+#BookItem {
+  .card {
+    height: 400px;
+    border-radius: 25px;
+    border: none;
+    .book-item-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 25px;
+      filter: brightness(50%);
+    }
+    .card-link {
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #BookItem {
+    .card {
+      height: 100%;
+    }
+  }
+}

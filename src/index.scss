@@ -1,0 +1,82 @@
+#root {
+  font-family: "Poppins", sans-serif;
+  // Global Style
+  .active {
+    font-weight: bold;
+    color: #0080ca;
+  }
+  .btn-primary {
+    background-color: #0080ca;
+    color: white;
+    border: 0;
+  }
+
+  .btn-primary:hover {
+    background-color: #00649e;
+    color: white;
+  }
+
+  .btn-outline-primary {
+    background-color: none;
+    color: #0080ca;
+    border-color: #0080ca;
+  }
+
+  .btn-outline-primary:hover {
+    background-color: #0080ca;
+    color: white;
+    border-color: #0080ca;
+  }
+
+  .section-title {
+    font-family: "Coolvetica", sans-serif;
+    color: #0080ca;
+  }
+
+  .section-title-white {
+    font-family: "Coolvetica", sans-serif;
+    color: #fff;
+  }
+
+  .section-line {
+    width: 60px;
+    height: 6px;
+    background: #0080ca;
+    margin: 30px auto;
+    display: block;
+  }
+
+  /* change active bullet color to red */
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ffc107;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  [id] {
+    scroll-margin-top: 50px;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: local("Coolvetica"),
+    url(./assets/fonts/coolvetica.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url(./assets/fonts/Poppins-Regular.ttf) format("truetype");
+}
