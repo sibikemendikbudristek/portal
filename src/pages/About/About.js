@@ -43,26 +43,26 @@ const About = () => {
                         </div>
                     </div>
                     <div className="row justify-content-center text-center">
-                        <div className="col-md-3">
-                            <h3 style={{color: '#0080CA', fontSize: '50px'}}><i class="fas fa-book-open" /></h3>
+                        <div className="col-md-3 col-lg-2 mx-2">
+                            <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-book-open" /></h3>
                             <p className="my-5">Buku terlengkap,
                             terdepan produksi
                             Kementrian</p>
                         </div>
-                        <div className="col-md-3">
-                            <h3 style={{color: '#0080CA', fontSize: '50px'}}><i class="fas fa-award" /></h3>
+                        <div className="col-md-3 col-lg-2 mx-2">
+                            <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-award" /></h3>
                             <p className="my-5">Buku dikurasi dan telah
                             dinilai layak disebar
                             untuk Pendidikan</p>
                         </div>
-                        <div className="col-md-3">
-                            <h3 style={{color: '#0080CA', fontSize: '50px'}}><i class="fas fa-graduation-cap" /></h3>
+                        <div className="col-md-3 col-lg-2 mx-2">
+                            <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-graduation-cap" /></h3>
                             <p className="my-5">Tersedia untuk berbagai
                             Jenjang Pendidikan<br />
                             (PAUD, SD, SMP, SMA/SMK)</p>
                         </div>
-                        <div className="col-md-3">
-                            <h3 style={{color: '#0080CA', fontSize: '50px'}}><i class="fas fa-history" /></h3>
+                        <div className="col-md-3 col-lg-2 mx-2">
+                            <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-history" /></h3>
                             <p className="my-5">Sistem up-to-date
                             sesuai dengan
                             Kurikulum pemerintah</p>
