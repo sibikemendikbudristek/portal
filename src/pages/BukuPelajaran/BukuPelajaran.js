@@ -20,7 +20,7 @@ const BukuPelajaran = () => {
                     <aside className="col-lg-3 d-none d-lg-block">
                         {/* Sidebar */}
                         <div className="card border-0 shadow" style={{borderRadius: '20px'}}>
-                            <div className="card-body">
+                            <div className="card-body" style={{borderRadius: '20px'}}>
                                 <form action="">
                                     <div className="mb-3">
                                         <h6><strong>Tipe Buku</strong></h6>
