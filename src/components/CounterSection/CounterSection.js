@@ -1,3 +1,4 @@
+import CountUp from 'react-countup';
 import counterSectionImg from '../../assets/img/counter-section-img.png';
 import './CounterSection.scss';
 
@@ -11,14 +12,21 @@ const CounterSection = ({counterData}) => {
                     <div className="col-lg-7">
                         <div className="row my-5">
                             <div className="col">
-                                <h2 className="section-title" style={{fontSize: 40}}>Ayo Baca Buku<br />Untuk Indonesia Lebih Baik!</h2>
+                                <h2 className="section-title counter-title">Ayo Baca Buku<br />Untuk Indonesia Lebih Baik!</h2>
                             </div>
                         </div>
                         <div className="row">
                         {statistics.map((statistic, index) => {
                             return(
                                 <div className="col-6 col-md-3 my-2" key={index}>
-                                    <h2 className="section-title">{statistic.value}</h2>
+                                    <h2 className="section-title">
+                                        <CountUp
+                                            start={0}
+                                            end={statistic.value} 
+                                            duration={3}
+                                            delay={3}
+                                        />
+                                    </h2>    
                                     <p><small>{statistic.name}</small></p>
                                 </div>
                             );

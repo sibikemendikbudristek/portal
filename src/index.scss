@@ -1,10 +1,6 @@
 #root {
   font-family: "Poppins", sans-serif;
   // Global Style
-  .active {
-    font-weight: bold;
-    color: #0080ca;
-  }
   .btn-primary {
     background-color: #0080ca;
     color: white;
@@ -16,10 +12,32 @@
     color: white;
   }
 
+  .btn-check:active + .btn-primary:focus,
+  .btn-check:checked + .btn-primary:focus,
+  .btn-primary.active,
+  .btn-primary.dropdown-toggle.show:focus,
+  .btn-primary:active {
+    background-color: #0080ca !important;
+    color: #fff !important;
+    border-color: #0080ca !important;
+    box-shadow: none;
+  }
+
   .btn-outline-primary {
     background-color: none;
     color: #0080ca;
     border-color: #0080ca;
+  }
+
+  .btn-check:active + .btn-outline-primary:focus,
+  .btn-check:checked + .btn-outline-primary:focus,
+  .btn-outline-primary.active,
+  .btn-outline-primary.dropdown-toggle.show:focus,
+  .btn-outline-primary:active {
+    background-color: #0080ca !important;
+    color: #fff !important;
+    border-color: #0080ca !important;
+    box-shadow: none;
   }
 
   .btn-outline-primary:hover {

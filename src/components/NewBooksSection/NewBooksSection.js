@@ -1,5 +1,4 @@
 import BookItem from '../BookItem/BookItem';
-import bookImgPlaceholder from '../../assets/img/book-placeholder.jpg';
 import './NewBooksSection.scss';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -44,11 +43,11 @@ const NewBooksSection = ({bookData}) => {
                                 <div className="col-md-3 my-3" key={index}>
                                 <SwiperSlide key={bookItem.id}>
                                     <BookItem
-                                        bookImg={bookItem.bookImg || bookImgPlaceholder}
-                                        category={bookItem.category || 'Tidak Diketahui'}
-                                        title={bookItem.title || 'Judul Tidak Ditemukan'}
-                                        readUrl={bookItem.readUrl || null}
-                                        detailUrl={bookItem.detailUrl || null}
+                                        bookImg={bookItem.bookImg}
+                                        category={bookItem.category}
+                                        title={bookItem.title}
+                                        readUrl={bookItem.readUrl}
+                                        detailUrl={bookItem.detailUrl}
                                     />
                                 </SwiperSlide>
                             </div>

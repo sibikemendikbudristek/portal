@@ -6,4 +6,16 @@
     rgba(212, 244, 255, 1) 0%,
     rgba(255, 255, 255, 1) 100%
   );
+
+  .counter-title {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #CounterSection {
+    .counter-title {
+      font-size: 30px;
+    }
+  }
 }

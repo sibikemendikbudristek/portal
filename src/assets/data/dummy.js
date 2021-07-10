@@ -46,6 +46,135 @@ const data = [
             },
         ],
 
+        pdfBooks: [
+            {
+                id: 1,
+                bookImg: '',
+                category: '',
+                title: '',
+                readUrl: '',
+                detailUrl: ''
+            },
+            {
+                id: 2,
+                bookImg: placeholderImg,
+                category: 'PDF',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 3,
+                bookImg: placeholderImg,
+                category: 'PDF',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 4,
+                bookImg: placeholderImg,
+                category: 'PDF',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 5,
+                bookImg: placeholderImg,
+                category: 'PDF',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+        ],
+
+        audioBooks: [
+            {
+                id: 1,
+                bookImg: '',
+                category: '',
+                title: '',
+                readUrl: '',
+                detailUrl: ''
+            },
+            {
+                id: 2,
+                bookImg: placeholderImg,
+                category: 'Audio',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 3,
+                bookImg: placeholderImg,
+                category: 'Audio',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 4,
+                bookImg: placeholderImg,
+                category: 'Audio',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 5,
+                bookImg: placeholderImg,
+                category: 'Audio',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+        ],
+
+        interaktifBooks: [
+            {
+                id: 1,
+                bookImg: '',
+                category: '',
+                title: '',
+                readUrl: '',
+                detailUrl: ''
+            },
+            {
+                id: 2,
+                bookImg: placeholderImg,
+                category: 'Interaktif',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 3,
+                bookImg: placeholderImg,
+                category: 'Interaktif',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 4,
+                bookImg: placeholderImg,
+                category: 'Interaktif',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+            {
+                id: 5,
+                bookImg: placeholderImg,
+                category: 'Interaktif',
+                title: 'Buku Seni Budaya Kelas VII',
+                readUrl: '',
+                detailUrl: 'seni-budaya-kelas-vii'
+            },
+        ],
+
         testimony : [
             {
                 id: 1,
@@ -79,22 +208,22 @@ const data = [
         statistics : [
             {
                 id: 1,
-                value: 300,
+                value: 1809,
                 name: 'Jumlah User'
             },
             {
                 id: 1,
-                value: 300,
+                value: 274,
                 name: 'Siswa Bergabung'
             },
             {
                 id: 1,
-                value: 300,
+                value: 398,
                 name: 'Buku Tersedia'
             },
             {
                 id: 1,
-                value: 300,
+                value: 8941,
                 name: 'Buku Lulus Penilaian'
             }
         ],
