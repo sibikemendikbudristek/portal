@@ -15,7 +15,10 @@ const Home = () => {
             <PanduanSection />
             <JenjangSection />
             <JenisBukuSection />
-            <NewBooksSection bookData={data} />
+            <NewBooksSection
+                bookData={data}
+                seeMoreUrl="/buku-pelajaran"
+            />
             <TestimonySection testimonyData={data} />
             <RelatedSiteSection />
             <CounterSection counterData={data} />

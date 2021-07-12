@@ -1,11 +1,12 @@
 import BookItem from '../BookItem/BookItem';
 import './NewBooksSection.scss';
+import {Link} from 'react-router-dom';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
-const NewBooksSection = ({bookData}) => {
+const NewBooksSection = ({bookData, seeMoreUrl}) => {
     let newBookItems = bookData[0].newbooks;
     
     return (
@@ -40,7 +41,7 @@ const NewBooksSection = ({bookData}) => {
                     >
                         {newBookItems.map((bookItem, index) => {
                             return(
-                                <div className="col-md-3 my-3" key={index}>
+                            <div className="col-md-3 my-3" key={index}>
                                 <SwiperSlide key={bookItem.id}>
                                     <BookItem
                                         bookImg={bookItem.bookImg}
@@ -57,7 +58,7 @@ const NewBooksSection = ({bookData}) => {
                 </div>
                 <div className="row my-5">
                     <div className="col text-center">
-                        <a className="btn btn-outline-primary py-3 px-4 rounded-pill" href="!#">Lihat Semua</a>
+                        <Link className="btn btn-outline-primary py-3 px-4 rounded-pill" to={seeMoreUrl}>Lihat Semua</Link>
                     </div>
                 </div>
             </div>
