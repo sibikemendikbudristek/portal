@@ -1,21 +1,44 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Banner from '../../components/Banner/Banner';
 import bukuPelajaranImgBanner from '../../assets/img/buku-pelajaran-img.png';
 import BookItem from '../../components/BookItem/BookItem';
-import data from '../../assets/data/dummy';
+import Modal from '../../components/Modal/Modal';
+
+const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
 const BukuPelajaran = () => {
-    const pdfBooks = data[0].pdfBooks;
-    const interaktifBooks = data[0].interaktifBooks;
-    const audioBooks = data[0].audioBooks;
+    const [books, setBooks] = useState([]);
+    const [limit, setLimit] = useState(6);
+    const [type, setType] = useState('type_pdf');
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const getBooks = async () => {
+            setLoading(true);
+            console.log(type)
+            try {
+                let response = await axios.get(`${base_url}/getTextBooks?${type}&limit=${limit}&offset=0&title=buku`);
+                setBooks(response.data.results);
+                setLoading(false);
+            } catch(err) {
+                setLoading(true);
+                return err.message;
+            }
+        }
+        getBooks();
+    }, [type, limit]);
     
     return (
         <main style={{minHeight: '100vh'}}>
             <Banner
-                bannerTitle="Buku Pelajaran"
-                bannerDescription="Temukan buku-buku pelajaran terbaru sesuai kebutuhanmu"
+                bannerTitle="Buku Teks"
+                bannerDescription="Temukan buku-buku teks terbaru sesuai kebutuhanmu"
                 bannerImg={bukuPelajaranImgBanner}
             />
-            <section className="container my-5">
+            <section className="container my-5" style={{minHeight: '100vh'}}>
                 <div className="row justify-content-between">
                     <aside className="col-lg-3 d-none d-lg-block">
                         {/* Sidebar */}
@@ -239,37 +262,26 @@ const BukuPelajaran = () => {
                         {/* Main Content */}
                         <div className="row">
                             <div className="col text-center">
-                                <div className="nav nav-pills d-grid d-md-block gap-2 mb-3 px-5 px-md-0" id="pills-tab" role="tablist">
+                                <div className="d-grid d-md-block gap-2 mb-3 px-5 px-md-0">
                                     <button
-                                        className="btn btn-outline-primary btn-lg mx-2 active"
-                                        id="pills-home-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-pdf"
                                         type="button"
-                                        role="tab"
-                                        aria-controls="pills-pdf"
-                                        aria-selected="true">
+                                        className="btn btn-outline-primary btn-lg mx-2"
+                                        onClick={(() => setType('type_pdf'))}
+                                    >
                                         Buku PDF
                                     </button>
                                     <button
-                                        className="btn btn-outline-primary btn-lg mx-2"
-                                        id="pills-contact-tab"
-                                        data-bs-toggle="pill"
-                                        data-bs-target="#pills-audio"
                                         type="button"
-                                        role="tab"
-                                        aria-controls="pills-audio"
-                                        aria-selected="false">
+                                        className="btn btn-outline-primary btn-lg mx-2"
+                                        onClick={(() => setType('type_audio'))}
+                                    >
                                         Buku Audio
                                     </button>
                                     <button
-                                        className="btn btn-outline-primary btn-lg mx-2"
-                                        id="pills-profile-tab"
-                                        data-bs-toggle="pill"
-                                        data-bs-target="#pills-interaktif"
                                         type="button"
-                                        role="tab"
-                                        aria-controls="pills-interaktif"
-                                        aria-selected="false">
+                                        className="btn btn-outline-primary btn-lg mx-2"
+                                        onClick={(() => setType('type_interactive'))}
+                                    >
                                         Buku Interaktif
                                     </button>
                                 </div>
@@ -287,84 +299,43 @@ const BukuPelajaran = () => {
                                 </form>
                             </div>
                         </div>
-                        <div className="row justify-content-center px-5 px-md-0">
-                            <div className="col">
-                                <div className="tab-content" id="pills-tabContent">
-                                    <div className="tab-pane fade show active" id="pills-pdf" role="tabpanel" aria-labelledby="pills-pdf-tab">
-                                        <div className="row justify-content-start">
-                                            {pdfBooks.map((pdfBook, index) => {
-                                                return(
-                                                    <div className="col-md-4 my-3" key={index}>
-                                                        <BookItem 
-                                                            bookImg={pdfBook.bookImg} 
-                                                            category={pdfBook.category}
-                                                            title={pdfBook.title}
-                                                            readUrl={pdfBook.readUrl}
-                                                            detailUrl={pdfBook.detailUrl}
-                                                        />
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                        <div className="row my-5">
-                                            <div className="col text-center">
-                                                <button className="btn btn-primary btn-lg rounded-pill">Load More</button>
+                        {loading ? 
+                            <Loader
+                                className="text-center my-3"
+                                type="TailSpin"
+                                color="#00BFFF"
+                                height={80}
+                                width={80}
+                            /> : 
+                            <>
+                                <div className="row justify-content-start">
+                                    {books.map((book, index) => {
+                                        return(
+                                            <div className="col-md-4 my-3 px-5 px-md-3" key={index}>
+                                                <BookItem 
+                                                    bookImg={book.image}
+                                                    category={book.name}
+                                                    title={book.title}
+                                                    detailUrl={book.code === 'BEI' ? book.attachment : `/buku-teks/${book.code}/${book.slug}`}
+                                                />
                                             </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="tab-pane fade" id="pills-audio" role="tabpanel" aria-labelledby="pills-audio-tab">
-                                        <div className="row justify-content-start">
-                                            {audioBooks.map((audioBook, index) => {
-                                                return(
-                                                    <div className="col-md-4 my-3" key={index}>
-                                                        <BookItem 
-                                                            bookImg={audioBook.bookImg} 
-                                                            category={audioBook.category}
-                                                            title={audioBook.title}
-                                                            readUrl={audioBook.readUrl}
-                                                            detailUrl={audioBook.detailUrl}
-                                                        />
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                        <div className="row my-5">
-                                            <div className="col text-center">
-                                                <button className="btn btn-primary btn-lg rounded-pill">Load More</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="tab-pane fade" id="pills-interaktif" role="tabpanel" aria-labelledby="pills-interaktif-tab">
-                                        <div className="row justify-content-start">
-                                            {interaktifBooks.map((interaktifBook, index) => {
-                                                return(
-                                                    <div className="col-md-4 my-3" key={index}>
-                                                        <BookItem 
-                                                            bookImg={interaktifBook.bookImg} 
-                                                            category={interaktifBook.category}
-                                                            title={interaktifBook.title}
-                                                            readUrl={interaktifBook.readUrl}
-                                                            detailUrl={interaktifBook.detailUrl}
-                                                        />
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                        <div className="row my-5">
-                                            <div className="col text-center">
-                                                <button className="btn btn-primary btn-lg rounded-pill">Load More</button>
-                                            </div>
-                                        </div>
+                                        );
+                                    })}
+                                </div>
+                                <div className="row my-5">
+                                    <div className="col text-center">
+                                        <button onClick={(() => setLimit(limit + 3))} className="btn btn-primary btn-lg rounded-pill">Load More</button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </>
+                        }
                     </div>
-                    {/* End of Main Content */}
                 </div>
+            {/* End of Main Content */}
             </section>
+            <Modal title="Test">
+                <p>Hello World</p>
+            </Modal>
         </main>
     );
 };

@@ -4,7 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
 import BookItem from '../BookItem/BookItem';
 
-const RelatedBooksSection = () => {
+const RelatedBooksSection = ({data}) => {
+    const relatedBooks = data;
+    
     return (
         <section id="RelatedBooksSection">
             <div className="container my-5">
@@ -20,8 +22,8 @@ const RelatedBooksSection = () => {
                             grabCursor={true}
                             slidesPerView={1}
                             breakpoints={{
-                                // when window width is >= 640px
-                                640: {
+                                // when window width is >= 414px
+                                414: {
                                 slidesPerView: 2,
                                 },
                                 // when window width is >= 768px
@@ -34,51 +36,19 @@ const RelatedBooksSection = () => {
                             }}
                             style={{paddingBottom: '40px'}}
                         >
-                            <SwiperSlide key='1'>
-                                <BookItem
-                                    bookImg=''
-                                    category=''
-                                    title=''
-                                    readUrl=''
-                                    detailUrl=''
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide key='2'>
-                                <BookItem
-                                    bookImg=''
-                                    category=''
-                                    title=''
-                                    readUrl=''
-                                    detailUrl=''
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide key='3'>
-                                <BookItem
-                                    bookImg=''
-                                    category=''
-                                    title=''
-                                    readUrl=''
-                                    detailUrl=''
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide key='4'>
-                                <BookItem
-                                    bookImg=''
-                                    category=''
-                                    title=''
-                                    readUrl=''
-                                    detailUrl=''
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide key='5'>
-                                <BookItem
-                                    bookImg=''
-                                    category=''
-                                    title=''
-                                    readUrl=''
-                                    detailUrl=''
-                                />
-                            </SwiperSlide>
+                            {relatedBooks.map((relatedBook, index) => {
+                                return(
+                                    <SwiperSlide key={index}>
+                                        <BookItem
+                                            bookImg={relatedBook.image}
+                                            category={relatedBook.name}
+                                            title={relatedBook.title}
+                                            onClick={() => {console.log('Clicked')}}
+                                            detailUrl={relatedBook.code === 'BEI' ? relatedBook.attachment : `/buku-teks/${relatedBook.code}/${relatedBook.slug}`}
+                                        />
+                                    </SwiperSlide>
+                                );
+                            })}
                         </Swiper>
                     </div>
                 </div>

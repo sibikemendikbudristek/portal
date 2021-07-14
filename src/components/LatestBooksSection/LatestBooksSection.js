@@ -1,16 +1,16 @@
 import BookItem from '../BookItem/BookItem';
-import './NewBooksSection.scss';
+import './LatestBooksSection.scss';
 import {Link} from 'react-router-dom';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
-const NewBooksSection = ({bookData, seeMoreUrl}) => {
+const LatestBooksSection = ({bookData, seeMoreUrl}) => {
     let newBookItems = bookData[0].newbooks;
     
     return (
-        <section id="NewBooksSection">
+        <section id="LatestBooksSection">
             <div className="container py-5 px-5 px-md-0">
                 <div className="row my-5">
                     <div className="col">
@@ -25,8 +25,8 @@ const NewBooksSection = ({bookData, seeMoreUrl}) => {
                         grabCursor={true}
                         slidesPerView={1}
                         breakpoints={{
-                            // when window width is >= 640px
-                            640: {
+                            // when window width is >= 414px
+                            414: {
                             slidesPerView: 2,
                             },
                             // when window width is >= 768px
@@ -66,4 +66,4 @@ const NewBooksSection = ({bookData, seeMoreUrl}) => {
     );
 };
 
-export default NewBooksSection;
+export default LatestBooksSection;

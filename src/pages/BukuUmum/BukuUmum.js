@@ -11,7 +11,7 @@ const BukuUmum = () => {
     return (
         <main style={{minHeight: '100vh'}}>
             <Banner
-                bannerTitle="Buku Umum"
+                bannerTitle="Buku Nonteks"
                 bannerDescription="Temukan berbagai buku yang kamu inginkan untuk memperluas wawasanmu"
                 bannerImg={bukuUmumImgBanner}
             />

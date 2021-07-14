@@ -4,12 +4,12 @@ const NavbarItems = [
         url: '/'
     },
     {
-        name: 'Buku Pelajaran',
-        url: '/buku-pelajaran'
+        name: 'Buku Teks',
+        url: '/buku-teks'
     },
     {
-        name: 'Buku Umum',
-        url: '/buku-umum'
+        name: 'Buku Nonteks',
+        url: '/buku-nonteks'
     },
     {
         name: 'Panduan',

@@ -1,14 +1,79 @@
-import BookInfoSection from "../../components/BookInfoSection/BookInfoSection"
-import DetailBanner from "../../components/DetailBanner/DetailBanner"
-import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBooksSection"
+import {useState, useEffect} from 'react';
+import axios  from 'axios';
+import { useParams } from 'react-router-dom';
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { Rating } from 'react-simple-star-rating';
+import BookInfoSection from "../../components/BookInfoSection/BookInfoSection";
+import DetailBanner from "../../components/DetailBanner/DetailBanner";
+import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBooksSection";
+import ReviewItem from '../../components/ReviewItem/ReviewItem';
+import Modal from '../../components/Modal/Modal';
+
+const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
 
 const DetailBukuPelajaranPDF = () => {
-    return (
+    const [book, setBook] = useState([]);
+    const [relatedBooks, setRelatedBooks] = useState([]);
+    const { slug } = useParams();
+    const [loading, setLoading] = useState(false);
+    const [rating, setRating] = useState(0);
+
+    // Catch Rating value
+    const handleRating = (rate) => {
+        setRating(rate);
+    }
+
+    useEffect(() => {
+        const getBook = async () => {
+            setLoading(true);
+            try {
+                let response = await axios.get(`${base_url}/getDetails?slug=${slug}`);
+                setBook(response.data.results);
+                setLoading(false);
+            } catch(err) {
+                setLoading(true);
+                return err.message;
+            }
+        }
+        getBook();
+
+        const getRelatedBooks = async () => {
+            setLoading(true);
+            try {
+                let response = await axios.get(`${base_url}/getTextBooks?type_pdf&limit=5&offset=0&title=buku`);
+                setRelatedBooks(response.data.results);
+                setLoading(false);
+            } catch(err) {
+                setLoading(true);
+                return err.message;
+            }
+        }
+        getRelatedBooks();
+    }, [slug]);
+    return(
         <main style={{minHeight: '100vh'}}>
-            <DetailBanner />
-            <BookInfoSection />
-            <RelatedBooksSection />
+        {loading ? 
+            <Loader
+                className="d-flex justify-content-center align-items-center vh-100"
+                type="TailSpin"
+                color="#00BFFF"
+                height={80}
+                width={80}
+            /> : 
+            <>
+            <DetailBanner
+                bookImg={book.image}
+                title={book.title}
+                writer={book.writer}
+                attachment={book.attachment}
+                btnType={book.type}
+            />
+            <BookInfoSection data={book} />
+            <RelatedBooksSection
+                data={relatedBooks}
+            />
             <section className="bg-light">
                 <div className="container py-5">
                     <div className="row mt-5">
@@ -19,17 +84,17 @@ const DetailBukuPelajaranPDF = () => {
                     <form action="">
                         <div className="row my-3">
                             <div className="col-auto">
-                                <label for="inputPassword6" className="col-form-label">Beri ulasan</label>
+                                <label className="col-form-label">Beri ulasan</label>
                             </div>
-                            <div className="col-auto">
-                                <input type="password" id="inputPassword6" className="form-control" aria-describedby="passwordHelpInline" />
+                            <div className="col-auto py-1">
+                                <Rating onClick={handleRating} ratingValue={rating} stars={5} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col">
                                 <div className="form-floating">
                                     <textarea className="form-control border-2" placeholder="Leave a comment here" id="floatingTextarea2" style={{height: '200px', borderRadius: '20px'}}></textarea>
-                                    <label for="floatingTextarea2">Tulis Ulasan...</label>
+                                    <label>Tulis Ulasan...</label>
                                 </div>
                             </div>
                         </div>
@@ -45,11 +110,16 @@ const DetailBukuPelajaranPDF = () => {
                 <div className="container py-5">
                     <div className="row">
                         <div className="col">
-                            
+                            <ReviewItem />
                         </div>
                     </div>
                 </div>
             </section>
+            <Modal title={book.title}>
+                
+            </Modal>
+            </>
+        }
         </main>
     );
 };

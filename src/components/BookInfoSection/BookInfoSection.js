@@ -1,6 +1,8 @@
 import './BookInfoSection.scss';
 
-const BookInfoSection = () => {
+const BookInfoSection = ({data}) => {
+    const bookData = data;
+    
     return (
         <section id="BookInfoSection">
             <div className="container my-5">
@@ -15,19 +17,19 @@ const BookInfoSection = () => {
                             <tbody>
                                 <tr>
                                     <th scope="row" className="col-md-6 col-lg-4">Jenjang</th>
-                                    <td>SMP</td>
+                                    <td>{bookData.level || '-'}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Tipe</th>
-                                    <td>Buku PDF</td>
+                                    <td>{bookData.type || '-'}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Penulis</th>
-                                    <td>Nama Penulis</td>
+                                    <td>{bookData.writer || '-'}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Penerbit</th>
-                                    <td>Badan Pengembangan Bahasa dan Perbukuan, Kementerian Pendidikan dan Kebudayaan</td>
+                                    <td>{bookData.publisher || '-'}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -37,19 +39,19 @@ const BookInfoSection = () => {
                             <tbody>
                                 <tr>
                                     <th scope="row" className="col-md-6 col-lg-4">Penelaah</th>
-                                    <td>SMP</td>
+                                    <td>{bookData.reviewer || '-'}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Tahun Terbit</th>
-                                    <td>Buku PDF</td>
+                                    <td>{bookData.published_year || '-'}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">ISBN</th>
-                                    <td>Nama Penulis</td>
+                                    <td>{bookData.isbn || '-'}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Edisi</th>
-                                    <td>Nama Penerbit</td>
+                                    <td>{bookData.edition || '-'}</td>
                                 </tr>
                             </tbody>
                         </table>

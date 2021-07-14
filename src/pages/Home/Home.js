@@ -2,7 +2,7 @@ import CounterSection from '../../components/CounterSection/CounterSection';
 import Hero from '../../components/Hero/Hero';
 import JenisBukuSection from '../../components/JenisBukuSection/JenisBukuSection';
 import JenjangSection from '../../components/JenjangSection/JenjangSection';
-import NewBooksSection from '../../components/NewBooksSection/NewBooksSection';
+import LatestBooksSection from '../../components/LatestBooksSection/LatestBooksSection';
 import PanduanSection from '../../components/PanduanSection/PanduanSection';
 import RelatedSiteSection from '../../components/RelatedSiteSection/RelatedSiteSection';
 import TestimonySection from '../../components/TestimonySection/TestimonySection';
@@ -15,9 +15,9 @@ const Home = () => {
             <PanduanSection />
             <JenjangSection />
             <JenisBukuSection />
-            <NewBooksSection
+            <LatestBooksSection
                 bookData={data}
-                seeMoreUrl="/buku-pelajaran"
+                seeMoreUrl="/buku-teks"
             />
             <TestimonySection testimonyData={data} />
             <RelatedSiteSection />
