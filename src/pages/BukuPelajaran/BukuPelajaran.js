@@ -44,23 +44,23 @@ const BukuPelajaran = () => {
                         {/* Sidebar */}
                         <div className="card border-0 shadow" style={{borderRadius: '20px'}}>
                             <div className="card-body" style={{borderRadius: '20px'}}>
-                                <form action="">
+                                <form>
                                     <div className="mb-3">
                                         <h6><strong>Tipe Buku</strong></h6>
                                         <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" defaultValue />
+                                            <input className="form-check-input" type="checkbox" value="type_pdf" />
                                             <label className="form-check-label">
                                                 PDF
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" defaultValue />
+                                            <input className="form-check-input" type="checkbox" value="type_audio" />
                                             <label className="form-check-label">
                                                 Audio
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" defaultValue />
+                                            <input className="form-check-input" type="checkbox" value="type_interactive" />
                                             <label className="form-check-label">
                                                 Interaktif
                                             </label>
@@ -69,19 +69,19 @@ const BukuPelajaran = () => {
                                     <div className="mb-3">
                                         <h6><strong>Jenjang</strong></h6>
                                         <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" defaultValue />
+                                            <input className="form-check-input" type="checkbox" value="SD" />
                                             <label className="form-check-label">
                                                 SD/MI
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" defaultValue />
+                                            <input className="form-check-input" type="checkbox" value="SMP" />
                                             <label className="form-check-label">
                                                 SMP/MTS
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" defaultValue />
+                                            <input className="form-check-input" type="checkbox" value="SMA" />
                                             <label className="form-check-label">
                                                 SMA/MA
                                             </label>
@@ -92,37 +92,37 @@ const BukuPelajaran = () => {
                                         <div className="row">
                                             <div className="col">
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="1" />
                                                     <label className="form-check-label">
                                                         I
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="2" />
                                                     <label className="form-check-label">
                                                         II
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="3" />
                                                     <label className="form-check-label">
                                                         III
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="4" />
                                                     <label className="form-check-label">
                                                         IV
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="5" />
                                                     <label className="form-check-label">
                                                         V
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="6" />
                                                     <label className="form-check-label">
                                                         VI
                                                     </label>
@@ -130,37 +130,37 @@ const BukuPelajaran = () => {
                                             </div>
                                             <div className="col">
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="7" />
                                                     <label className="form-check-label">
                                                         VII
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="8" />
                                                     <label className="form-check-label">
                                                         VIII
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="9" />
                                                     <label className="form-check-label">
                                                         IX
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="10" />
                                                     <label className="form-check-label">
                                                         X
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="11" />
                                                     <label className="form-check-label">
                                                         XI
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input className="form-check-input" type="checkbox" value="12" />
                                                     <label className="form-check-label">
                                                         XII
                                                     </label>
@@ -173,43 +173,43 @@ const BukuPelajaran = () => {
                                         <div className="row">
                                             <div className="col">
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="Ilmu%20Pengetahuan%20Alam" />
                                                     <label className="form-check-label">
                                                         IPA
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="Ilmu%20Pengetahuan%20Sosial" />
                                                     <label className="form-check-label">
                                                         IPS
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="Bahasa%20Indonesia" />
                                                     <label className="form-check-label">
                                                         B.Indonesia
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="Bahasa%20Inggris" />
                                                     <label className="form-check-label">
                                                         B.Inggris
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="PJOK" />
                                                     <label className="form-check-label">
                                                         PJOK
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="kewarganegaraan" />
                                                     <label className="form-check-label">
                                                         PKN
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="matematika" />
                                                     <label className="form-check-label">
                                                         Matematika
                                                     </label>
@@ -217,31 +217,31 @@ const BukuPelajaran = () => {
                                             </div>
                                             <div className="col">
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="prakarya" />
                                                     <label className="form-check-label">
                                                         Prakarya
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="seni" />
                                                     <label className="form-check-label">
                                                         S.Budaya
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="agama" />
                                                     <label className="form-check-label">
                                                         Agama
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="sejarah" />
                                                     <label className="form-check-label">
                                                         Sejarah
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input className="form-check-input" type="checkbox" defaultValue />
+                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="tematik" />
                                                     <label className="form-check-label">
                                                         Tematik
                                                     </label>
@@ -251,7 +251,7 @@ const BukuPelajaran = () => {
                                     </div>
                                     <div className="d-grid gap-2">
                                         <button className="btn btn-primary rounded-pill" type="submit">Terapkan</button>
-                                        <button className="btn btn-light rounded-pill" type="button">Reset</button>
+                                        <button className="btn btn-light rounded-pill" type="reset">Reset</button>
                                     </div>
                                 </form>
                             </div>
@@ -262,10 +262,11 @@ const BukuPelajaran = () => {
                         {/* Main Content */}
                         <div className="row">
                             <div className="col text-center">
-                                <div className="d-grid d-md-block gap-2 mb-3 px-5 px-md-0">
+                                <div className="nav d-grid d-md-block gap-2 mb-3 px-5 px-md-0" role="tablist">
                                     <button
                                         type="button"
-                                        className="btn btn-outline-primary btn-lg mx-2"
+                                        className="btn btn-outline-primary active btn-lg mx-2"
+                                        data-bs-toggle="pill"
                                         onClick={(() => setType('type_pdf'))}
                                     >
                                         Buku PDF
@@ -273,6 +274,7 @@ const BukuPelajaran = () => {
                                     <button
                                         type="button"
                                         className="btn btn-outline-primary btn-lg mx-2"
+                                        data-bs-toggle="pill"
                                         onClick={(() => setType('type_audio'))}
                                     >
                                         Buku Audio
@@ -280,6 +282,7 @@ const BukuPelajaran = () => {
                                     <button
                                         type="button"
                                         className="btn btn-outline-primary btn-lg mx-2"
+                                        data-bs-toggle="pill"
                                         onClick={(() => setType('type_interactive'))}
                                     >
                                         Buku Interaktif
@@ -306,8 +309,8 @@ const BukuPelajaran = () => {
                                 width={80}
                             /> : 
                             <>
-                                <div className="row justify-content-start">
-                                    {textbooks.length < 1 ? <p className="text-center my-5">Buku tidak ditemukan</p> : 
+                                <div className="row justify-content-start" style={{minHeight: '100vh'}}>
+                                    {textbooks.length < 1 ? <p className="text-center my-5">Buku tidak ditemukan, cari dengan kata kunci lain.</p> : 
                                         textbooks.map((book, index) => {
                                         return(
                                             <div className="col-md-4 my-3 px-5 px-md-3" key={index}>
