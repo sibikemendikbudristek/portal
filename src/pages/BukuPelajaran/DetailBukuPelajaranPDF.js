@@ -29,7 +29,9 @@ const DetailBukuPelajaranPDF = () => {
         const getBook = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getDetails?slug=${slug}`);
+                let response = await axios.get(`${base_url}/getDetails?slug=${slug}`, {
+                    mode: 'no-cors',
+                });
                 setBook(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -42,7 +44,7 @@ const DetailBukuPelajaranPDF = () => {
         const getRelatedBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getTextBooks?type_pdf&limit=5&offset=0&title=buku`);
+                let response = await axios.get(`${base_url}/getTextBooks?type_pdf&limit=5`);
                 setRelatedBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -69,6 +71,8 @@ const DetailBukuPelajaranPDF = () => {
                 writer={book.writer}
                 attachment={book.attachment}
                 btnType={book.type}
+                readModal="#readModal"
+                reportModal="#reportPdfModal"
             />
             <BookInfoSection data={book} />
             <RelatedBooksSection
@@ -115,8 +119,11 @@ const DetailBukuPelajaranPDF = () => {
                     </div>
                 </div>
             </section>
-            <Modal title={book.title}>
-                
+            <Modal id="readModal" title={book.title}>
+                <embed type="application/pdf" src={book.attachment} width="100%" height="800" />
+            </Modal>
+            <Modal id="reportPdfModal" title="Lapor">
+                <p>It's a form</p>
             </Modal>
             </>
         }

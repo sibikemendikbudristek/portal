@@ -1,7 +1,7 @@
 import bookImgPlaceholder from '../../assets/img/book-placeholder.jpg';
 import './BookItem.scss';
 
-const BookItem = ({bookImg, category, title, bookType, detailUrl}) => {
+const BookItem = ({bookImg, category, title, bookType, detailUrl, readModal}) => {
     return (
         <div id="BookItem">
             <div className="card shadow">
@@ -14,11 +14,13 @@ const BookItem = ({bookImg, category, title, bookType, detailUrl}) => {
                     </div>
                     <div className="row mb-4">
                         <div className="col">
-                        {bookType === 'pdf' ? <h5 className="card-title text-white">{title || 'Undefined'}</h5> : <a className="link" href="!#" data-bs-toggle="modal" data-bs-target="#Modal">
-                        <h5 className="card-title text-white">{title || 'Undefined'}</h5>
-                    </a>}
+                            {bookType !== 'pdf' ? 
+                            <h5 className="card-title text-white" style={{pointerEvents: 'none'}}>{title || 'Undefined'}</h5> : 
+                            <a className="link" href="!#" data-bs-toggle="modal" data-bs-target={readModal}>
+                                <h5 className="card-title text-white">{title || 'Undefined'}</h5>
+                            </a>}
                             <a className="card-link" href={detailUrl || null}>
-                               <p className="card-text text-warning">Baca Selengkapnya <i className="fas fa-fw fa-arrow-right" /></p>
+                                <p className="card-text text-warning">Baca Selengkapnya <i className="fas fa-fw fa-arrow-right" /></p>
                             </a>
                         </div>
                     </div>

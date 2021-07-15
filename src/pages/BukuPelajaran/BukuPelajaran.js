@@ -10,26 +10,26 @@ import Modal from '../../components/Modal/Modal';
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
 const BukuPelajaran = () => {
-    const [books, setBooks] = useState([]);
+    const [textbooks, setTextBooks] = useState([]);
+    const [searchTitle, setSearchTitle] = useState('');
     const [limit, setLimit] = useState(6);
     const [type, setType] = useState('type_pdf');
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const getBooks = async () => {
+        const getTextBooks = async () => {
             setLoading(true);
-            console.log(type)
             try {
-                let response = await axios.get(`${base_url}/getTextBooks?${type}&limit=${limit}&offset=0&title=buku`);
-                setBooks(response.data.results);
+                let response = await axios.get(`${base_url}/getTextBooks?${type}&limit=${limit}&offset=0&title=${searchTitle}`);
+                setTextBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
                 setLoading(true);
                 return err.message;
             }
         }
-        getBooks();
-    }, [type, limit]);
+        getTextBooks();
+    }, [type, limit, searchTitle]);
     
     return (
         <main style={{minHeight: '100vh'}}>
@@ -289,14 +289,12 @@ const BukuPelajaran = () => {
                         </div>
                         <div className="row justify-content-center my-3">
                             <div className="col-9 col-md-7">
-                                <form action="">
                                     <div className="input-group mb-3">
                                         <span className="input-group-text bg-white border-end-0 border-2">
                                             <i className="fas fa-search text-muted" />
                                         </span>
-                                        <input type="text" className="form-control border-start-0 border-2 shadow-none" placeholder="Cari buku..." />
+                                        <input type="text" onChange={event => {setSearchTitle(event.target.value)}} className="form-control border-start-0 border-2 shadow-none" placeholder="Cari buku..." />
                                     </div>
-                                </form>
                             </div>
                         </div>
                         {loading ? 
@@ -309,33 +307,38 @@ const BukuPelajaran = () => {
                             /> : 
                             <>
                                 <div className="row justify-content-start">
-                                    {books.map((book, index) => {
+                                    {textbooks.length < 1 ? <p className="text-center my-5">Buku tidak ditemukan</p> : 
+                                        textbooks.map((book, index) => {
                                         return(
                                             <div className="col-md-4 my-3 px-5 px-md-3" key={index}>
-                                                <BookItem 
+                                                <BookItem
+                                                    readModal={'#'+book.slug}
                                                     bookImg={book.image}
                                                     category={book.name}
                                                     title={book.title}
+                                                    bookType={book.type}
                                                     detailUrl={book.code === 'BEI' ? book.attachment : `/buku-teks/${book.code}/${book.slug}`}
                                                 />
+                                                <Modal id={book.slug} title={book.title}>
+                                                    <embed type="application/pdf" src={book.attachment} width="100%" height="800" />
+                                                </Modal>
                                             </div>
                                         );
                                     })}
                                 </div>
-                                <div className="row my-5">
-                                    <div className="col text-center">
-                                        <button onClick={(() => setLimit(limit + 3))} className="btn btn-primary btn-lg rounded-pill">Load More</button>
+                                {textbooks.length < 5 ? '' : 
+                                    <div className="row my-5">
+                                        <div className="col text-center">
+                                            <button onClick={(() => setLimit(limit + 3))} className="btn btn-primary btn-lg rounded-pill">Load More</button>
+                                        </div>
                                     </div>
-                                </div>
+                                }
                             </>
                         }
                     </div>
                 </div>
             {/* End of Main Content */}
             </section>
-            <Modal title="Test">
-                <p>Hello World</p>
-            </Modal>
         </main>
     );
 };

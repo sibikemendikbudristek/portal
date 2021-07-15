@@ -15,14 +15,10 @@
     }
     .card-title {
       cursor: pointer;
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  #BookItem {
-    .card {
-      height: 50%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
     }
   }
 }

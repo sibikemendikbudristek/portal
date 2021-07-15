@@ -43,7 +43,6 @@ const RelatedBooksSection = ({data}) => {
                                             bookImg={relatedBook.image}
                                             category={relatedBook.name}
                                             title={relatedBook.title}
-                                            onClick={() => {console.log('Clicked')}}
                                             detailUrl={relatedBook.code === 'BEI' ? relatedBook.attachment : `/buku-teks/${relatedBook.code}/${relatedBook.slug}`}
                                         />
                                     </SwiperSlide>
