@@ -173,43 +173,43 @@ const BukuPelajaran = () => {
                                         <div className="row">
                                             <div className="col">
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="Ilmu%20Pengetahuan%20Alam" />
+                                                    <input className="form-check-input" type="checkbox" value="Ilmu%20Pengetahuan%20Alam" />
                                                     <label className="form-check-label">
                                                         IPA
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="Ilmu%20Pengetahuan%20Sosial" />
+                                                    <input className="form-check-input" type="checkbox" value="Ilmu%20Pengetahuan%20Sosial" />
                                                     <label className="form-check-label">
                                                         IPS
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="Bahasa%20Indonesia" />
+                                                    <input className="form-check-input" type="checkbox" value="Bahasa%20Indonesia" />
                                                     <label className="form-check-label">
                                                         B.Indonesia
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="Bahasa%20Inggris" />
+                                                    <input className="form-check-input" type="checkbox" value="Bahasa%20Inggris" />
                                                     <label className="form-check-label">
                                                         B.Inggris
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="PJOK" />
+                                                    <input className="form-check-input" type="checkbox" value="PJOK" />
                                                     <label className="form-check-label">
                                                         PJOK
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="kewarganegaraan" />
+                                                    <input className="form-check-input" type="checkbox" value="kewarganegaraan" />
                                                     <label className="form-check-label">
                                                         PKN
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="matematika" />
+                                                    <input className="form-check-input" type="checkbox" value="matematika" />
                                                     <label className="form-check-label">
                                                         Matematika
                                                     </label>
@@ -217,31 +217,31 @@ const BukuPelajaran = () => {
                                             </div>
                                             <div className="col">
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="prakarya" />
+                                                    <input className="form-check-input" type="checkbox" value="prakarya" />
                                                     <label className="form-check-label">
                                                         Prakarya
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="seni" />
+                                                    <input className="form-check-input" type="checkbox" value="seni" />
                                                     <label className="form-check-label">
                                                         S.Budaya
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="agama" />
+                                                    <input className="form-check-input" type="checkbox" value="agama" />
                                                     <label className="form-check-label">
                                                         Agama
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="sejarah" />
+                                                    <input className="form-check-input" type="checkbox" value="sejarah" />
                                                     <label className="form-check-label">
                                                         Sejarah
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onChange={(e) => setSearchTitle(e.target.value)} className="form-check-input" type="checkbox" value="tematik" />
+                                                    <input className="form-check-input" type="checkbox" value="tematik" />
                                                     <label className="form-check-label">
                                                         Tematik
                                                     </label>
@@ -309,7 +309,7 @@ const BukuPelajaran = () => {
                                 width={80}
                             /> : 
                             <>
-                                <div className="row justify-content-start" style={{minHeight: '100vh'}}>
+                                <div className="row justify-content-start">
                                     {textbooks.length < 1 ? <p className="text-center my-5">Buku tidak ditemukan, cari dengan kata kunci lain.</p> : 
                                         textbooks.map((book, index) => {
                                         return(
@@ -329,7 +329,7 @@ const BukuPelajaran = () => {
                                         );
                                     })}
                                 </div>
-                                {textbooks.length < 5 ? '' : 
+                                {textbooks.length < limit - 1 ? '' : 
                                     <div className="row my-5">
                                         <div className="col text-center">
                                             <button onClick={(() => setLimit(limit + 3))} className="btn btn-primary btn-lg rounded-pill">Load More</button>
