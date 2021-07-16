@@ -29,9 +29,7 @@ const DetailBukuPelajaranPDF = () => {
         const getBook = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getDetails?slug=${slug}`, {
-                    mode: 'no-cors',
-                });
+                let response = await axios.get(`${base_url}/getDetails?slug=${slug}`);
                 setBook(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -44,7 +42,7 @@ const DetailBukuPelajaranPDF = () => {
         const getRelatedBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getTextBooks?type_pdf&limit=5`);
+                let response = await axios.get(`${base_url}/getTextBooks?type=pdf&limit=5`);
                 setRelatedBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -69,6 +67,7 @@ const DetailBukuPelajaranPDF = () => {
                 bookImg={book.image}
                 title={book.title}
                 writer={book.writer}
+                description={book.description}
                 attachment={book.attachment}
                 btnType={book.type}
                 readModal="#readModal"

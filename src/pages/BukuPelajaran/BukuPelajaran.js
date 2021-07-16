@@ -13,14 +13,14 @@ const BukuPelajaran = () => {
     const [textbooks, setTextBooks] = useState([]);
     const [searchTitle, setSearchTitle] = useState('');
     const [limit, setLimit] = useState(6);
-    const [type, setType] = useState('type_pdf');
+    const [type, setType] = useState('pdf');
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const getTextBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getTextBooks?${type}&limit=${limit}&offset=0&title=${searchTitle}`);
+                let response = await axios.get(`${base_url}/getTextBooks?type=${type}&limit=${limit}&offset=0&title=${searchTitle}`);
                 setTextBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -30,6 +30,21 @@ const BukuPelajaran = () => {
         }
         getTextBooks();
     }, [type, limit, searchTitle]);
+
+    const typePdfHandler = () => {
+       setType('pdf');
+       setLimit(6);
+    }
+
+    const typeAudioHandler = () => {
+        setType('audio');
+        setLimit(6);
+    }
+  
+    const typeInteractiveHandler = () => {
+        setType('interactive');
+        setLimit(6);
+    }
     
     return (
         <main style={{minHeight: '100vh'}}>
@@ -267,7 +282,7 @@ const BukuPelajaran = () => {
                                         type="button"
                                         className="btn btn-outline-primary active btn-lg mx-2"
                                         data-bs-toggle="pill"
-                                        onClick={(() => setType('type_pdf'))}
+                                        onClick={typePdfHandler}
                                     >
                                         Buku PDF
                                     </button>
@@ -275,7 +290,7 @@ const BukuPelajaran = () => {
                                         type="button"
                                         className="btn btn-outline-primary btn-lg mx-2"
                                         data-bs-toggle="pill"
-                                        onClick={(() => setType('type_audio'))}
+                                        onClick={typeAudioHandler}
                                     >
                                         Buku Audio
                                     </button>
@@ -283,7 +298,7 @@ const BukuPelajaran = () => {
                                         type="button"
                                         className="btn btn-outline-primary btn-lg mx-2"
                                         data-bs-toggle="pill"
-                                        onClick={(() => setType('type_interactive'))}
+                                        onClick={typeInteractiveHandler}
                                     >
                                         Buku Interaktif
                                     </button>
@@ -310,7 +325,12 @@ const BukuPelajaran = () => {
                             /> : 
                             <>
                                 <div className="row justify-content-start">
-                                    {textbooks.length < 1 ? <p className="text-center my-5">Buku tidak ditemukan, cari dengan kata kunci lain.</p> : 
+                                    {textbooks.length < 1 ?
+                                        <div className="col text-center my-5">
+                                            <i className="fas fa-times text-danger" style={{fontSize: '45px'}} />
+                                            <p className="lead">Buku tidak ditemukan di kategori {type === 'interactive' ? 'interaktif' : type},<br />cari dengan kata kunci lain.</p> 
+                                        </div>
+                                        : 
                                         textbooks.map((book, index) => {
                                         return(
                                             <div className="col-md-4 my-3 px-5 px-md-3" key={index}>
