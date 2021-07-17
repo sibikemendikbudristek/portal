@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {Suspense, useState, useEffect} from 'react';
 import axios  from 'axios';
 import { useParams } from 'react-router-dom';
 import Loader from "react-loader-spinner";
@@ -9,11 +9,12 @@ import DetailBanner from "../../components/DetailBanner/DetailBanner";
 import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBooksSection";
 import ReviewItem from '../../components/ReviewItem/ReviewItem';
 import Modal from '../../components/Modal/Modal';
+const PlaylistSection = React.lazy(() => import('../../components/PlaylistSection/PlaylistSection'));
 
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
 
-const DetailBukuPelajaranPDF = () => {
+const DetailBukuTeksAudio = () => {
     const [book, setBook] = useState([]);
     const [relatedBooks, setRelatedBooks] = useState([]);
     const { slug } = useParams();
@@ -42,7 +43,7 @@ const DetailBukuPelajaranPDF = () => {
         const getRelatedBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getTextBooks?type=pdf&limit=5`);
+                let response = await axios.get(`${base_url}/getTextBooks?type_audio&limit=5`);
                 setRelatedBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -68,12 +69,13 @@ const DetailBukuPelajaranPDF = () => {
                 title={book.title}
                 writer={book.writer}
                 description={book.description}
-                attachment={book.attachment}
                 btnType={book.type}
-                readModal="#readModal"
-                reportModal="#reportPdfModal"
+                reportModal="#reportAudioModal"
             />
             <BookInfoSection data={book} />
+            <Suspense fallback={<div>Loading...</div>}>
+                <PlaylistSection data={book.audio_attachment} />
+            </Suspense>
             <RelatedBooksSection
                 data={relatedBooks}
             />
@@ -121,7 +123,7 @@ const DetailBukuPelajaranPDF = () => {
             <Modal id="readModal" title={book.title}>
                 <embed type="application/pdf" src={book.attachment} width="100%" height="800" />
             </Modal>
-            <Modal id="reportPdfModal" title="Lapor">
+            <Modal id="reportAudioModal" title="Lapor">
                 <p>It's a form</p>
             </Modal>
             </>
@@ -130,4 +132,4 @@ const DetailBukuPelajaranPDF = () => {
     );
 };
 
-export default DetailBukuPelajaranPDF;
+export default DetailBukuTeksAudio;

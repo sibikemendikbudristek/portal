@@ -15,8 +15,8 @@ const DetailBanner = ({bookImg, title, writer, description, attachment, btnType,
                         <h5 className="mt-5"><strong>Deskripsi</strong></h5>
                         <p className="mb-4">{description || 'Belum ada deskripsi untuk buku ini'}</p>
                         <div className="d-grid gap-2 d-md-block">
-                        {btnType === 'pdf' ? <button className="btn btn-light btn-md px-4 mx-2 mx-lg-0 me-lg-2" data-bs-toggle="modal" data-bs-target={readModal}><i className="fab fa-fw fa-readme" /> Baca</button> : <button className="btn btn-light btn-md px-4 mx-2"><i className="fas fa-fw fa-play" /> Putar</button>}
-                            <a className="btn btn-light btn-md px-4 mx-2" href={attachment} target="_blank" rel="noopener noreferrer"><i className="fas fa-fw fa-download" /> Unduh</a>
+                        {btnType === 'pdf' ? <button className="btn btn-light btn-md px-4 mx-2 mx-lg-0 me-lg-2" data-bs-toggle="modal" data-bs-target={readModal}><i className="fab fa-fw fa-readme" /> Baca</button> : <a href="#PlaylistSection" className="btn btn-light btn-md px-4 me-2"><i className="fas fa-fw fa-play" /> Putar</a>}
+                        {btnType === 'audio' ? '' : <a className="btn btn-light btn-md px-4 mx-2" href={attachment} target="_blank" rel="noopener noreferrer"><i className="fas fa-fw fa-download" /> Unduh</a>}
                             <button className="btn btn-danger btn-md px-4 mx-2" data-bs-toggle="modal" data-bs-target={reportModal}><i className="fas fa-fw fa-exclamation-triangle" /> Lapor</button>
                         </div>
                     </div>

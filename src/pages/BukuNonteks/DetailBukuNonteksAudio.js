@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {Suspense, useState, useEffect} from 'react';
 import axios  from 'axios';
 import { useParams } from 'react-router-dom';
 import Loader from "react-loader-spinner";
@@ -7,14 +7,14 @@ import { Rating } from 'react-simple-star-rating';
 import BookInfoSection from "../../components/BookInfoSection/BookInfoSection";
 import DetailBanner from "../../components/DetailBanner/DetailBanner";
 import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBooksSection";
-import PlaylistSection from '../../components/PlaylistSection/PlaylistSection';
 import ReviewItem from '../../components/ReviewItem/ReviewItem';
 import Modal from '../../components/Modal/Modal';
+const PlaylistSection = React.lazy(() => import('../../components/PlaylistSection/PlaylistSection'));
 
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
 
-const DetailBukuPelajaranAudio = () => {
+const DetailBukuNonteksAudio = () => {
     const [book, setBook] = useState([]);
     const [relatedBooks, setRelatedBooks] = useState([]);
     const { slug } = useParams();
@@ -43,7 +43,7 @@ const DetailBukuPelajaranAudio = () => {
         const getRelatedBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getTextBooks?type=audio&limit=5`);
+                let response = await axios.get(`${base_url}/getNonTextBooks?type_audio&limit=5`);
                 setRelatedBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -53,6 +53,7 @@ const DetailBukuPelajaranAudio = () => {
         }
         getRelatedBooks();
     }, [slug]);
+    
     return(
         <main style={{minHeight: '100vh'}}>
         {loading ? 
@@ -69,18 +70,13 @@ const DetailBukuPelajaranAudio = () => {
                 title={book.title}
                 writer={book.writer}
                 description={book.description}
-                attachment={book.attachment}
                 btnType={book.type}
                 reportModal="#reportAudioModal"
             />
             <BookInfoSection data={book} />
-            <PlaylistSection data={book} />
-            <nav className="navbar navbar-light shadow bg-light fixed-bottom">
-            <div className="container">
-                <span className="navbar-brand mb-0 h1">Navbar</span>
-            </div>
-            </nav>
-
+            <Suspense fallback={<div>Loading...</div>}>
+                <PlaylistSection data={book.audio_attachment} />
+            </Suspense>
             <RelatedBooksSection
                 data={relatedBooks}
             />
@@ -137,4 +133,4 @@ const DetailBukuPelajaranAudio = () => {
     );
 };
 
-export default DetailBukuPelajaranAudio;
+export default DetailBukuNonteksAudio;

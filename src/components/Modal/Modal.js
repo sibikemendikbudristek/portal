@@ -3,7 +3,7 @@ import './Modal.scss';
 const Modal = ({children, title, id}) => {
     return (
         <div className="modal fade" id={id} tabIndex={-1} aria-labelledby="ModalLabel" aria-hidden="true" style={{width: '100%'}}>
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-lg">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="ModalLabel">{title}</h5>

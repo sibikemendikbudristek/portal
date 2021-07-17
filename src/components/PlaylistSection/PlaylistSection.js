@@ -1,33 +1,37 @@
 import './PlaylistSection.scss';
 
 const PlaylistSection = ({data}) => {
-    const bookData = data;
-
     return (
         <section id="PlaylistSection">
             <div className="container my-5">
                 <div className="row">
-                    <div className="col">
-                    <table className="table table-striped table-borderless table-hover">
+                    <div className="col" style={{overflowX : 'scroll'}}>
+                    <table className="table table-striped table-borderless">
                     <thead>
-                      <tr>
-                        <th scope="col" className="col-1 text-center"><i className="fas fa-fw fa-music" /></th>
-                        <th scope="col" className="col-9">Judul</th>
+                      <tr className="text-center">
+                        <th scope="col">
+                          <i className="fas fa-fw fa-music" /> Audio
+                        </th>
+                        <th scope="col">Judul</th>
                         <th scope="col">Bab</th>
                         <th scope="col">Sub Bab</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                    {data.map((item, index) => {
+                      return(
+                        <tr className="text-center" key={index}>
                         <th scope="row">
-                            <button className="btn">
-                                <i className="fas fa-fw fa-play" />
-                            </button>
+                          <audio controls>
+                            <source src={item.attachment} type="audio/mpeg" />
+                          </audio>
                         </th>
-                        <td>Daftar Isi</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td className="text-start">{item.title}</td>
+                        <td>{item.chapter}</td>
+                        <td>{item.sub_chapter}</td>
                       </tr>
+                      );
+                    })}
                     </tbody>
                   </table>                  
                     </div>

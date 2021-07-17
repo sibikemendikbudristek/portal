@@ -9,18 +9,18 @@ import Modal from '../../components/Modal/Modal';
 
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
-const BukuPelajaran = () => {
+const BukuTeks = () => {
     const [textbooks, setTextBooks] = useState([]);
     const [searchTitle, setSearchTitle] = useState('');
     const [limit, setLimit] = useState(6);
-    const [type, setType] = useState('pdf');
+    const [type, setType] = useState('type_pdf');
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const getTextBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getTextBooks?type=${type}&limit=${limit}&offset=0&title=${searchTitle}`);
+                let response = await axios.get(`${base_url}/getTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}`);
                 setTextBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -32,17 +32,17 @@ const BukuPelajaran = () => {
     }, [type, limit, searchTitle]);
 
     const typePdfHandler = () => {
-       setType('pdf');
+       setType('type_pdf');
        setLimit(6);
     }
 
     const typeAudioHandler = () => {
-        setType('audio');
+        setType('type_audio');
         setLimit(6);
     }
   
     const typeInteractiveHandler = () => {
-        setType('interactive');
+        setType('type_interactive');
         setLimit(6);
     }
     
@@ -327,8 +327,8 @@ const BukuPelajaran = () => {
                                 <div className="row justify-content-start">
                                     {textbooks.length < 1 ?
                                         <div className="col text-center my-5">
-                                            <i className="fas fa-times text-danger" style={{fontSize: '45px'}} />
-                                            <p className="lead">Buku tidak ditemukan di kategori {type === 'interactive' ? 'interaktif' : type},<br />cari dengan kata kunci lain.</p> 
+                                            <i className="fas fa-times text-warning my-3" style={{fontSize: '60px'}} />
+                                            <p className="lead">Buku tidak ditemukan di kategori ini,<br />cari dengan kata kunci lain.</p> 
                                         </div>
                                         : 
                                         textbooks.map((book, index) => {
@@ -366,4 +366,4 @@ const BukuPelajaran = () => {
     );
 };
 
-export default BukuPelajaran;
+export default BukuTeks;
