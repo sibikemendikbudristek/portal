@@ -43,7 +43,12 @@ const RelatedBooksSection = ({data}) => {
                                             bookImg={relatedBook.image}
                                             category={relatedBook.name}
                                             title={relatedBook.title}
-                                            detailUrl={relatedBook.code === 'BEI' ? relatedBook.attachment : `/buku-teks/${relatedBook.code}/${relatedBook.slug}`}
+                                            detailUrl={relatedBook.code === 'BEI' ?
+                                            relatedBook.attachment : 
+                                            relatedBook.category !== 'buku_non_teks' ?
+                                        `/buku-teks/${relatedBook.code}/${relatedBook.slug}` :
+                                        `/buku-nonteks/${relatedBook.code}/${relatedBook.slug}`
+                                    }
                                         />
                                     </SwiperSlide>
                                 );
