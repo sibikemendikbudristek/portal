@@ -5,10 +5,15 @@ import {Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
+import 'swiper/components/pagination/pagination.min.css';
 
-const LatestBooksSection = ({bookData, seeMoreUrl}) => {
-    let newBookItems = bookData[0].newbooks;
-    
+// import Swiper core and required modules
+import SwiperCore, { Pagination } from 'swiper/core';
+  
+// install Swiper modules
+SwiperCore.use([Pagination]);
+
+const LatestBooksSection = ({data, seeMoreUrl}) => {
     return (
         <section id="LatestBooksSection">
             <div className="container py-5 px-5 px-md-0">
@@ -24,6 +29,7 @@ const LatestBooksSection = ({bookData, seeMoreUrl}) => {
                         spaceBetween={20}
                         grabCursor={true}
                         slidesPerView={1}
+                        pagination={true}
                         breakpoints={{
                             // when window width is >= 414px
                             414: {
@@ -37,21 +43,24 @@ const LatestBooksSection = ({bookData, seeMoreUrl}) => {
                             slidesPerView: 4,
                             },
                         }}
-                        style={{paddingBottom: '40px'}}
+                        style={{paddingBottom: '60px'}}
                     >
-                        {newBookItems.map((bookItem, index) => {
+                        {data.map((item, index) => {
+                            console.log(item);
                             return(
-                            <div className="col-md-3 my-3" key={index}>
-                                <SwiperSlide key={bookItem.id}>
-                                    <BookItem
-                                        bookImg={bookItem.bookImg}
-                                        category={bookItem.category}
-                                        title={bookItem.title}
-                                        readUrl={bookItem.readUrl}
-                                        detailUrl={bookItem.detailUrl}
-                                    />
-                                </SwiperSlide>
-                            </div>
+                            <SwiperSlide key={index}>
+                                <BookItem
+                                    bookImg={item.image}
+                                    category={item.name}
+                                    title={item.title}
+                                    detailUrl={item.code === 'BEI' ?
+                                        item.attachment : 
+                                        item.category !== 'buku_non_teks' ?
+                                        `/buku-teks/${item.code}/${item.slug}` :
+                                        `/buku-nonteks/${item.code}/${item.slug}`
+                                    }
+                                />
+                            </SwiperSlide>
                             );
                         })}
                     </Swiper>

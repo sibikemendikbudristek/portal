@@ -107,6 +107,7 @@ const BukuNonteks = () => {
                                         className="btn btn-outline-primary btn-lg mx-2"
                                         data-bs-toggle="pill"
                                         onClick={typeAudioHandler}
+                                        disabled
                                     >
                                         Buku Audio
                                     </button>
@@ -115,6 +116,7 @@ const BukuNonteks = () => {
                                         className="btn btn-outline-primary btn-lg mx-2"
                                         data-bs-toggle="pill"
                                         onClick={typeInteractiveHandler}
+                                        disabled
                                     >
                                         Buku Interaktif
                                     </button>

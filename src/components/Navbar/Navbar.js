@@ -27,10 +27,10 @@ const Navbar = () => {
                             })}
                         </ul>
                         <div className="my-2 my-lg-0 mx-1">
-                            <NavLink className="nav-link btn btn-primary btn-sm rounded-pill px-4" to="!#">Login</NavLink>
+                            <NavLink className="nav-link btn btn-primary btn-sm rounded-pill px-4" to="/login">Login</NavLink>
                         </div>
                         <div className="my-2 my-lg-0 mx-1">
-                            <NavLink className="nav-link btn btn-outline-primary btn-sm rounded-pill px-4" to="!#">Daftar</NavLink>
+                            <NavLink className="nav-link btn btn-outline-primary btn-sm rounded-pill px-4" to="/register">Daftar</NavLink>
                         </div>
                     </div>
                 </div>
