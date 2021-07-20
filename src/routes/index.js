@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import About from '../pages/About/About';
 import BukuPelajaran from '../pages/BukuTeks/BukuTeks';
 import DetailBukuTeksPDF from '../pages/BukuTeks/DetailBukuTeksPDF';
@@ -14,6 +14,8 @@ import Login from '../pages/Auth/Login';
 import Dashboard from '../pages/Dashboard/Dashboard';
 
 const Routes = () => {
+    const isLoggin = JSON.parse(localStorage.getItem('user-info'));
+    
     return (
         <Switch>
             <Route exact path="/" component={Home} />
@@ -25,9 +27,9 @@ const Routes = () => {
             <Route path="/buku-nonteks/BA/:slug" component={DetailBukuNonteksAudio} />
             <Route path="/panduan" component={Panduan} />
             <Route path="/tentang-kami" component={About} />
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
-            <Route path="/dashboard" component={Dashboard} />
+            {isLoggin && <Route path="/dashboard" component={Dashboard} />}
+            {isLoggin ? <Redirect to='/dashboard' component={Dashboard} /> : <Route path="/register" component={Register} />}
+            {isLoggin ? <Redirect to='/dashboard' component={Dashboard} /> : <Route path="/login" component={Login} />}
             <Route path="*" component={NotFound} />
         </Switch>
     );
