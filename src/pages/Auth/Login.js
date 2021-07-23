@@ -5,15 +5,15 @@ import { Link, useHistory } from "react-router-dom";
 const base_url = "https://sibi.sc.cloudapp.web.id";
 
 const Login = () => {
-  const flashMessage = JSON.parse(localStorage.getItem('user-info'));
-    
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [alert, setAlert] = useState("");
   let history = useHistory();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     let data = { email, password };
     let response = await axios({
       method: "post",
@@ -25,28 +25,39 @@ const Login = () => {
       data: JSON.stringify(data),
     });
 
-    localStorage.setItem("user-info", JSON.stringify(response));
-
-    setEmail("");
-    setPassword("");
-
-    history.push("/dashboard");
-    window.location.reload();
+    if (response.data.status === "success") {
+      localStorage.setItem("user-info", JSON.stringify(response));
+      history.push("/dashboard");
+      window.location.reload();
+    } else {
+      console.log(response.data);
+      setEmail("");
+      setPassword("");
+      setLoading(false);
+      setAlert(response.data.message);
+    }
   };
-
-
 
   return (
     <main className="bg-light" style={{ minHeight: "100vh" }}>
       <div className="container" style={{ paddingTop: "150px" }}>
         <div className="row justify-content-center">
           <div className="col-md-5">
-          {localStorage.getItem('user-info') && 
-          <div className="alert alert-info alert-dismissible fade show" role="alert">
-            {flashMessage.data.message}
-            
-            <button onClick={() => localStorage.clear()} type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" />
-          </div>}
+            {alert !== "" && (
+              <div
+                className="alert alert-warning alert-dismissible fade show"
+                role="alert"
+              >
+                {alert}
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                  onClick={() => window.location.reload()}
+                />
+              </div>
+            )}
             <div className="card">
               <div className="card-header bg-white">
                 <h1 className="section-title">Login</h1>
@@ -84,9 +95,15 @@ const Login = () => {
                       required
                     />
                   </div>
-                  <button type="submit" className="btn btn-primary">
-                    Masuk
-                  </button>
+                  {loading ? (
+                    <button type="submit" className="btn btn-primary" disabled>
+                      Masuk
+                    </button>
+                  ) : (
+                    <button type="submit" className="btn btn-primary">
+                      Masuk
+                    </button>
+                  )}
                 </form>
               </div>
             </div>

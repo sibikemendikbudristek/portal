@@ -2,6 +2,8 @@ import React from 'react';
 
 const Dashboard = () => {
     const userInfo = JSON.parse(localStorage.getItem('user-info'));
+
+    
     return (
         <main className="bg-light" style={{minHeight: '100vh', paddingTop: '120px'}}>
             <div className="container">

@@ -1,7 +1,7 @@
 #TestimonySection {
   min-height: 80vh;
   background-color: #0080ca;
-  background-image: url("../../assets/img/testimony-section-bg.png");
+  background-image: url("../../assets/img/testimony-section-bg.webp");
   background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
@@ -9,6 +9,6 @@
 
 @media screen and (max-width: 700px) {
   #TestimonySection {
-    background-image: url("../../assets/img/testimony-section-bg-small.png");
+    background-image: url("../../assets/img/testimony-section-bg-small.webp");
   }
 }

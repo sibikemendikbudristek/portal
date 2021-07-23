@@ -1,6 +1,6 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.scss';
-import heroImg from '../../assets/img/hero-img.png';
+import heroImg from '../../assets/img/hero-img.webp';
 
 const Hero = () => {
     return (
@@ -13,13 +13,13 @@ const Hero = () => {
                         <a className="btn btn-primary rounded-pill py-3 px-4" href="#PanduanSection">Lihat Selengkapnya</a>
                         <p className="my-4">Lorem ipsum dolor sit amet explicing elit.</p>
                         <div className="d-grid gap-2 d-md-block">
-                            <a className="btn btn-outline-primary rounded mx-5 mx-md-0 me-md-2" href="!#">
+                            <Link className="btn btn-outline-primary rounded mx-5 mx-md-0 me-md-2" to="/login">
                                <i className="fas fa-fw fa-user" /> Siswa
-                            </a>
-                            <a className="btn btn-outline-primary rounded mx-5 mx-md-2" href="!#">
+                            </Link>
+                            <Link className="btn btn-outline-primary rounded mx-5 mx-md-2" to="/login">
                                 <i className="fas fa-fw fa-user-graduate" /> Guru
-                            </a>
-                            <a className="btn btn-outline-primary rounded mx-5 mx-md-2" href="!#">
+                            </Link>
+                            <a className="btn btn-outline-primary rounded mx-5 mx-md-2" href="https://google.com" target="_blank" rel="noopener noreferrer">
                                 <i className="fas fa-fw fa-book-reader" /> Pelaku Perbukuan
                             </a>
                         </div>

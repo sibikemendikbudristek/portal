@@ -1,6 +1,6 @@
 import { useState } from "react";
 import NavbarItems from "./NavbarItems";
-import SibiLogo from "../../assets/img/sibi-nav-logo.png";
+import SibiLogo from "../../assets/img/sibi-nav-logo.webp";
 import "./Navbar.scss";
 import { NavLink, useHistory } from "react-router-dom";
 
@@ -12,10 +12,10 @@ const Navbar = () => {
   let history = useHistory();
 
   const logoutHandler = () => {
-      localStorage.clear();
-      history.push('/login');
-      window.location.reload();
-  }
+    localStorage.clear();
+    history.push("/login");
+    window.location.reload();
+  };
 
   return (
     <nav
@@ -31,6 +31,47 @@ const Navbar = () => {
             alt="Sistem Informasi Perbukuan Indonesia"
           />
         </NavLink>
+        {localStorage.getItem("user-info") && (
+          <div className="ms-auto dropdown d-block d-xl-none">
+            <a
+              className="nav-link"
+              data-toggle="dropdown"
+              href="!#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                className="rounded-circle ms-2"
+                src={userInfo && userInfo.data.result.avatar}
+                alt=""
+                style={{ width: "40px", height: "40px" }}
+              />
+            </a>
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <NavLink
+                  activeClassName="dropdown"
+                  className="dropdown-item"
+                  to="/dashboard"
+                >
+                  <i className="fas fa-fw fa-tachometer-alt" /> Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+              <li
+                className="dropdown-item"
+                onClick={logoutHandler}
+                style={{ cursor: "pointer" }}
+              >
+                <i className="fas fa-fw fa-sign-out-alt" /> Logout
+              </li>
+            </ul>
+          </div>
+        )}
         <button
           onClick={() => setToggleIcon((toggleIcon) => !toggleIcon)}
           className="navbar-toggler shadow-none border-0"
@@ -61,9 +102,10 @@ const Navbar = () => {
           </ul>
           {localStorage.getItem("user-info") ? (
             <ul className="navbar-nav mb-2 mb-lg-0 text-center text-xl-start">
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown d-none d-xl-block">
                 <a
-                  className="nav-link dropdown-toggle"
+                  className="nav-link"
+                  data-toggle="dropdown"
                   href="!#"
                   id="navbarDropdown"
                   role="button"
@@ -85,14 +127,18 @@ const Navbar = () => {
                       className="dropdown-item"
                       to="/dashboard"
                     >
-                      Dashboard
+                      <i className="fas fa-fw fa-tachometer-alt" /> Dashboard
                     </NavLink>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
-                  <li className="dropdown-item" onClick={logoutHandler} style={{cursor: 'pointer'}}>
-                      Logout
+                  <li
+                    className="dropdown-item"
+                    onClick={logoutHandler}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <i className="fas fa-fw fa-sign-out-alt" /> Logout
                   </li>
                 </ul>
               </li>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { RatingView } from 'react-simple-star-rating'
+import { RatingView } from 'react-simple-star-rating';
+import defaultAvatar from '../../assets/img/default-avatar.png';
 
 const ReviewItem = ({profileImg, name, feedbackStar, message}) => {
     return (
@@ -8,7 +9,7 @@ const ReviewItem = ({profileImg, name, feedbackStar, message}) => {
                 <div className="card-body">
                     <div className="row my-3">
                         <div className="col-3">
-                            <img src={profileImg} alt={name} />
+                            <img className="img-fluid rounded-circle d-block mx-auto" src={profileImg || defaultAvatar} alt={name} />
                         </div>
                         <div className="col-9">
                             <h5><strong>{name}</strong></h5>

@@ -11,7 +11,7 @@ import ReviewItem from '../../components/ReviewItem/ReviewItem';
 import Modal from '../../components/Modal/Modal';
 const PlaylistSection = React.lazy(() => import('../../components/PlaylistSection/PlaylistSection'));
 
-const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
+const base_url = 'https://sibi.sc.cloudapp.web.id';
 
 
 const DetailBukuTeksAudio = () => {
@@ -34,7 +34,7 @@ const DetailBukuTeksAudio = () => {
         const getBook = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getDetails?slug=${slug}`);
+                let response = await axios.get(`${base_url}/api/catalogue/getDetails?slug=${slug}`);
                 setBook(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -47,7 +47,7 @@ const DetailBukuTeksAudio = () => {
         const getRelatedBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getTextBooks?type_audio&limit=5`);
+                let response = await axios.get(`${base_url}/api/catalogue/getTextBooks?type_audio&limit=5`);
                 setRelatedBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
@@ -61,7 +61,7 @@ const DetailBukuTeksAudio = () => {
             setLoading(true);
             try {
               let response = await axios.get(
-                `${base_url}/getReviews?slug=${slug}&limit=${limit}`
+                `${base_url}/api/review/getReviews?slug=${slug}&limit=${limit}`
               );
               setReviews(response.data.results);
               setLoading(false);
@@ -141,7 +141,7 @@ const DetailBukuTeksAudio = () => {
                       <div className="col my-2" key={index}>
                         <ReviewItem
                           profileImg={review.avatar}
-                          name={review.fullname}
+                          name={review.name}
                           feedbackStar={review.feedback_star}
                           message={review.message}
                         />
@@ -150,6 +150,7 @@ const DetailBukuTeksAudio = () => {
                   })
                 )}
               </div>
+              {console.log(reviews)}
               {reviews.length > 5 ? (
                 <div className="row mt-3">
                   <div className="col text-center">

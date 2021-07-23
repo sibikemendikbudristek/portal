@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import kemendikbudLogo from '../../assets/img/kemendikbud.png';
+import kemendikbudLogo from '../../assets/img/kemendikbud.webp';
 import './Footer.scss';
 import sitemap from '../Navbar/NavbarItems';
 

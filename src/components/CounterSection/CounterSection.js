@@ -1,5 +1,5 @@
 import CountUp from 'react-countup';
-import counterSectionImg from '../../assets/img/counter-section-img.png';
+import counterSectionImg from '../../assets/img/counter-section-img.webp';
 import './CounterSection.scss';
 
 const CounterSection = ({counterData}) => {

@@ -10,7 +10,7 @@ import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBoo
 import ReviewItem from "../../components/ReviewItem/ReviewItem";
 import Modal from "../../components/Modal/Modal";
 
-const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
+const base_url = "https://sibi.sc.cloudapp.web.id";
 
 const DetailBukuTeksPDF = () => {
   const [book, setBook] = useState([]);
@@ -19,20 +19,85 @@ const DetailBukuTeksPDF = () => {
   const [limit, setLimit] = useState(5);
   const { slug } = useParams();
   const [loading, setLoading] = useState(false);
-  const [rating, setRating] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Review
+  const [feedback_star, setFeedbackStar] = useState(0);
+  const [reviewMessage, setReviewMessage] = useState("");
+
+  // Report
+  const [category, setCategory] = useState("");
+  const [reportMessage, setReportMessage] = useState("");
 
   const isLoggin = JSON.parse(localStorage.getItem("user-info"));
 
   // Catch Rating value
-  const handleRating = (rate) => {
-    setRating(rate);
+  const postReview = async () => {
+    setIsSubmitting(true);
+
+    let data = { slug, feedback_star, reviewMessage };
+    let response = await axios({
+      method: "post",
+      url: `${base_url}/api/review/addReview`,
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Accept: "*/*",
+        Authorization: isLoggin.data.token,
+      },
+      data: JSON.stringify({
+        slug: data.slug,
+        feedback_star: data.feedback_star,
+        message: data.reviewMessage,
+      }),
+    });
+
+    if (response.data.status === "success") {
+      setIsSubmitting(false);
+      setFeedbackStar(0);
+      setReviewMessage("");
+    } else {
+      setIsSubmitting(false);
+      console.log(response.data);
+    }
+  };
+
+  const postReport = async () => {
+    setIsSubmitting(true);
+
+    let data = { slug, category, reportMessage };
+    let response = await axios({
+      method: "post",
+      url: `${base_url}/api/report/addReport`,
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Accept: "*/*",
+        Authorization: isLoggin.data.token,
+      },
+      data: JSON.stringify({
+        slug: data.slug,
+        category: data.category,
+        message: data.reportMessage,
+      }),
+    });
+
+    if (response.data.status === "success") {
+      setIsSubmitting(false);
+      setCategory('');
+      setReportMessage('');
+      console.log(response.data);
+    } else {
+      setIsSubmitting(false);
+      console.log(response.data);
+    }
   };
 
   useEffect(() => {
     const getBook = async () => {
       setLoading(true);
       try {
-        let response = await axios.get(`${base_url}/getDetails?slug=${slug}`);
+        let response = await axios.get(
+          `${base_url}/api/catalogue/getDetails?slug=${slug}`
+        );
         setBook(response.data.results);
         setLoading(false);
       } catch (err) {
@@ -46,7 +111,7 @@ const DetailBukuTeksPDF = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getTextBooks?type_pdf&limit=5`
+          `${base_url}/api/catalogue/getTextBooks?type_pdf&limit=5`
         );
         setRelatedBooks(response.data.results);
         setLoading(false);
@@ -61,7 +126,7 @@ const DetailBukuTeksPDF = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getReviews?slug=${slug}&limit=${limit}`
+          `${base_url}/api/review/getReviews?slug=${slug}&limit=${limit}`
         );
         setReviews(response.data.results);
         setLoading(false);
@@ -72,6 +137,7 @@ const DetailBukuTeksPDF = () => {
     };
     getReviews();
   }, [slug, limit]);
+
   return (
     <main style={{ minHeight: "100vh" }}>
       {loading ? (
@@ -106,15 +172,15 @@ const DetailBukuTeksPDF = () => {
                 </div>
               </div>
               {isLoggin && (
-                <form action="">
+                <>
                   <div className="row my-3">
                     <div className="col-auto">
                       <label className="col-form-label">Beri ulasan</label>
                     </div>
                     <div className="col-auto py-1">
                       <Rating
-                        onClick={handleRating}
-                        ratingValue={rating}
+                        onClick={(star) => setFeedbackStar(star)}
+                        ratingValue={feedback_star}
                         stars={5}
                       />
                     </div>
@@ -123,6 +189,8 @@ const DetailBukuTeksPDF = () => {
                     <div className="col">
                       <div className="form-floating">
                         <textarea
+                          onChange={(e) => setReviewMessage(e.target.value)}
+                          value={reviewMessage}
                           className="form-control border-2"
                           placeholder="Leave a comment here"
                           id="floatingTextarea2"
@@ -134,12 +202,25 @@ const DetailBukuTeksPDF = () => {
                   </div>
                   <div className="row my-5">
                     <div className="col text-center">
-                      <button className="btn btn-primary btn-lg px-4 rounded-pill">
-                        Kirim
-                      </button>
+                      {isSubmitting ? (
+                        <button
+                          onClick={postReview}
+                          className="btn btn-primary btn-lg px-4 rounded-pill"
+                          disabled
+                        >
+                          Kirim
+                        </button>
+                      ) : (
+                        <button
+                          onClick={postReview}
+                          className="btn btn-primary btn-lg px-4 rounded-pill"
+                        >
+                          Kirim
+                        </button>
+                      )}
                     </div>
                   </div>
-                </form>
+                </>
               )}
             </div>
           </section>
@@ -151,16 +232,16 @@ const DetailBukuTeksPDF = () => {
                 ) : (
                   reviews.map((review, index) => {
                     return (
-                      <div className="col my-2" key={index}>
+                      <div className="col-12 my-2" key={index}>
                         <ReviewItem
                           profileImg={review.avatar}
-                          name={review.fullname}
+                          name={review.name}
                           feedbackStar={review.feedback_star}
                           message={review.message}
                         />
                       </div>
                     );
-                  })
+                  }).reverse()
                 )}
               </div>
               {reviews.length > 5 ? (
@@ -188,7 +269,55 @@ const DetailBukuTeksPDF = () => {
             />
           </Modal>
           <Modal id="reportPdfModal" title="Lapor">
-            <p>It's a form</p>
+            {isLoggin ? (
+              <>
+                <label htmlFor="">Kategori</label>
+                <select
+                  onChange={(e) => setCategory(e.target.value)}
+                  className="form-select mb-3"
+                >
+                  <option value="Sara">Sara</option>
+                  <option value="Salah Cetak">Salah Cetak</option>
+                  <option value="Plagiasi">Plagiasi</option>
+                </select>
+                <div className="form-floating mb-3">
+                  <textarea
+                    className="form-control"
+                    onChange={(e) => setReportMessage(e.target.value)}
+                    value={reportMessage}
+                    id="floatingTextarea"
+                    style={{ height: "100px" }}
+                  />
+                  <label htmlFor="floatingTextarea">Pesan</label>
+                </div>
+                {isSubmitting ? (
+                  <button className="btn btn-primary" disabled>
+                    Kirim
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={postReport}
+                    className="btn btn-primary"
+                  >
+                    Kirim
+                  </button>
+                )}
+              </>
+            ) : (
+              <div className="row my-5">
+                <div className="col text-center">
+                  <i
+                    class="fas fa-exclamation-triangle text-warning"
+                    style={{ fontSize: "40px" }}
+                  />
+                  <p className="mt-3">Maaf kamu harus login terlebih dahulu</p>
+                  <a className="btn btn-primary" href="/login">
+                    Login
+                  </a>
+                </div>
+              </div>
+            )}
           </Modal>
         </>
       )}
