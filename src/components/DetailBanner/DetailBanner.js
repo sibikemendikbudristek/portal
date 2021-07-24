@@ -49,7 +49,7 @@ const DetailBanner = ({
                 </button>
               ) : (
                 <a
-                  href="#PlaylistSection"
+                  href={attachment}
                   className="btn btn-light btn-md px-4 me-2"
                   onClick={onClickRead}
                 >
@@ -59,9 +59,7 @@ const DetailBanner = ({
               {btnType === "audio" ? (
                 <a
                   className="btn btn-light btn-md px-4 mx-2"
-                  href="#PlaylistSection"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={attachment}
                   onClick={onClickDownload}
                 >
                   <i className="fas fa-fw fa-download" /> Unduh
