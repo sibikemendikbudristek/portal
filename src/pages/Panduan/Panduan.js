@@ -1,5 +1,5 @@
 import Banner from '../../components/Banner/Banner';
-import panduanImgBanner from '../../assets/img/panduan-img.webp';
+import panduanImgBanner from '../../assets/img/panduan-img.png';
 import CTASection from '../../components/CTASection/CTASection';
 import ctaPanduanImg from '../../assets/img/cta-panduan-img.webp';
 import panduanImg1 from '../../assets/img/panduan-img-1.png';
