@@ -10,7 +10,7 @@ const Banner = ({bannerTitle, bannerDescription, bannerImg}) => {
                         <p>{bannerDescription}</p>
                     </div>
                     <div className="col-md-4 d-none d-md-block">
-                        <img className="img-fluid float-end" src={bannerImg} alt={bannerTitle} />
+                        <img className="img-fluid float-end" loading="lazy" src={bannerImg} alt={bannerTitle} />
                     </div>
                 </div>
             </div>

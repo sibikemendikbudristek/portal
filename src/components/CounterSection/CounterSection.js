@@ -34,7 +34,7 @@ const CounterSection = ({counterData}) => {
                         </div>
                     </div>
                     <div className="col-lg-5">
-                        <img className="img-fluid d-block mx-auto float-lg-end" src={counterSectionImg} alt="" />
+                        <img className="img-fluid d-block mx-auto float-lg-end" loading="lazy" src={counterSectionImg} alt="Model anak SD memegang buku" />
                     </div>
                 </div>
             </div>

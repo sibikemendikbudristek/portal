@@ -10,7 +10,11 @@ import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBoo
 import ReviewItem from "../../components/ReviewItem/ReviewItem";
 import Modal from "../../components/Modal/Modal";
 
+// Base Url
 const base_url = "https://sibi.sc.cloudapp.web.id";
+
+// Validation
+const isLoggin = JSON.parse(localStorage.getItem("user-info"));
 
 const DetailBukuTeksPDF = () => {
   const [book, setBook] = useState([]);
@@ -20,6 +24,7 @@ const DetailBukuTeksPDF = () => {
   const { slug } = useParams();
   const [loading, setLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [alert, setAlert] = useState("");
 
   // Review
   const [feedback_star, setFeedbackStar] = useState(0);
@@ -29,9 +34,62 @@ const DetailBukuTeksPDF = () => {
   const [category, setCategory] = useState("");
   const [reportMessage, setReportMessage] = useState("");
 
-  const isLoggin = JSON.parse(localStorage.getItem("user-info"));
 
-  // Catch Rating value
+   // Post Read History
+   const postRead = async () => {
+    setIsSubmitting(true);
+
+    let data = { slug };
+    let response = await axios({
+      method: "post",
+      url: `${base_url}/api/statistic/push`,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "*/*",
+        Authorization: isLoggin.data.token,
+      },
+      data: JSON.stringify({
+        activity: 'read',
+        slug: data.slug,
+      }),
+    });
+
+    if (response.data.status === "success") {
+      setIsSubmitting(false);
+    } else {
+      setIsSubmitting(false);
+      console.log(response.data);
+    }
+  };
+
+   // Post Read History
+   const postDownload = async () => {
+    setIsSubmitting(true);
+
+    let data = { slug };
+    let response = await axios({
+      method: "post",
+      url: `${base_url}/api/statistic/push`,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "*/*",
+        Authorization: isLoggin.data.token,
+      },
+      data: JSON.stringify({
+        activity: 'download',
+        slug: data.slug,
+      }),
+    });
+
+    if (response.data.status === "success") {
+      setIsSubmitting(false);
+    } else {
+      setIsSubmitting(false);
+      console.log(response.data);
+    }
+  };
+
+  // Posting Review
   const postReview = async () => {
     setIsSubmitting(true);
 
@@ -40,14 +98,14 @@ const DetailBukuTeksPDF = () => {
       method: "post",
       url: `${base_url}/api/review/addReview`,
       headers: {
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
         Accept: "*/*",
         Authorization: isLoggin.data.token,
       },
       data: JSON.stringify({
-        slug: data.slug,
         feedback_star: data.feedback_star,
         message: data.reviewMessage,
+        slug: data.slug,
       }),
     });
 
@@ -55,12 +113,14 @@ const DetailBukuTeksPDF = () => {
       setIsSubmitting(false);
       setFeedbackStar(0);
       setReviewMessage("");
+      window.location.reload();
     } else {
       setIsSubmitting(false);
       console.log(response.data);
     }
   };
 
+  // Posting Report
   const postReport = async () => {
     setIsSubmitting(true);
 
@@ -69,7 +129,7 @@ const DetailBukuTeksPDF = () => {
       method: "post",
       url: `${base_url}/api/report/addReport`,
       headers: {
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
         Accept: "*/*",
         Authorization: isLoggin.data.token,
       },
@@ -82,8 +142,9 @@ const DetailBukuTeksPDF = () => {
 
     if (response.data.status === "success") {
       setIsSubmitting(false);
-      setCategory('');
-      setReportMessage('');
+      setCategory("");
+      setReportMessage("");
+      setAlert(response.data.message);
       console.log(response.data);
     } else {
       setIsSubmitting(false);
@@ -159,6 +220,8 @@ const DetailBukuTeksPDF = () => {
             btnType={book.type}
             readModal="#readModal"
             reportModal="#reportPdfModal"
+            onClickRead={isLoggin && postRead}
+            onClickDownload={isLoggin && postDownload}
           />
           <BookInfoSection data={book} />
           <RelatedBooksSection data={relatedBooks} />
@@ -225,23 +288,25 @@ const DetailBukuTeksPDF = () => {
             </div>
           </section>
           <section className="bg-light">
-            <div className="container py-5">
+            <div className="container pb-5">
               <div className="row">
                 {reviews.length < 1 ? (
                   <p className="text-center">Belum ada review untuk buku ini</p>
                 ) : (
-                  reviews.map((review, index) => {
-                    return (
-                      <div className="col-12 my-2" key={index}>
-                        <ReviewItem
-                          profileImg={review.avatar}
-                          name={review.name}
-                          feedbackStar={review.feedback_star}
-                          message={review.message}
-                        />
-                      </div>
-                    );
-                  }).reverse()
+                  reviews
+                    .map((review, index) => {
+                      return (
+                        <div className="col-12 my-2" key={index}>
+                          <ReviewItem
+                            profileImg={review.avatar}
+                            name={review.name}
+                            feedbackStar={review.feedback_star}
+                            message={review.message}
+                          />
+                        </div>
+                      );
+                    })
+                    .reverse()
                 )}
               </div>
               {reviews.length > 5 ? (
@@ -271,6 +336,14 @@ const DetailBukuTeksPDF = () => {
           <Modal id="reportPdfModal" title="Lapor">
             {isLoggin ? (
               <>
+                {alert !== "" && (
+                  <div
+                    className="alert alert-info alert-dismissible fade show"
+                    role="alert"
+                  >
+                    {alert}
+                  </div>
+                )}
                 <label htmlFor="">Kategori</label>
                 <select
                   onChange={(e) => setCategory(e.target.value)}
@@ -308,7 +381,7 @@ const DetailBukuTeksPDF = () => {
               <div className="row my-5">
                 <div className="col text-center">
                   <i
-                    class="fas fa-exclamation-triangle text-warning"
+                    className="fas fa-exclamation-triangle text-warning"
                     style={{ fontSize: "40px" }}
                   />
                   <p className="mt-3">Maaf kamu harus login terlebih dahulu</p>
