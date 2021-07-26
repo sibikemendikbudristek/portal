@@ -11,7 +11,7 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
-  const [role_id, setRoleId] = useState(3);
+  const [role_id, setRoleId] = useState(4);
 
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState("");
@@ -95,14 +95,14 @@ const Register = () => {
                       <button
                         data-bs-toggle="pill"
                         className="btn btn-outline-primary me-2 active"
-                        onClick={() => setRoleId(3)}
+                        onClick={() => setRoleId(4)}
                       >
                         <i className="fas fa-fw fa-user" /> Siswa
                       </button>
                       <button
                         data-bs-toggle="pill"
                         className="btn btn-outline-primary"
-                        onClick={() => setRoleId(4)}
+                        onClick={() => setRoleId(6)}
                       >
                         <i className="fas fa-fw fa-user-graduate" /> Guru
                       </button>
@@ -203,13 +203,13 @@ const Register = () => {
                     {loading ? (
                       <button
                         type="submit"
-                        className="btn btn-primary"
+                        className="btn btn-primary float-end btn-lg"
                         disabled
                       >
                         Daftar
                       </button>
                     ) : (
-                      <button type="submit" className="btn btn-primary">
+                      <button type="submit" className="btn btn-primary float-end btn-lg">
                         Daftar
                       </button>
                     )}

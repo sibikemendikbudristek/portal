@@ -66,7 +66,7 @@ const Login = () => {
                 <form onSubmit={handleLogin}>
                   <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">
-                      <i className="fas fa-fw fa-envelope" /> Email address
+                      <i className="fas fa-fw fa-envelope" /> Alamat Email
                     </label>
                     <input
                       onChange={(e) => setEmail(e.target.value)}
@@ -74,7 +74,7 @@ const Login = () => {
                       type="email"
                       name="email"
                       className="form-control"
-                      placeholder="Email..."
+                      placeholder="Alamat Email..."
                       required
                     />
                   </div>
@@ -83,7 +83,7 @@ const Login = () => {
                       htmlFor="exampleInputPassword1"
                       className="form-label"
                     >
-                      <i className="fas fa-fw fa-lock" /> Password
+                      <i className="fas fa-fw fa-lock" /> Kata Sandi
                     </label>
                     <input
                       onChange={(e) => setPassword(e.target.value)}
@@ -91,16 +91,16 @@ const Login = () => {
                       type="password"
                       name="password"
                       className="form-control"
-                      placeholder="Password..."
+                      placeholder="Kata sandi..."
                       required
                     />
                   </div>
                   {loading ? (
-                    <button type="submit" className="btn btn-primary" disabled>
+                    <button type="submit" className="btn btn-primary float-end btn-lg" disabled>
                       Masuk
                     </button>
                   ) : (
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-primary float-end btn-lg">
                       Masuk
                     </button>
                   )}
