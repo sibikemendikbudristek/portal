@@ -18,7 +18,6 @@ const Dashboard = () => {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [birthday, setBirthday] = useState("");
-  const [interest, setInterest] = useState("");
   const [portfolio_link, setPortfolioLink] = useState("");
   const [description, setDescription] = useState("");
 
@@ -46,7 +45,6 @@ const Dashboard = () => {
         setName(response.data.result.name || "");
         setUsername(response.data.result.username || "");
         setBirthday(response.data.result.birthday || "");
-        setInterest(response.data.result.interest || "");
         setPhone(response.data.result.phone || "");
         setPortfolioLink(response.data.result.portfolio_link || "");
         setAddress(response.data.result.address || "");
@@ -112,7 +110,6 @@ const Dashboard = () => {
     let data = {
       username,
       name,
-      interest,
       portfolio_link,
       phone,
       address,
@@ -348,26 +345,6 @@ const Dashboard = () => {
                                   value={birthday}
                                   className="form-control"
                                   type="date"
-                                />
-                              </div>
-                            </div>
-
-                            <div className="row my-3">
-                              <div className="col-md-3">
-                                <label
-                                  className="form-label"
-                                  htmlFor="interest"
-                                >
-                                  Interest (Hobi)
-                                </label>
-                              </div>
-                              <div className="col-md-9">
-                                <input
-                                  onChange={(e) => setInterest(e.target.value)}
-                                  value={interest}
-                                  className="form-control"
-                                  type="text"
-                                  placeholder="Interest..."
                                 />
                               </div>
                             </div>

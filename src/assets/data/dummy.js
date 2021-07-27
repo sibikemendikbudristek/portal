@@ -1,7 +1,7 @@
-import pic1 from '../../assets/img/pic1.png';
-import pic2 from '../../assets/img/pic2.png';
-import pic3 from '../../assets/img/pic3.png';
-import pic4 from '../../assets/img/pic4.png';
+import pic1 from '../../assets/img/pic1.webp';
+import pic2 from '../../assets/img/pic2.webp';
+import pic3 from '../../assets/img/pic3.webp';
+import pic4 from '../../assets/img/pic4.webp';
 
 const data = [
     {
