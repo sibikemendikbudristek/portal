@@ -8,10 +8,12 @@ const Hero = () => {
             <div className="container">
                 <div className="row justify-content-between text-center text-md-start">
                     <div className="col-lg-5">
-                        <h1 className="hero-title">Sekilas Tentang<br />Pusat Buku</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt deleniti quae necessitatibus dolorem vel, iure esse sed, nulla ipsam impedit nesciunt iste cupiditate exercitationem fuga nam accusantium beatae harum. Nobis!</p>
-                        <a className="btn btn-primary rounded-pill py-3 px-4" href="#PanduanSection">Lihat Selengkapnya</a>
-                        <p className="my-4">Lorem ipsum dolor sit amet explicing elit.</p>
+                        <h1 className="hero-title">Layanan Buku Daring<br />Terlengkap di Indonesia</h1>
+                        <p>Belajar mandiri dengan puluhan ribu buku pelajaran resmi yang diterbitkan oleh Kemendikbud. 
+                        Dipersembahkan untuk para peserta didik, pendidik, dan tenaga kependidikan dalam
+                        pembelajaran berbasis elektronik. <strong>Merdeka Belajar!</strong></p>
+                        <a className="btn btn-primary rounded-pill py-3 px-4" href="#PanduanSection">Pelajari Sekarang</a>
+                        <p className="my-4">Masuk sebagai:</p>
                         <div className="d-grid gap-2 d-md-block">
                             <Link className="btn btn-outline-primary rounded mx-5 mx-md-0 me-md-2" to="/login">
                                <i className="fas fa-fw fa-user" /> Siswa

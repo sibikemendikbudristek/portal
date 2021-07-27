@@ -1,35 +1,38 @@
-import pictureImg from '../../assets/img/picture.jpg';
+import pic1 from '../../assets/img/pic1.png';
+import pic2 from '../../assets/img/pic2.png';
+import pic3 from '../../assets/img/pic3.png';
+import pic4 from '../../assets/img/pic4.png';
 
 const data = [
     {
         testimony : [
             {
                 id: 1,
-                picture: pictureImg,
-                name: 'Petter Thiel',
-                institution: 'SMKN 1 Dayeuhkolot',
-                text: 'Buku-bukunya lengkap'
+                picture: pic1,
+                name: 'Aldiansyah Ibrahim',
+                institution: 'SMK TI Garuda Cimahi',
+                text: 'Bukunya bagus-bagus'
             },
             {
                 id: 2,
-                picture: pictureImg,
-                name: 'Robert T. Kiosaki',
-                institution: 'SMAN 2 Baleendah',
-                text: 'Baca buku disini mudah sekali'
+                picture: pic2,
+                name: 'Luella Syifa',
+                institution: 'SMK TI Garuda Nusantara',
+                text: 'Buku Elektronik Interakrif keren sekali!'
             },
             {
                 id: 3,
-                picture: pictureImg,
-                name: 'Fiersa Besari',
-                institution: 'SMKN 1 Majalaya',
-                text: 'Enak ya bukunya bisa di download juga'
+                picture: pic3,
+                name: 'Mochamad Firman',
+                institution: 'SMP 1 Padalarang',
+                text: 'Sangat membantu saya buat belajar, bukunya lengkap dan menarik'
             },
             {
                 id: 4,
-                picture: pictureImg,
-                name: 'Mark Manson',
-                institution: 'SMAN 23 Bandung',
-                text: 'The best lah pokonya'
+                picture: pic4,
+                name: 'Hadyan Palupi',
+                institution: 'MA Persis Tasikmalaya',
+                text: 'Buku Interakrifnya sangat menarik, animasinya menarik'
             },
         ],
         statistics : [

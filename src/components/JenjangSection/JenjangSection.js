@@ -13,22 +13,26 @@ const JenjangSection = () => {
                     <div className="col-md-6">
                         <h2 className="section-title text-center text-md-start mb-4">SIBI Tersedia Untuk Berbagai Jenjang Pendidikan</h2>
                         <JenjangSectionCard
-                            thumbnail=""
+                            bgColor="#FDFD95"
+                            thumbnail="PAUD"
                             title="PAUD"
                             description="Pendidikan Anak Usia Dini"
                         />
                         <JenjangSectionCard
-                            thumbnail=""
+                            bgColor="#F69C9E"
+                            thumbnail="SD"
                             title="SD"
                             description="Sekolah Dasar"
                         />
                         <JenjangSectionCard
-                            thumbnail=""
+                            bgColor="#99C3EC"
+                            thumbnail="SMP"
                             title="SMP"
                             description="Sekolah Menengah Pertama"
                         />
                         <JenjangSectionCard
-                            thumbnail=""
+                            bgColor="#EEECF1"
+                            thumbnail="SMA/SMK"
                             title="SMA/SMK"
                             description="Sekolah Menengah Atas/Kejuruan"
                         />
