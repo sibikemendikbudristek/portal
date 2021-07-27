@@ -7,7 +7,7 @@ const Hero = () => {
         <section id="Hero">
             <div className="container">
                 <div className="row justify-content-between text-center text-md-start">
-                    <div className="col-lg-5">
+                    <div className="col-lg-5 mt-5 pt-3">
                         <h1 className="hero-title">Layanan Buku Daring<br />Terlengkap di Indonesia</h1>
                         <p>Belajar mandiri dengan puluhan ribu buku pelajaran resmi yang diterbitkan oleh Kemendikbud. 
                         Dipersembahkan untuk para peserta didik, pendidik, dan tenaga kependidikan dalam
