@@ -50,7 +50,7 @@ const DetailBanner = ({
               ) : (
                 <a
                   href={attachment}
-                  className="btn btn-light btn-md px-4 me-2"
+                  className="btn btn-light btn-md px-4 mx-2 mx-lg-0 me-lg-2"
                   onClick={onClickRead}
                 >
                   <i className="fas fa-fw fa-play" /> Putar
