@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Loader from "react-loader-spinner";
@@ -9,8 +9,7 @@ import DetailBanner from "../../components/DetailBanner/DetailBanner";
 import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBooksSection";
 import ReviewItem from "../../components/ReviewItem/ReviewItem";
 import Modal from "../../components/Modal/Modal";
-
-const PlaylistSection = React.lazy(() => import('../../components/PlaylistSection/PlaylistSection'));
+import PlaylistSection from "../../components/PlaylistSection/PlaylistSection";
 
 // Base Url
 const base_url = "https://sibi.sc.cloudapp.web.id";
@@ -36,9 +35,8 @@ const DetailBukuTeksAudio = () => {
   const [category, setCategory] = useState("");
   const [reportMessage, setReportMessage] = useState("");
 
-
-   // Post Read History
-   const postRead = async () => {
+  // Post Read History
+  const postRead = async () => {
     setIsSubmitting(true);
 
     let data = { slug };
@@ -51,7 +49,7 @@ const DetailBukuTeksAudio = () => {
         Authorization: isLoggin.data.token,
       },
       data: JSON.stringify({
-        activity: 'read',
+        activity: "read",
         slug: data.slug,
       }),
     });
@@ -64,8 +62,8 @@ const DetailBukuTeksAudio = () => {
     }
   };
 
-   // Post Read History
-   const postDownload = async () => {
+  // Post Read History
+  const postDownload = async () => {
     setIsSubmitting(true);
 
     let data = { slug };
@@ -78,7 +76,7 @@ const DetailBukuTeksAudio = () => {
         Authorization: isLoggin.data.token,
       },
       data: JSON.stringify({
-        activity: 'download',
+        activity: "download",
         slug: data.slug,
       }),
     });
@@ -226,9 +224,7 @@ const DetailBukuTeksAudio = () => {
             onClickDownload={isLoggin && postDownload}
           />
           <BookInfoSection data={book} />
-          <Suspense fallback={<div>Loading...</div>}>
-                <PlaylistSection data={book.audio_attachment} />
-            </Suspense>
+          <PlaylistSection data={book.audio_attachment} />
           <RelatedBooksSection data={relatedBooks} />
           <section className="bg-light">
             <div className="container py-5">

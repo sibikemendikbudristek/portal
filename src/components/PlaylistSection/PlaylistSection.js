@@ -18,7 +18,7 @@ const PlaylistSection = ({data}) => {
                       </tr>
                     </thead>
                     <tbody>
-                    {data.map((item, index) => {
+                    {data?.map((item, index) => {
                       return(
                         <tr className="text-center" key={index}>
                         <th scope="row">
