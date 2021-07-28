@@ -18,7 +18,7 @@ const data = [
                 picture: pic2,
                 name: 'Luella Syifa',
                 institution: 'SMK TI Garuda Nusantara',
-                text: 'Buku Elektronik Interakrif keren sekali!'
+                text: 'Buku Elektronik Interaktif keren sekali!'
             },
             {
                 id: 3,
@@ -32,7 +32,7 @@ const data = [
                 picture: pic4,
                 name: 'Hadyan Palupi',
                 institution: 'MA Persis Tasikmalaya',
-                text: 'Buku Interakrifnya sangat menarik, animasinya menarik'
+                text: 'Buku Interaktifnya sangat menarik, animasinya menarik'
             },
         ],
         statistics : [
