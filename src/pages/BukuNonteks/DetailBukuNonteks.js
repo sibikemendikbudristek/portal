@@ -226,7 +226,7 @@ const DetailBukuNonteks = () => {
             attachment={book.type !== 'audio' ? book.attachment : '#PlaylistSection'}
             btnType={book.type}
             readModal="#readModal"
-            reportModal="#reportPdfModal"
+            reportModal="#reportModal"
             onClickRead={isLoggin && postRead}
             onClickDownload={isLoggin && postDownload}
           />
@@ -341,7 +341,7 @@ const DetailBukuNonteks = () => {
               height="800"
             />
           </Modal>
-          <Modal id="reportPdfModal" title="Lapor">
+          <Modal id="reportModal" title="Lapor">
             {isLoggin ? (
               <>
                 {alert !== "" && (

@@ -55,8 +55,8 @@ const LatestBooksSection = ({data, seeMoreUrl}) => {
                                     detailUrl={item.code === 'BEI' ?
                                         item.attachment : 
                                         item.category !== 'buku_non_teks' ?
-                                        `/buku-teks/${item.code}/${item.slug}` :
-                                        `/buku-nonteks/${item.code}/${item.slug}`
+                                        `/buku-teks/detail/${item.slug}` :
+                                        `/buku-nonteks/detail/${item.slug}`
                                     }
                                 />
                             </SwiperSlide>
