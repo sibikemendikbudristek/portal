@@ -9,6 +9,7 @@ import DetailBanner from "../../components/DetailBanner/DetailBanner";
 import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBooksSection";
 import ReviewItem from "../../components/ReviewItem/ReviewItem";
 import Modal from "../../components/Modal/Modal";
+import PlaylistSection from "../../components/PlaylistSection/PlaylistSection";
 
 // Base Url
 const base_url = "https://sibi.sc.cloudapp.web.id";
@@ -16,7 +17,7 @@ const base_url = "https://sibi.sc.cloudapp.web.id";
 // Validation
 const isLoggin = JSON.parse(localStorage.getItem("user-info"));
 
-const DetailBukuTeksPDF = () => {
+const DetailBukuNonteks = () => {
   const [book, setBook] = useState([]);
   const [relatedBooks, setRelatedBooks] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -25,6 +26,7 @@ const DetailBukuTeksPDF = () => {
   const [loading, setLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [alert, setAlert] = useState("");
+  const [type, setType] = useState("type_pdf");
 
   // Review
   const [feedback_star, setFeedbackStar] = useState(0);
@@ -34,9 +36,61 @@ const DetailBukuTeksPDF = () => {
   const [category, setCategory] = useState("");
   const [reportMessage, setReportMessage] = useState("");
 
+  useEffect(() => {
+    const getBook = async () => {
+      setLoading(true);
+      try {
+        let response = await axios.get(
+          `${base_url}/api/catalogue/getDetails?slug=${slug}`
+        );
+        setBook(response.data.results);
+        setLoading(false);
+      } catch (err) {
+        setLoading(true);
+        return err.message;
+      }
+    };
+    getBook();
 
-   // Post Read History
-   const postRead = async () => {
+    const getRelatedBooks = async () => {
+      setLoading(true);
+      try {
+        if(book.type === 'pdf') {
+          setType('type_pdf');
+        } else {
+          setType('type_audio');
+        }
+
+        let response = await axios.get(
+          `${base_url}/api/catalogue/getNonTextBooks?${type}&limit=5`
+        );
+        setRelatedBooks(response.data.results);
+        setLoading(false);
+      } catch (err) {
+        setLoading(true);
+        return err.message;
+      }
+    };
+    getRelatedBooks();
+
+    const getReviews = async () => {
+      setLoading(true);
+      try {
+        let response = await axios.get(
+          `${base_url}/api/review/getReviews?slug=${slug}&limit=${limit}`
+        );
+        setReviews(response.data.results);
+        setLoading(false);
+      } catch (err) {
+        setLoading(true);
+        return err.message;
+      }
+    };
+    getReviews();
+  }, [book.type, type, slug, limit]);
+
+  // Post Read History
+  const postRead = async () => {
     setIsSubmitting(true);
 
     let data = { slug };
@@ -152,53 +206,6 @@ const DetailBukuTeksPDF = () => {
     }
   };
 
-  useEffect(() => {
-    const getBook = async () => {
-      setLoading(true);
-      try {
-        let response = await axios.get(
-          `${base_url}/api/catalogue/getDetails?slug=${slug}`
-        );
-        setBook(response.data.results);
-        setLoading(false);
-      } catch (err) {
-        setLoading(true);
-        return err.message;
-      }
-    };
-    getBook();
-
-    const getRelatedBooks = async () => {
-      setLoading(true);
-      try {
-        let response = await axios.get(
-          `${base_url}/api/catalogue/getTextBooks?type_pdf&limit=5`
-        );
-        setRelatedBooks(response.data.results);
-        setLoading(false);
-      } catch (err) {
-        setLoading(true);
-        return err.message;
-      }
-    };
-    getRelatedBooks();
-
-    const getReviews = async () => {
-      setLoading(true);
-      try {
-        let response = await axios.get(
-          `${base_url}/api/review/getReviews?slug=${slug}&limit=${limit}`
-        );
-        setReviews(response.data.results);
-        setLoading(false);
-      } catch (err) {
-        setLoading(true);
-        return err.message;
-      }
-    };
-    getReviews();
-  }, [slug, limit]);
-
   return (
     <main style={{ minHeight: "100vh" }}>
       {loading ? (
@@ -216,7 +223,7 @@ const DetailBukuTeksPDF = () => {
             title={book.title}
             writer={book.writer}
             description={book.description}
-            attachment={book.attachment}
+            attachment={book.type !== 'audio' ? book.attachment : '#PlaylistSection'}
             btnType={book.type}
             readModal="#readModal"
             reportModal="#reportPdfModal"
@@ -224,6 +231,7 @@ const DetailBukuTeksPDF = () => {
             onClickDownload={isLoggin && postDownload}
           />
           <BookInfoSection data={book} />
+          {book.type === 'audio' && <PlaylistSection data={book.audio_attachment} />}
           <RelatedBooksSection data={relatedBooks} />
           <section className="bg-light">
             <div className="container py-5">
@@ -398,4 +406,4 @@ const DetailBukuTeksPDF = () => {
   );
 };
 
-export default DetailBukuTeksPDF;
+export default DetailBukuNonteks;

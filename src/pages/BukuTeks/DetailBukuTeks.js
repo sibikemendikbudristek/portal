@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Loader from "react-loader-spinner";
@@ -17,7 +17,7 @@ const base_url = "https://sibi.sc.cloudapp.web.id";
 // Validation
 const isLoggin = JSON.parse(localStorage.getItem("user-info"));
 
-const DetailBukuNonteksAudio = () => {
+const DetailBukuTeks = () => {
   const [book, setBook] = useState([]);
   const [relatedBooks, setRelatedBooks] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -26,6 +26,7 @@ const DetailBukuNonteksAudio = () => {
   const [loading, setLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [alert, setAlert] = useState("");
+  const [type, setType] = useState("type_pdf");
 
   // Review
   const [feedback_star, setFeedbackStar] = useState(0);
@@ -35,9 +36,61 @@ const DetailBukuNonteksAudio = () => {
   const [category, setCategory] = useState("");
   const [reportMessage, setReportMessage] = useState("");
 
+  useEffect(() => {
+    const getBook = async () => {
+      setLoading(true);
+      try {
+        let response = await axios.get(
+          `${base_url}/api/catalogue/getDetails?slug=${slug}`
+        );
+        setBook(response.data.results);
+        setLoading(false);
+      } catch (err) {
+        setLoading(true);
+        return err.message;
+      }
+    };
+    getBook();
 
-   // Post Read History
-   const postRead = async () => {
+    const getRelatedBooks = async () => {
+      setLoading(true);
+      try {
+        if(book.type === 'pdf') {
+          setType('type_pdf');
+        } else {
+          setType('type_audio');
+        }
+
+        let response = await axios.get(
+          `${base_url}/api/catalogue/getTextBooks?${type}&limit=5`
+        );
+        setRelatedBooks(response.data.results);
+        setLoading(false);
+      } catch (err) {
+        setLoading(true);
+        return err.message;
+      }
+    };
+    getRelatedBooks();
+
+    const getReviews = async () => {
+      setLoading(true);
+      try {
+        let response = await axios.get(
+          `${base_url}/api/review/getReviews?slug=${slug}&limit=${limit}`
+        );
+        setReviews(response.data.results);
+        setLoading(false);
+      } catch (err) {
+        setLoading(true);
+        return err.message;
+      }
+    };
+    getReviews();
+  }, [book.type, type, slug, limit]);
+
+  // Post Read History
+  const postRead = async () => {
     setIsSubmitting(true);
 
     let data = { slug };
@@ -153,53 +206,6 @@ const DetailBukuNonteksAudio = () => {
     }
   };
 
-  useEffect(() => {
-    const getBook = async () => {
-      setLoading(true);
-      try {
-        let response = await axios.get(
-          `${base_url}/api/catalogue/getDetails?slug=${slug}`
-        );
-        setBook(response.data.results);
-        setLoading(false);
-      } catch (err) {
-        setLoading(true);
-        return err.message;
-      }
-    };
-    getBook();
-
-    const getRelatedBooks = async () => {
-      setLoading(true);
-      try {
-        let response = await axios.get(
-          `${base_url}/api/catalogue/getNonTextBooks?type_audio&limit=5`
-        );
-        setRelatedBooks(response.data.results);
-        setLoading(false);
-      } catch (err) {
-        setLoading(true);
-        return err.message;
-      }
-    };
-    getRelatedBooks();
-
-    const getReviews = async () => {
-      setLoading(true);
-      try {
-        let response = await axios.get(
-          `${base_url}/api/review/getReviews?slug=${slug}&limit=${limit}`
-        );
-        setReviews(response.data.results);
-        setLoading(false);
-      } catch (err) {
-        setLoading(true);
-        return err.message;
-      }
-    };
-    getReviews();
-  }, [slug, limit]);
-
   return (
     <main style={{ minHeight: "100vh" }}>
       {loading ? (
@@ -217,15 +223,15 @@ const DetailBukuNonteksAudio = () => {
             title={book.title}
             writer={book.writer}
             description={book.description}
-            attachment="#PlaylistSection"
+            attachment={book.type !== 'audio' ? book.attachment : '#PlaylistSection'}
             btnType={book.type}
             readModal="#readModal"
-            reportModal="#reportAudioModal"
+            reportModal="#reportPdfModal"
             onClickRead={isLoggin && postRead}
             onClickDownload={isLoggin && postDownload}
           />
           <BookInfoSection data={book} />
-          <PlaylistSection data={book.audio_attachment} />
+          {book.type === 'audio' && <PlaylistSection data={book.audio_attachment} />}
           <RelatedBooksSection data={relatedBooks} />
           <section className="bg-light">
             <div className="container py-5">
@@ -335,7 +341,7 @@ const DetailBukuNonteksAudio = () => {
               height="800"
             />
           </Modal>
-          <Modal id="reportAudioModal" title="Lapor">
+          <Modal id="reportPdfModal" title="Lapor">
             {isLoggin ? (
               <>
                 {alert !== "" && (
@@ -400,4 +406,4 @@ const DetailBukuNonteksAudio = () => {
   );
 };
 
-export default DetailBukuNonteksAudio;
+export default DetailBukuTeks;

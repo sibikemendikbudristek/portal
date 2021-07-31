@@ -1,11 +1,9 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 import About from '../pages/About/About';
 import BukuPelajaran from '../pages/BukuTeks/BukuTeks';
-import DetailBukuTeksPDF from '../pages/BukuTeks/DetailBukuTeksPDF';
-import DetailBukuTeksAudio from '../pages/BukuTeks/DetailBukuTeksAudio';
 import BukuNonteks from '../pages/BukuNonteks/BukuNonteks';
-import DetailBukuNonteksPDF from '../pages/BukuNonteks/DetailBukuNonteksPDF';
-import DetailBukuNonteksAudio from '../pages/BukuNonteks/DetailBukuNonteksAudio';
+import DetailBukuTeks from '../pages/BukuTeks/DetailBukuTeks';
+import DetailBukuNonteks from '../pages/BukuNonteks/DetailBukuNonteks';
 import NotFound from '../pages/Error/NotFound';
 import Home from '../pages/Home/Home';
 import Panduan from '../pages/Panduan/Panduan';
@@ -20,14 +18,15 @@ const Routes = () => {
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/buku-teks" component={BukuPelajaran} />
-            <Route path="/buku-teks/PDF/:slug" component={DetailBukuTeksPDF} />
-            <Route path="/buku-teks/BA/:slug" component={DetailBukuTeksAudio} />
+            <Route path="/buku-teks/detail/:slug" component={DetailBukuTeks} />
             <Route exact path="/buku-nonteks" component={BukuNonteks} />
-            <Route path="/buku-nonteks/PDF/:slug" component={DetailBukuNonteksPDF} />
-            <Route path="/buku-nonteks/BA/:slug" component={DetailBukuNonteksAudio} />
+            <Route path="/buku-nonteks/detail/:slug" component={DetailBukuNonteks} />
             <Route path="/panduan" component={Panduan} />
             <Route path="/tentang-kami" component={About} />
-            {isLoggin && <Route path="/dashboard" component={Dashboard} />}
+            <Route path="/dashboard">
+            {isLoggin ? <Dashboard /> : <Redirect to='/login' />}
+                
+            </Route>
             {isLoggin ? <Redirect to='/dashboard' component={Dashboard} /> : <Route path="/register" component={Register} />}
             {isLoggin ? <Redirect to='/dashboard' component={Dashboard} /> : <Route path="/login" component={Login} />}
             <Route path="*" component={NotFound} />

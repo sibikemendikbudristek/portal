@@ -750,7 +750,7 @@ const BukuTeks = () => {
                             detailUrl={
                               book.code === "BEI"
                                 ? book.attachment
-                                : `/buku-teks/${book.code}/${book.slug}`
+                                : `/buku-teks/detail/${book.slug}`
                             }
                           />
                           <Modal id={book.slug} title={book.title}>
