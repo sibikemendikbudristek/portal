@@ -740,7 +740,7 @@ const BukuTeks = () => {
                   ) : (
                     textbooks.map((book, index) => {
                       return (
-                        <div className="col-md-4 my-3 px-5 px-md-3" key={index}>
+                        <div className="col-sm-6 col-md-4 my-3 px-5 px-sm-3" key={index}>
                           <BookItem
                             readModal={"#" + book.slug}
                             bookImg={book.image}

@@ -23,7 +23,7 @@ const RelatedBooksSection = ({data}) => {
                             slidesPerView={1}
                             breakpoints={{
                                 // when window width is >= 414px
-                                414: {
+                                500: {
                                 slidesPerView: 2,
                                 },
                                 // when window width is >= 768px

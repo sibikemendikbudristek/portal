@@ -12,7 +12,7 @@ const BookInfoSection = ({data}) => {
                     </div>    
                 </div>
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-lg-6">
                         <table className="table table-borderless">
                             <tbody>
                                 <tr>
@@ -34,7 +34,7 @@ const BookInfoSection = ({data}) => {
                             </tbody>
                         </table>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-lg-6">
                         <table className="table table-borderless">
                             <tbody>
                                 <tr>
