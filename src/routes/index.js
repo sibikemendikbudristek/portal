@@ -24,11 +24,14 @@ const Routes = () => {
             <Route path="/panduan" component={Panduan} />
             <Route path="/tentang-kami" component={About} />
             <Route path="/dashboard">
-            {isLoggin ? <Dashboard /> : <Redirect to='/login' />}
-                
+                {isLoggin ? <Dashboard /> : <Redirect to='/login' />}
             </Route>
-            {isLoggin ? <Redirect to='/dashboard' component={Dashboard} /> : <Route path="/register" component={Register} />}
-            {isLoggin ? <Redirect to='/dashboard' component={Dashboard} /> : <Route path="/login" component={Login} />}
+            <Route path="/register">
+                {isLoggin ? <Redirect to='/dashboard' /> : <Register />}
+            </Route>
+            <Route path="/login">
+                {isLoggin ? <Redirect to='/dashboard' /> : <Login />}
+            </Route>
             <Route path="*" component={NotFound} />
         </Switch>
     );
