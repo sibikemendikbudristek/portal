@@ -46,8 +46,8 @@ const RelatedBooksSection = ({data}) => {
                                             detailUrl={relatedBook.code === 'BEI' ?
                                             relatedBook.attachment : 
                                             relatedBook.category !== 'buku_non_teks' ?
-                                        `/buku-teks/${relatedBook.code}/${relatedBook.slug}` :
-                                        `/buku-nonteks/${relatedBook.code}/${relatedBook.slug}`
+                                        `/buku-teks/detail/${relatedBook.slug}` :
+                                        `/buku-nonteks/detail/${relatedBook.slug}`
                                     }
                                         />
                                     </SwiperSlide>
