@@ -36,7 +36,7 @@ const RelatedBooksSection = ({data}) => {
                             }}
                             style={{paddingBottom: '40px'}}
                         >
-                            {relatedBooks.map((relatedBook, index) => {
+                            {relatedBooks?.map((relatedBook, index) => {
                                 return(
                                     <SwiperSlide key={index}>
                                         <BookItem

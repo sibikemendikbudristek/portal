@@ -45,7 +45,7 @@ const LatestBooksSection = ({data, seeMoreUrl}) => {
                         }}
                         style={{paddingBottom: '60px'}}
                     >
-                        {data.map((item, index) => {
+                        {data?.map((item, index) => {
                             return(
                             <SwiperSlide key={index}>
                                 <BookItem
