@@ -3,7 +3,7 @@ import axios from 'axios';
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Banner from '../../components/Banner/Banner';
-import bukuUmumImgBanner from '../../assets/img/buku-umum-img.png';
+import bukuUmumImgBanner from '../../assets/img/nonteks-img.png';
 import BookItem from '../../components/BookItem/BookItem';
 import Modal from '../../components/Modal/Modal';
 
