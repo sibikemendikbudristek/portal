@@ -438,7 +438,7 @@ const Dashboard = () => {
                                 className="btn btn-primary btn-lg float-end"
                                 disabled
                               >
-                                Update
+                                Please wait...
                               </button>
                             ) : (
                               <button

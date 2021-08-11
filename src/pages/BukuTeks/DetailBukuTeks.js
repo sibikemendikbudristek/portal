@@ -279,7 +279,7 @@ const DetailBukuTeks = () => {
                           className="btn btn-primary btn-lg px-4 rounded-pill"
                           disabled
                         >
-                          Kirim
+                          Please wait...
                         </button>
                       ) : (
                         <button
@@ -373,7 +373,7 @@ const DetailBukuTeks = () => {
                 </div>
                 {isSubmitting ? (
                   <button className="btn btn-primary" disabled>
-                    Kirim
+                    Please wait...
                   </button>
                 ) : (
                   <button

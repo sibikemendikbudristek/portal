@@ -206,7 +206,7 @@ const Register = () => {
                         className="btn btn-primary float-end btn-lg"
                         disabled
                       >
-                        Daftar
+                       Please wait...
                       </button>
                     ) : (
                       <button type="submit" className="btn btn-primary float-end btn-lg">
