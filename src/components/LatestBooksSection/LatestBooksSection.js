@@ -52,11 +52,10 @@ const LatestBooksSection = ({data, seeMoreUrl}) => {
                                     bookImg={item.image}
                                     category={item.name}
                                     title={item.title}
+                                    bookType={item.type}
                                     detailUrl={item.code === 'BEI' ?
                                         item.attachment : 
-                                        item.category !== 'buku_non_teks' ?
-                                        `/buku-teks/detail/${item.slug}` :
-                                        `/buku-nonteks/detail/${item.slug}`
+                                        `/book/detail/${item.slug}`
                                     }
                                 />
                             </SwiperSlide>

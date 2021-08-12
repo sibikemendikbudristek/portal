@@ -156,7 +156,7 @@ const BukuNonteks = () => {
                                                     category={book.name}
                                                     title={book.title}
                                                     bookType={book.type}
-                                                    detailUrl={book.code === 'BEI' ? book.attachment : `/buku-nonteks/detail/${book.slug}`}
+                                                    detailUrl={book.code === 'BEI' ? book.attachment : `/book/detail/${book.slug}`}
                                                 />
                                                 <Modal id={book.slug} title={book.title}>
                                                     <embed type="application/pdf" src={book.attachment} width="100%" height="800" />

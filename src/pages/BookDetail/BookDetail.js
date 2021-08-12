@@ -17,7 +17,7 @@ const base_url = "https://sibi.sc.cloudapp.web.id";
 // Validation
 const isLoggin = JSON.parse(localStorage.getItem("user-info"));
 
-const DetailBukuTeks = () => {
+const BookDetail = () => {
   const [book, setBook] = useState([]);
   const [relatedBooks, setRelatedBooks] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -26,6 +26,9 @@ const DetailBukuTeks = () => {
   const [loading, setLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [alert, setAlert] = useState("");
+
+  //Related Books
+  const [bookCategoryUrl, setBookCategoryUrl] = useState('getTextBooks');
   const [type, setType] = useState("type_pdf");
 
   // Review
@@ -55,6 +58,14 @@ const DetailBukuTeks = () => {
     const getRelatedBooks = async () => {
       setLoading(true);
       try {
+        if(book.category === 'buku_teks') {
+          setBookCategoryUrl('getTextBooks');
+        } else if(book.category === 'buku_non_teks') {
+          setBookCategoryUrl('getNonTextBooks');
+        } else {
+          setBookCategoryUrl('getTextBooks'); // Needs Change to buku sekolah penggerak
+        }
+
         if(book.type === 'pdf') {
           setType('type_pdf');
         } else {
@@ -62,7 +73,7 @@ const DetailBukuTeks = () => {
         }
 
         let response = await axios.get(
-          `${base_url}/api/catalogue/getTextBooks?${type}&limit=5`
+          `${base_url}/api/catalogue/${bookCategoryUrl}?${type}&limit=5`
         );
         setRelatedBooks(response.data.results);
         setLoading(false);
@@ -406,4 +417,4 @@ const DetailBukuTeks = () => {
   );
 };
 
-export default DetailBukuTeks;
+export default BookDetail;

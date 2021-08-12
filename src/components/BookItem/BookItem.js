@@ -48,18 +48,18 @@ const BookItem = ({
                   </h5>
                 </a>
               )}
-              {bookType !== "interactive" ? (
-                <Link className="card-link" to={detailUrl || null}>
-                  <p className="card-text text-warning">
-                    Baca Selengkapnya <i className="fas fa-fw fa-arrow-right" />
-                  </p>
-                </Link>
-              ) : (
+              {bookType === "interactive" ? (
                 <a className="card-link" href={detailUrl || null}>
                   <p className="card-text text-warning">
                     Baca Selengkapnya <i className="fas fa-fw fa-arrow-right" />
                   </p>
                 </a>
+              ) : (
+                <Link className="card-link" to={detailUrl || null}>
+                  <p className="card-text text-warning">
+                    Baca Selengkapnya <i className="fas fa-fw fa-arrow-right" />
+                  </p>
+                </Link>
               )}
             </div>
           </div>
