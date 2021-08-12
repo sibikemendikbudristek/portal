@@ -105,7 +105,7 @@ const Navbar = () => {
               >
                 Buku
               </a>
-              <ul className="dropdown-menu" aria-labelledby="booksDropdown">
+              <ul className="dropdown-menu text-center text-xl-start" aria-labelledby="booksDropdown">
                 <li>
                   <NavLink className="dropdown-item" to="/buku-teks">
                     Buku Teks
