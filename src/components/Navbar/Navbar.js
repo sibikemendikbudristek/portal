@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NavbarItems from "./NavbarItems";
 import SibiLogo from "../../assets/img/sibi-nav-logo.webp";
 import "./Navbar.scss";
 import { NavLink, useHistory } from "react-router-dom";
@@ -90,15 +89,50 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto me-2 mb-2 mb-lg-0 text-center text-xl-start">
-            {NavbarItems.map((item, index) => {
-              return (
-                <li className="nav-item" key={index}>
-                  <NavLink className="nav-link mx-2" exact to={item.url}>
-                    {item.name}
+            <li className="nav-item">
+              <NavLink className="nav-link mx-2" exact to="/">
+                Beranda
+              </NavLink>
+            </li>
+            <li className="nav-item dropdown mx-2">
+              <a
+                className="nav-link dropdown-toggle"
+                href="!#"
+                id="booksDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Buku
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="booksDropdown">
+                <li>
+                  <NavLink className="dropdown-item" to="/buku-teks">
+                    Buku Teks
                   </NavLink>
                 </li>
-              );
-            })}
+                <li>
+                  <NavLink className="dropdown-item" to="/buku-nonteks">
+                    Buku Nonteks
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="dropdown-item" to="/buku-sekolah-penggerak">
+                    Buku Sekolah Penggerak
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link mx-2" exact to="/panduan">
+                Panduan
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link mx-2" exact to="/tentang-kami">
+                Tentang Kami
+              </NavLink>
+            </li>
           </ul>
           {localStorage.getItem("user-info") ? (
             <ul className="navbar-nav mb-2 mb-lg-0 text-center text-xl-start">

@@ -12,6 +12,10 @@ const NavbarItems = [
         url: '/buku-nonteks'
     },
     {
+        name: 'Buku Sekolah Penggerak',
+        url: '/buku-sekolah-penggerak'
+    },
+    {
         name: 'Panduan',
         url: '/panduan'
     },
