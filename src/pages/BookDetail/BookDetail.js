@@ -28,7 +28,7 @@ const BookDetail = () => {
   const [alert, setAlert] = useState("");
 
   //Related Books
-  const [bookCategoryUrl, setBookCategoryUrl] = useState('getTextBooks');
+  const [bookCategoryUrl, setBookCategoryUrl] = useState("");
   const [type, setType] = useState("type_pdf");
 
   // Review
@@ -63,7 +63,7 @@ const BookDetail = () => {
         } else if(book.category === 'buku_non_teks') {
           setBookCategoryUrl('getNonTextBooks');
         } else {
-          setBookCategoryUrl('getTextBooks'); // Needs Change to buku sekolah penggerak
+          setBookCategoryUrl('getLatestBooks'); // Needs Change to buku sekolah penggerak
         }
 
         if(book.type === 'pdf') {
