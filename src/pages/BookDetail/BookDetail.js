@@ -98,7 +98,7 @@ const BookDetail = () => {
       }
     };
     getReviews();
-  }, [book.type, type, slug, limit]);
+  }, [book.category, book.type, bookCategoryUrl, type, slug, limit]);
 
   // Post Read History
   const postRead = async () => {
