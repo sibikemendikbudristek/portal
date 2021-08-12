@@ -29,7 +29,7 @@ const JenisBukuSection = () => {
               <small>
                 Buku dalam format aplikasi online / interaktif yang berisi
                 berbagai konten seperti suara, video, animasi, games, dan
-                Virtual Reality..
+                Virtual Reality.
               </small>
             </p>
           </div>

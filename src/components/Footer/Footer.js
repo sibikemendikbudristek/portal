@@ -13,18 +13,18 @@ const Footer = () => {
                         <h5 className="footer-title">Sistem Informasi<br /><strong>Perbukuan Indonesia</strong></h5>
                     </div>
                     <div className="col-md-4 col-lg-3 text-center text-md-end">
-                        <a className="footer-social-icon" href="!#" target="_blank" rel="noreferrer">
+                        <span className="footer-social-icon">
                             <i className="fab fa-instagram" />
-                        </a>
-                        <a className="footer-social-icon" href="!#" target="_blank" rel="noreferrer">
+                        </span>
+                        <span className="footer-social-icon">
                             <i className="fab fa-facebook" />
-                        </a>
-                        <a className="footer-social-icon" href="!#" target="_blank" rel="noreferrer">
+                        </span>
+                        <span className="footer-social-icon">
                             <i className="fab fa-twitter" />
-                        </a>
-                        <a className="footer-social-icon" href="!#" target="_blank" rel="noreferrer">
+                        </span>
+                        <span className="footer-social-icon">
                             <i className="fab fa-linkedin" />
-                        </a>
+                        </span>
                     </div>
                 </div>
                 <hr />

@@ -72,7 +72,6 @@ const RelatedSiteSection = () => {
                         </a>
                     </div>
                     <div className="col-8 col-md-3 col-lg-2 my-2">
-                        <a href="http://google.com" target="_blank" rel="noreferrer">
                             <div className="card">
                                 <div className="card-body">
                                     <img 
@@ -83,7 +82,6 @@ const RelatedSiteSection = () => {
                                     />
                                 </div>
                             </div>
-                        </a>
                     </div>
                 </div>
             </div>

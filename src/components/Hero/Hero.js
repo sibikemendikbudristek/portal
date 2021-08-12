@@ -8,8 +8,8 @@ const Hero = () => {
             <div className="container">
                 <div className="row justify-content-between text-center text-md-start">
                     <div className="col-lg-5 mt-5 pt-3">
-                        <h1 className="hero-title">Layanan Buku Daring<br />Terlengkap di Indonesia</h1>
-                        <p>Belajar mandiri dengan puluhan ribu buku pelajaran resmi yang diterbitkan oleh Kemendikbud. 
+                        <h1 className="hero-title">Layanan Buku Daring</h1>
+                        <p>Belajar mandiri dengan buku pelajaran resmi yang diterbitkan oleh Kemendikbud. 
                         Dipersembahkan untuk para peserta didik, pendidik, dan tenaga kependidikan dalam
                         pembelajaran berbasis elektronik. <strong>Merdeka Belajar!</strong></p>
                         <a className="btn btn-primary rounded-pill py-3 px-4" href="#PanduanSection">Pelajari Sekarang</a>

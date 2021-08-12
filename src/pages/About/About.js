@@ -45,9 +45,7 @@ const About = () => {
                     <div className="row justify-content-center text-center">
                         <div className="col-md-3 col-lg-2 mx-2">
                             <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-book-open" /></h3>
-                            <p className="my-5">Buku terlengkap,
-                            terdepan produksi
-                            Kementrian</p>
+                            <p className="my-5">Buku Terlengkap Produksi Puskurbuk, Kemendikbud Ristek</p>
                         </div>
                         <div className="col-md-3 col-lg-2 mx-2">
                             <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-award" /></h3>
@@ -63,9 +61,7 @@ const About = () => {
                         </div>
                         <div className="col-md-3 col-lg-2 mx-2">
                             <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-history" /></h3>
-                            <p className="my-5">Sistem up-to-date
-                            sesuai dengan
-                            Kurikulum pemerintah</p>
+                            <p className="my-5">Sistem up-to-date sesuai dengan Kurikulum yang berlaku</p>
                         </div>
                     </div>
                 </div>
