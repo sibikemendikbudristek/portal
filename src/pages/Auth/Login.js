@@ -95,15 +95,31 @@ const Login = () => {
                       required
                     />
                   </div>
-                  {loading ? (
-                    <button type="submit" className="btn btn-primary float-end btn-lg" disabled>
-                      Please wait...
-                    </button>
-                  ) : (
-                    <button type="submit" className="btn btn-primary float-end btn-lg">
-                      Masuk
-                    </button>
-                  )}
+                  <div className="row">
+                    <div className="col">
+                      <a className="link" href="https://sibi.sc.cloudapp.web.id/user/recovery">
+                        Lupa kata sandi?
+                      </a>
+                    </div>
+                    <div className="col">
+                      {loading ? (
+                        <button
+                          type="submit"
+                          className="btn btn-primary float-end btn-lg"
+                          disabled
+                        >
+                          Please wait...
+                        </button>
+                      ) : (
+                        <button
+                          type="submit"
+                          className="btn btn-primary float-end btn-lg"
+                        >
+                          Masuk
+                        </button>
+                      )}
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
