@@ -39,7 +39,7 @@ const DetailBanner = ({
               {description || "Belum ada deskripsi untuk buku ini"}
             </p>
             <p className="mb-4">
-              <strong>Tags :</strong> {tags}
+              <strong>Tags :</strong> {tags || "-"}
             </p>
             <div className="d-grid gap-2 d-md-block">
               {btnType === "pdf" ? (
