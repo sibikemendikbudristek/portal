@@ -21,7 +21,7 @@ const Hero = () => {
                             <Link className="btn btn-outline-primary rounded mx-5 mx-md-2" to="/login">
                                 <i className="fas fa-fw fa-user-graduate" /> Guru
                             </Link>
-                            <a className="btn btn-outline-primary rounded mx-5 mx-md-2" href="https://google.com" target="_blank" rel="noopener noreferrer">
+                            <a className="btn btn-outline-primary rounded mx-5 mx-md-2" href="https://sibi.sc.cloudapp.web.id/" target="_blank" rel="noopener noreferrer">
                                 <i className="fas fa-fw fa-book-reader" /> Pelaku Perbukuan
                             </a>
                         </div>

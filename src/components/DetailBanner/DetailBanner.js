@@ -6,6 +6,7 @@ const DetailBanner = ({
   title,
   writer,
   description,
+  tags,
   attachment,
   btnType,
   readModal,
@@ -28,14 +29,17 @@ const DetailBanner = ({
           </div>
           <div className="col-md-8 col-lg-9 ps-md-5">
             <h1>
-              <strong>{title || "Unknown"}</strong>
+              <strong>{title || "Tidak diketahui"}</strong>
             </h1>
-            <h6>Oleh: {writer || "Unknown"}</h6>
-            <h5 className="mt-5">
+            <span><strong>Oleh :</strong> {writer || "Tidak diketahui"}</span>
+            <h5 className="mt-4">
               <strong>Deskripsi</strong>
             </h5>
             <p className="mb-4">
               {description || "Belum ada deskripsi untuk buku ini"}
+            </p>
+            <p className="mb-4">
+              <strong>Tags :</strong> {tags}
             </p>
             <div className="d-grid gap-2 d-md-block">
               {btnType === "pdf" ? (

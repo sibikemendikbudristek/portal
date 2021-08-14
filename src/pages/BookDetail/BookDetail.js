@@ -217,6 +217,9 @@ const BookDetail = () => {
     }
   };
 
+  // Split tags
+  let tags = book?.tags?.split(',');
+
   return (
     <main style={{ minHeight: "100vh" }}>
       {loading ? (
@@ -234,6 +237,9 @@ const BookDetail = () => {
             title={book.title}
             writer={book.writer}
             description={book.description}
+            tags={tags?.map((tag, index) => {
+              return(<span className="badge bg-primary bg-gradient me-1" key={index}>{tag}</span>);
+            })}
             attachment={book.type !== 'audio' ? book.attachment : '#PlaylistSection'}
             btnType={book.type}
             readModal="#readModal"
