@@ -28,7 +28,8 @@ const BookDetail = () => {
   const [alert, setAlert] = useState("");
 
   //Related Books
-  const [bookCategoryUrl, setBookCategoryUrl] = useState("");
+  const [bookUrl, setBookUrl] = useState("");
+  const [bookCategory, setBookCategory] = useState("");
   const [type, setType] = useState("type_pdf");
 
   // Review
@@ -59,11 +60,14 @@ const BookDetail = () => {
       setLoading(true);
       try {
         if(book.category === 'buku_teks') {
-          setBookCategoryUrl('getTextBooks');
+          setBookUrl('getTextBooks');
+          setBookCategory('category_buku_teks=true');
         } else if(book.category === 'buku_non_teks') {
-          setBookCategoryUrl('getNonTextBooks');
+          setBookUrl('getNonTextBooks');
+          setBookCategory('');
         } else {
-          setBookCategoryUrl('getLatestBooks'); // Needs Change to buku sekolah penggerak
+          setBookUrl('getTextBooks');
+          setBookCategory('category_buku_sekolah_penggerak=true');
         }
 
         if(book.type === 'pdf') {
@@ -73,7 +77,7 @@ const BookDetail = () => {
         }
 
         let response = await axios.get(
-          `${base_url}/api/catalogue/${bookCategoryUrl}?${type}&limit=5`
+          `${base_url}/api/catalogue/${bookUrl}?${bookCategory}&${type}&limit=5`
         );
         setRelatedBooks(response.data.results);
         setLoading(false);
@@ -98,7 +102,7 @@ const BookDetail = () => {
       }
     };
     getReviews();
-  }, [book.category, book.type, bookCategoryUrl, type, slug, limit]);
+  }, [book.category, book.type, bookUrl, bookCategory, type, slug, limit]);
 
   // Post Read History
   const postRead = async () => {
