@@ -83,7 +83,7 @@ const BukuSekolahPenggerak = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgama}&${subjectSejarah}&${subjectTematik}`
+          `${base_url}/getTextBooks?category_buku_sekolah_penggerak=true&limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgama}&${subjectSejarah}&${subjectTematik}`
         );
         setTextBooks(response.data.results);
         setLoading(false);

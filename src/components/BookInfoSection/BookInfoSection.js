@@ -21,7 +21,7 @@ const BookInfoSection = ({data}) => {
                                 </tr>
                                 <tr>
                                     <th scope="row">Tipe</th>
-                                    <td>{bookData.book_type || '-'}</td>
+                                    <td>{bookData.type || '-'}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Penulis</th>

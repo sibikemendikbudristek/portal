@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Rating } from "react-simple-star-rating";
@@ -218,7 +218,7 @@ const BookDetail = () => {
   };
 
   // Split tags
-  let tags = book?.tags?.split(',');
+  let tags = book?.tags?.split(/[ ,]+/);
 
   return (
     <main style={{ minHeight: "100vh" }}>
@@ -238,7 +238,11 @@ const BookDetail = () => {
             writer={book.writer}
             description={book.description}
             tags={tags?.map((tag, index) => {
-              return(<span className="badge bg-primary bg-gradient me-1" key={index}>{tag}</span>);
+              return(
+                <Link key={index} to={`/book/tag/${tag}`}>
+                  <span className="badge bg-primary bg-gradient me-1">{tag}</span>
+                </Link>
+              );
             })}
             attachment={book.type !== 'audio' ? book.attachment : '#PlaylistSection'}
             btnType={book.type}
