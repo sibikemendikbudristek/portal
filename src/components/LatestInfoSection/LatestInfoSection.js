@@ -12,13 +12,13 @@ const LatestInfoSection = () => {
                 <div style={{backgroundImage: `url(${infoBg})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', minHeight: '40vh'}}>
                 <div className="row mt-5 text-center text-white py-5">
                     <div className="col">
-                            <p className="w-75 mx-auto mt-4">Pengumuman Pendaftaran Penilaian<br />Buku Non Teks Pelajaran Tahun 2021</p>
+                            <p className="w-75 mx-auto mt-4" style={{fontSize: '1.5rem'}}>Pengumuman Pendaftaran Penilaian<br />Buku Non Teks Pelajaran Tahun 2021</p>
                         </div>
                     </div>
                 </div>
                 <div className="row mt-5">
                     <div className="col text-center">
-                        <a className="btn btn-primary rounded-pill btn-lg" href="!#">Baca Selengkapnya</a>
+                        <a className="btn btn-primary rounded-pill btn-lg" href="https://sibi.sc.cloudapp.web.id/kebijakan">Baca Selengkapnya</a>
                     </div>
                 </div>
             </div>

@@ -210,14 +210,14 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link mx-1" exact to="/hasil-penilaian">
+                  <a className="nav-link mx-1" href="https://sibi.sc.cloudapp.web.id/penilaian">
                     Penilaian
-                  </NavLink>
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link mx-1" exact to="/kebijakan">
+                  <a className="nav-link mx-1" href="https://sibi.sc.cloudapp.web.id/kebijakan">
                     Kebijakan
-                  </NavLink>
+                  </a>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link mx-1" exact to="/panduan">
@@ -234,56 +234,66 @@ const Navbar = () => {
 
             {role === "umum" && (
               <>
-                <li className="nav-item">
-                  <NavLink className="nav-link mx-2" exact to="/">
-                    Beranda
+              <li className="nav-item">
+              <a className="nav-link mx-1" exact href="/">
+                Beranda
+              </a>
+            </li>
+            <li className="nav-item dropdown mx-1">
+              <a
+                className="nav-link dropdown-toggle"
+                href="!#"
+                id="booksDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Buku
+              </a>
+              <ul
+                className="dropdown-menu text-center text-xl-start"
+                aria-labelledby="booksDropdown"
+              >
+                <li>
+                  <NavLink className="dropdown-item" to="/buku-teks">
+                    Buku Teks
                   </NavLink>
                 </li>
-                <li className="nav-item dropdown mx-2">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="!#"
-                    id="booksDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                <li>
+                  <NavLink className="dropdown-item" to="/buku-nonteks">
+                    Buku Nonteks
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="dropdown-item"
+                    to="/buku-sekolah-penggerak"
                   >
-                    Buku
-                  </a>
-                  <ul
-                    className="dropdown-menu text-center text-xl-start"
-                    aria-labelledby="booksDropdown"
-                  >
-                    <li>
-                      <NavLink className="dropdown-item" to="/buku-teks">
-                        Buku Teks
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink className="dropdown-item" to="/buku-nonteks">
-                        Buku Nonteks
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        className="dropdown-item"
-                        to="/buku-sekolah-penggerak"
-                      >
-                        Buku Sekolah Penggerak
-                      </NavLink>
-                    </li>
-                  </ul>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link mx-2" exact to="/panduan">
-                    Panduan
+                    Buku Sekolah Penggerak
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link mx-2" exact to="/tentang-kami">
-                    Tentang Kami
-                  </NavLink>
-                </li>
+              </ul>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link mx-1" href="https://sibi.sc.cloudapp.web.id/penilaian">
+                Penilaian
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link mx-1" href="https://sibi.sc.cloudapp.web.id/kebijakan">
+                Kebijakan
+              </a>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link mx-1" exact to="/panduan">
+                Panduan
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link mx-1" exact to="/tentang-kami">
+                Tentang Kami
+              </NavLink>
+            </li>
               </>
             )}
           </ul>

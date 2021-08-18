@@ -8,7 +8,6 @@ import PanduanSection from "../../components/PanduanSection/PanduanSection";
 import RelatedSiteSection from "../../components/RelatedSiteSection/RelatedSiteSection";
 import TestimonySection from "../../components/TestimonySection/TestimonySection";
 import data from "../../assets/data/dummy";
-import { Link } from "react-router-dom";
 import heroImg from "../../assets/img/landing-page-img.png";
 import LatestInfoSection from "../../components/LatestInfoSection/LatestInfoSection";
 import readingBookVectorImg from "../../assets/img/reading-book-vector.png";
@@ -40,14 +39,15 @@ const Home = () => {
         <div className="row justify-content-between text-center text-md-start">
           <div className="col-lg-5 mt-5 pt-3">
             <h1 className="hero-title">
-              Selamat Datang di
+              Selamat Datang
               <br />
-              Sistem Informasi Pebukuan Indonesia
+              di SIBI
             </h1>
             <p>
+              SIBI adalah sistem terpusat dan terintegrasi yang mewadahi kebutuhan perbukuan Indonesia secara daring.<br />
               Untuk masuk ke SIBI silahkan masuk sesuai peran yang dibutuhkan, nanti akan diarahkan untuk menggunakan fitur yang disediakan.
             </p>
-            <p className="mt-5">Masuk sebagai:</p>
+            <p className="mt-3">Masuk sebagai:</p>
             <div className="d-grid gap-2 d-md-block">
               <div className="row">
                 <div className="col">

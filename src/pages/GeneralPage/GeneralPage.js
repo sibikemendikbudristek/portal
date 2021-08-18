@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CounterSection from '../../components/CounterSection/CounterSection';
 import Hero from '../../components/Hero/Hero';
-import JenisBukuSection from '../../components/JenisBukuSection/JenisBukuSection';
-import JenjangSection from '../../components/JenjangSection/JenjangSection';
 import Loader from "react-loader-spinner";
 import LatestBooksSection from '../../components/LatestBooksSection/LatestBooksSection';
 import PanduanSection from '../../components/PanduanSection/PanduanSection';
@@ -11,11 +9,11 @@ import RelatedSiteSection from '../../components/RelatedSiteSection/RelatedSiteS
 import TestimonySection from '../../components/TestimonySection/TestimonySection';
 import data from '../../assets/data/dummy';
 import heroImg from '../../assets/img/hero-img.webp';
-import panduanImg from "../../assets/img/panduan-siswa.png";
+import readingBookVectorImg from "../../assets/img/reading-book-vector.png";
 
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
-const StudentPage = () => {
+const GeneralPage = () => {
 
     const [latestbooks, setLatestBooks] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -41,15 +39,12 @@ const StudentPage = () => {
         <Hero>
         <div className="row justify-content-between text-center text-md-start">
           <div className="col-lg-5 mt-5 pt-3">
-            <h1 className="hero-title">Layanan Buku Daring untuk Generasi Penerus Bangsa</h1>
-            <p>
-              Belajar mandiri dengan buku pelajaran resmi yang diterbitkan oleh
-              Kemendikbud ristek. Dipersembahkan untuk para peserta didik,
-              pendidik, dan tenaga kependidikan dalam pembelajaran berbasis
-              elektronik. <strong>Merdeka Belajar!</strong>
+            <h1 className="hero-title">Buku Daring Resmi Kemendikbud ristek</h1>
+            <p className="mb-5">
+              Temukan berbagai buku bacaan menarik yang telah lulus penilaian dari Kemendikbud ristek. Didedikasikan untuk tanah air dan para pencinta bahasa serta budaya di Indonesia.
             </p>
             <a
-              className="btn btn-primary rounded-pill mt-4 py-3 px-4"
+              className="btn btn-primary rounded-pill py-3 px-4"
               href="#PanduanSection"
             >
               Pelajari Sekarang
@@ -70,7 +65,7 @@ const StudentPage = () => {
         <div className="col-md-6">
           <img
             className="img-fluid d-block mx-auto mb-3"
-            src={panduanImg}
+            src={readingBookVectorImg}
             alt="Panduan Sibi"
           />
         </div>
@@ -243,8 +238,6 @@ const StudentPage = () => {
         </div>
       </div>
     </PanduanSection>
-            <JenjangSection />
-            <JenisBukuSection />
             {loading ? 
                 <Loader
                     className="d-flex justify-content-center align-items-center vh-100"
@@ -265,4 +258,4 @@ const StudentPage = () => {
     );
 };
 
-export default StudentPage;
+export default GeneralPage;

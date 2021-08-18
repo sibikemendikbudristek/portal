@@ -10,7 +10,7 @@ import PanduanSection from '../../components/PanduanSection/PanduanSection';
 import RelatedSiteSection from '../../components/RelatedSiteSection/RelatedSiteSection';
 import TestimonySection from '../../components/TestimonySection/TestimonySection';
 import data from '../../assets/data/dummy';
-import heroImg from '../../assets/img/hero-img.webp';
+import heroImg from '../../assets/img/guru-img.png';
 import readingBookVectorImg from "../../assets/img/reading-book-vector.png";
 
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
@@ -41,12 +41,10 @@ const TeacherPage = () => {
         <Hero>
         <div className="row justify-content-between text-center text-md-start">
           <div className="col-lg-5 mt-5 pt-3">
-            <h1 className="hero-title">Layanan Buku Daring</h1>
-            <p>
-              Belajar mandiri dengan buku pelajaran resmi yang diterbitkan oleh
-              Kemendikbud ristek. Dipersembahkan untuk para peserta didik,
-              pendidik, dan tenaga kependidikan dalam pembelajaran berbasis
-              elektronik. <strong>Merdeka Belajar!</strong>
+            <h1 className="hero-title">Selamat Datang,<br />Para Pengajar</h1>
+            <p className="mb-5">
+              SIBI menyediakan berbagai buku pelajaran sekolah maupun umum untuk kebutuhan belajar mengajar.<br />
+              Dipersembahkan unuk para pendidik dan tenaga kependidikan dalam pembelajaran berbasis elektronik.
             </p>
             <a
               className="btn btn-primary rounded-pill py-3 px-4"
@@ -243,7 +241,7 @@ const TeacherPage = () => {
         </div>
       </div>
     </PanduanSection>
-            <JenjangSection />
+    <JenjangSection />
             <JenisBukuSection />
             {loading ? 
                 <Loader
