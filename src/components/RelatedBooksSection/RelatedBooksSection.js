@@ -41,7 +41,7 @@ const RelatedBooksSection = ({data}) => {
                                     <SwiperSlide key={index}>
                                         <BookItem
                                             bookImg={relatedBook.image}
-                                            category={relatedBook.name}
+                                            category={relatedBook.type}
                                             title={relatedBook.title}
                                             bookType={relatedBook.type}
                                             detailUrl={relatedBook.code === 'BEI' ?

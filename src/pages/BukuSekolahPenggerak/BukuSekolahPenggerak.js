@@ -42,12 +42,16 @@ const BukuSekolahPenggerak = () => {
   const [subjectPKNisChecked, setSubjectPKNisChecked] = useState(false);
   const [subjectMatematikaisChecked, setSubjectMatematikaisChecked] =
     useState(false);
-  const [subjectPrakaryaisChecked, setSubjectPrakaryaisChecked] =
-    useState(false);
   const [subjectSBudayaisChecked, setSubjectSBudayaisChecked] = useState(false);
+  const [subjectSRupaisChecked, setSubjectSRupaisChecked] = useState(false);
+  const [subjectSTariisChecked, setSubjectSTariisChecked] = useState(false);
+  const [subjectSMusikisChecked, setSubjectSMusikisChecked] = useState(false);
+  const [subjectSTeaterisChecked, setSubjectSTeaterisChecked] = useState(false);
   const [subjectAgamaisChecked, setSubjectAgamaisChecked] = useState(false);
   const [subjectSejarahisChecked, setSubjectSejarahisChecked] = useState(false);
-  const [subjectTematikisChecked, setSubjectTematikisChecked] = useState(false);
+  const [subjectInformatikaisChecked, setSubjectInformatikaisChecked] = useState(false);
+  const [subjectKepercayaanisChecked, setSubjectKepercayaanisChecked] = useState(false);
+  const [subjectIPASisChecked, setSubjectIPASisChecked] = useState(false);
 
   // Filter
   const [levelSD, setLevelSD] = useState("");
@@ -72,18 +76,23 @@ const BukuSekolahPenggerak = () => {
   const [subjectPJOK, setSubjectPJOK] = useState("");
   const [subjectPKN, setSubjectPKN] = useState("");
   const [subjectMatematika, setSubjectMatematika] = useState("");
-  const [subjectPrakarya, setSubjectPrakarya] = useState("");
   const [subjectSBudaya, setSubjectSBudaya] = useState("");
+  const [subjectSMusik, setSubjectSMusik] = useState("");
+  const [subjectSRupa, setSubjectSRupa] = useState("");
+  const [subjectSTari, setSubjectSTari] = useState("");
+  const [subjectSTeater, setSubjectSTeater] = useState("");
   const [subjectAgama, setSubjectAgama] = useState("");
   const [subjectSejarah, setSubjectSejarah] = useState("");
-  const [subjectTematik, setSubjectTematik] = useState("");
+  const [subjectInformatika, setSubjectInformatika] = useState("");
+  const [subjectKepercayaan, setSubjectKepercayaan] = useState("");
+  const [subjectIPAS, setSubjectIPAS] = useState("");
 
   useEffect(() => {
     const getTextBooks = async () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getTextBooks?category_buku_sekolah_penggerak=true&limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgama}&${subjectSejarah}&${subjectTematik}`
+          `${base_url}/getTextBooks?category_buku_sekolah_penggerak=true&limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectSBudaya}&${subjectAgama}&${subjectSejarah}&${subjectSRupa}&${subjectSMusik}&${subjectSTari}&${subjectSTeater}&${subjectInformatika}&${subjectIPAS}&${subjectKepercayaan}`
         );
         setTextBooks(response.data.results);
         setLoading(false);
@@ -119,11 +128,16 @@ const BukuSekolahPenggerak = () => {
     subjectPJOK,
     subjectPKN,
     subjectMatematika,
-    subjectPrakarya,
     subjectSBudaya,
     subjectAgama,
     subjectSejarah,
-    subjectTematik,
+    subjectSRupa,
+    subjectSMusik,
+    subjectSTari,
+    subjectSTeater,
+    subjectInformatika,
+    subjectIPAS,
+    subjectKepercayaan
   ]);
 
   const typePdfHandler = () => {
@@ -279,16 +293,52 @@ const BukuSekolahPenggerak = () => {
       setSubjectMatematika("");
     }
 
-    if (subjectPrakaryaisChecked === true) {
-      setSubjectPrakarya("subject_prakarya");
+    if (subjectInformatikaisChecked === true) {
+      setSubjectInformatika("subject_informatika");
     } else {
-      setSubjectPrakarya("");
+      setSubjectInformatika("");
+    }
+
+    if (subjectIPASisChecked === true) {
+      setSubjectIPAS("subject_ipas");
+    } else {
+      setSubjectIPAS("");
+    }
+
+    if (subjectKepercayaanisChecked === true) {
+      setSubjectKepercayaan("subject_kepercayaan");
+    } else {
+      setSubjectKepercayaan("");
     }
 
     if (subjectSBudayaisChecked === true) {
       setSubjectSBudaya("subject_seni");
     } else {
       setSubjectSBudaya("");
+    }
+
+    if (subjectSRupaisChecked === true) {
+      setSubjectSRupa("subject_seni_rupa");
+    } else {
+      setSubjectSRupa("");
+    }
+
+    if (subjectSTariisChecked === true) {
+      setSubjectSTari("subject_seni_rupa");
+    } else {
+      setSubjectSTari("");
+    }
+
+    if (subjectSMusikisChecked === true) {
+      setSubjectSMusik("subject_seni_musik");
+    } else {
+      setSubjectSMusik("");
+    }
+
+    if (subjectSTeaterisChecked === true) {
+      setSubjectSTeater("subject_seni_teater");
+    } else {
+      setSubjectSTeater("");
     }
 
     if (subjectAgamaisChecked === true) {
@@ -302,18 +352,12 @@ const BukuSekolahPenggerak = () => {
     } else {
       setSubjectSejarah("");
     }
-
-    if (subjectTematikisChecked === true) {
-      setSubjectTematik("subject_tematik");
-    } else {
-      setSubjectTematik("");
-    }
   };
   return (
     <main style={{ minHeight: "100vh" }}>
       <Banner
         bannerTitle="Buku Sekolah Penggerak"
-        bannerDescription="Buku-buku terbaru sekolah penggerak"
+        bannerDescription="Buku-buku eksklusif dari sekolah penggerak"
         bannerImg={bukuPelajaranImgBanner}
       />
       <section className="container my-5" style={{ minHeight: "100vh" }}>
@@ -352,7 +396,7 @@ const BukuSekolahPenggerak = () => {
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">SMA/MA</label>
+                      <label className="form-check-label">SMA/MA/SMK</label>
                     </div>
                   </div>
                   <div className="mb-3">
@@ -569,7 +613,7 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="kewarganegaraan"
                           />
-                          <label className="form-check-label">PKN</label>
+                          <label className="form-check-label">PPKN</label>
                         </div>
                         <div className="form-check">
                           <input
@@ -587,13 +631,79 @@ const BukuSekolahPenggerak = () => {
                         <div className="form-check">
                           <input
                             onChange={(e) =>
-                              setSubjectPrakaryaisChecked(e.target.checked)
+                              setSubjectInformatikaisChecked(e.target.checked)
                             }
                             className="form-check-input"
                             type="checkbox"
-                            value="prakarya"
+                            value="seni"
                           />
-                          <label className="form-check-label">Prakarya</label>
+                          <label className="form-check-label">Informatika</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectKepercayaanisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="seni"
+                          />
+                          <label className="form-check-label">Kepercayaan</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectIPASisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="seni"
+                          />
+                          <label className="form-check-label">IPAS</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectSTariisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="seni"
+                          />
+                          <label className="form-check-label">Seni Tari</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectSRupaisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="seni"
+                          />
+                          <label className="form-check-label">Seni Rupa</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectSMusikisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="seni"
+                          />
+                          <label className="form-check-label">Seni Musik</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectSTeaterisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="seni"
+                          />
+                          <label className="form-check-label">Seni Teater</label>
                         </div>
                         <div className="form-check">
                           <input
@@ -604,7 +714,7 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="seni"
                           />
-                          <label className="form-check-label">S.Budaya</label>
+                          <label className="form-check-label">Seni Budaya</label>
                         </div>
                         <div className="form-check">
                           <input
@@ -627,17 +737,6 @@ const BukuSekolahPenggerak = () => {
                             value="sejarah"
                           />
                           <label className="form-check-label">Sejarah</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
-                              setSubjectTematikisChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="tematik"
-                          />
-                          <label className="form-check-label">Tematik</label>
                         </div>
                       </div>
                     </div>
@@ -688,7 +787,7 @@ const BukuSekolahPenggerak = () => {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-outline-primary btn-lg mx-2"
+                    className="btn btn-outline-primary btn-lg mx-2 d-none"
                     data-bs-toggle="pill"
                     onClick={typeInteractiveHandler}
                   >
@@ -744,7 +843,7 @@ const BukuSekolahPenggerak = () => {
                           <BookItem
                             readModal={"#" + book.slug}
                             bookImg={book.image}
-                            category={book.name}
+                            category={book.type}
                             title={book.title}
                             bookType={book.type}
                             detailUrl={

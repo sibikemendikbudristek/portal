@@ -30,7 +30,7 @@ const About = () => {
                         yang sehat. Pengembangan sistem ini dilakukan secara
                         bertahap dan berkelanjutan.</p>
                         <p>Sistem Informasi Perbukuan ini dikembangkan oleh Puskurbuk,
-                        Kemendikbudristek.</p>
+                        Kemendikbud ristek.</p>
                     </div>
                 </div>
             </section>
@@ -38,14 +38,14 @@ const About = () => {
                 <div className="container py-5">
                     <div className="row my-5 pb-5">
                         <div className="col text-center">
-                            <h2 className="section-title">Mengapa Harus Pakai<br />Buku Kemendikbudristek?</h2>
+                            <h2 className="section-title">Mengapa Harus Pakai<br />Buku Kemendikbud ristek?</h2>
                             <span className="section-line"></span>
                         </div>
                     </div>
                     <div className="row justify-content-center text-center">
                         <div className="col-md-3 col-lg-2 mx-2">
                             <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-book-open" /></h3>
-                            <p className="my-5">Buku Terlengkap Produksi Puskurbuk, Kemendikbud Ristek</p>
+                            <p className="my-5">Buku Terlengkap Produksi Puskurbuk, Kemendikbud ristek</p>
                         </div>
                         <div className="col-md-3 col-lg-2 mx-2">
                             <h3 style={{color: '#0080CA', fontSize: '50px'}}><i className="fas fa-award" /></h3>

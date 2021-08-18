@@ -27,10 +27,10 @@ const BookDetail = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [alert, setAlert] = useState("");
 
-  //Related Books
-  const [bookUrl, setBookUrl] = useState("");
-  const [bookCategory, setBookCategory] = useState("");
-  const [type, setType] = useState("type_pdf");
+  // //Related Books
+  // const [bookUrl, setBookUrl] = useState("");
+  // const [bookCategory, setBookCategory] = useState("");
+  // const [type, setType] = useState("type_pdf");
 
   // Review
   const [feedback_star, setFeedbackStar] = useState(0);
@@ -59,25 +59,25 @@ const BookDetail = () => {
     const getRelatedBooks = async () => {
       setLoading(true);
       try {
-        if(book.category === 'buku_teks') {
-          setBookUrl('getTextBooks');
-          setBookCategory('category_buku_teks=true');
-        } else if(book.category === 'buku_non_teks') {
-          setBookUrl('getNonTextBooks');
-          setBookCategory('');
-        } else {
-          setBookUrl('getTextBooks');
-          setBookCategory('category_buku_sekolah_penggerak=true');
-        }
+        // if(book.category === 'buku_teks') {
+        //   setBookUrl('getTextBooks');
+        //   setBookCategory('category_buku_teks=true');
+        // } else if(book.category === 'buku_non_teks') {
+        //   setBookUrl('getNonTextBooks');
+        //   setBookCategory('');
+        // } else {
+        //   setBookUrl('getTextBooks');
+        //   setBookCategory('category_buku_sekolah_penggerak=true');
+        // }
 
-        if(book.type === 'pdf') {
-          setType('type_pdf');
-        } else {
-          setType('type_audio');
-        }
+        // if(book.type === 'pdf') {
+        //   setType('type_pdf');
+        // } else {
+        //   setType('type_audio');
+        // }
 
         let response = await axios.get(
-          `${base_url}/api/catalogue/${bookUrl}?${bookCategory}&${type}&limit=5`
+          `${base_url}/api/catalogue/getLatest?qty=10`
         );
         setRelatedBooks(response.data.results);
         setLoading(false);
@@ -102,7 +102,7 @@ const BookDetail = () => {
       }
     };
     getReviews();
-  }, [book.category, book.type, bookUrl, bookCategory, type, slug, limit]);
+  }, [slug, limit]);
 
   // Post Read History
   const postRead = async () => {

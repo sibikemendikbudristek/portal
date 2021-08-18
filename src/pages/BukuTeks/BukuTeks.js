@@ -17,6 +17,7 @@ const BukuTeks = () => {
   const [loading, setLoading] = useState(false);
 
   // Check Filter
+  const [levelPaudisChecked, setlevelPaudisChecked] = useState(false);
   const [levelSDisChecked, setlevelSDisChecked] = useState(false);
   const [levelSMPisChecked, setLevelSMPisChecked] = useState(false);
   const [levelSMAisChecked, setLevelSMAisChecked] = useState(false);
@@ -50,6 +51,7 @@ const BukuTeks = () => {
   const [subjectTematikisChecked, setSubjectTematikisChecked] = useState(false);
 
   // Filter
+  const [levelPaud, setLevelPaud] = useState("");
   const [levelSD, setLevelSD] = useState("");
   const [levelSMP, setLevelSMP] = useState("");
   const [levelSMA, setLevelSMA] = useState("");
@@ -83,7 +85,7 @@ const BukuTeks = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getTextBooks?category_buku_teks=true&limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgama}&${subjectSejarah}&${subjectTematik}`
+          `${base_url}/getTextBooks?category_buku_teks=true&limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelPaud}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgama}&${subjectSejarah}&${subjectTematik}`
         );
         setTextBooks(response.data.results);
         setLoading(false);
@@ -97,6 +99,7 @@ const BukuTeks = () => {
     type,
     limit,
     searchTitle,
+    levelPaud,
     levelSD,
     levelSMP,
     levelSMA,
@@ -145,6 +148,12 @@ const BukuTeks = () => {
     e.preventDefault();
 
     // Level
+    if (levelPaudisChecked === true) {
+      setLevelPaud("level_paud");
+    } else {
+      setLevelPaud("");
+    }
+
     if (levelSDisChecked === true) {
       setLevelSD("level_sd");
     } else {
@@ -332,6 +341,14 @@ const BukuTeks = () => {
                     </h6>
                     <div className="form-check">
                       <input
+                        onChange={(e) => setlevelPaudisChecked(e.target.checked)}
+                        className="form-check-input"
+                        type="checkbox"
+                      />
+                      <label className="form-check-label">PAUD</label>
+                    </div>
+                    <div className="form-check">
+                      <input
                         onChange={(e) => setlevelSDisChecked(e.target.checked)}
                         className="form-check-input"
                         type="checkbox"
@@ -352,7 +369,7 @@ const BukuTeks = () => {
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">SMA/MA</label>
+                      <label className="form-check-label">SMA/MA/SMK</label>
                     </div>
                   </div>
                   <div className="mb-3">
@@ -569,7 +586,7 @@ const BukuTeks = () => {
                             type="checkbox"
                             value="kewarganegaraan"
                           />
-                          <label className="form-check-label">PKN</label>
+                          <label className="form-check-label">PPKN</label>
                         </div>
                         <div className="form-check">
                           <input
@@ -744,7 +761,7 @@ const BukuTeks = () => {
                           <BookItem
                             readModal={"#" + book.slug}
                             bookImg={book.image}
-                            category={book.name}
+                            category={book.type}
                             title={book.title}
                             bookType={book.type}
                             detailUrl={

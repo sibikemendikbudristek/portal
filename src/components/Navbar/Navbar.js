@@ -6,6 +6,9 @@ import { NavLink, useHistory } from "react-router-dom";
 const Navbar = () => {
   const [toggleIcon, setToggleIcon] = useState(false);
 
+  const queryParams = new URLSearchParams(window.location.search);
+  const role = queryParams.get("role");
+
   let userInfo = JSON.parse(localStorage.getItem("user-info"));
 
   let history = useHistory();
@@ -89,50 +92,200 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto me-2 mb-2 mb-lg-0 text-center text-xl-start">
-            <li className="nav-item">
-              <NavLink className="nav-link mx-2" exact to="/">
-                Beranda
-              </NavLink>
-            </li>
-            <li className="nav-item dropdown mx-2">
-              <a
-                className="nav-link dropdown-toggle"
-                href="!#"
-                id="booksDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Buku
-              </a>
-              <ul className="dropdown-menu text-center text-xl-start" aria-labelledby="booksDropdown">
-                <li>
-                  <NavLink className="dropdown-item" to="/buku-teks">
-                    Buku Teks
+            {role === null && (
+              <>
+                <li className="nav-item">
+                  <a className="nav-link mx-2" exact href="/">
+                    Beranda
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-2" exact to="/panduan">
+                    Panduan
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/buku-nonteks">
-                    Buku Nonteks
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-2" exact to="/tentang-kami">
+                    Tentang Kami
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/buku-sekolah-penggerak">
-                    Buku Sekolah Penggerak
+              </>
+            )}
+
+            {role === "siswa" && (
+              <>
+                <li className="nav-item">
+                  <a className="nav-link mx-2" exact href="/">
+                    Beranda
+                  </a>
+                </li>
+                <li className="nav-item dropdown mx-2">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="!#"
+                    id="booksDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Buku
+                  </a>
+                  <ul
+                    className="dropdown-menu text-center text-xl-start"
+                    aria-labelledby="booksDropdown"
+                  >
+                    <li>
+                      <NavLink className="dropdown-item" to="/buku-teks">
+                        Buku Teks
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/buku-nonteks">
+                        Buku Nonteks
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item"
+                        to="/buku-sekolah-penggerak"
+                      >
+                        Buku Sekolah Penggerak
+                      </NavLink>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-2" exact to="/panduan">
+                    Panduan
                   </NavLink>
                 </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link mx-2" exact to="/panduan">
-                Panduan
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link mx-2" exact to="/tentang-kami">
-                Tentang Kami
-              </NavLink>
-            </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-2" exact to="/tentang-kami">
+                    Tentang Kami
+                  </NavLink>
+                </li>
+              </>
+            )}
+
+            {role === "guru" && (
+              <>
+                <li className="nav-item">
+                  <a className="nav-link mx-1" exact href="/">
+                    Beranda
+                  </a>
+                </li>
+                <li className="nav-item dropdown mx-1">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="!#"
+                    id="booksDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Buku
+                  </a>
+                  <ul
+                    className="dropdown-menu text-center text-xl-start"
+                    aria-labelledby="booksDropdown"
+                  >
+                    <li>
+                      <NavLink className="dropdown-item" to="/buku-teks">
+                        Buku Teks
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/buku-nonteks">
+                        Buku Nonteks
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item"
+                        to="/buku-sekolah-penggerak"
+                      >
+                        Buku Sekolah Penggerak
+                      </NavLink>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-1" exact to="/hasil-penilaian">
+                    Penilaian
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-1" exact to="/kebijakan">
+                    Kebijakan
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-1" exact to="/panduan">
+                    Panduan
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-1" exact to="/tentang-kami">
+                    Tentang Kami
+                  </NavLink>
+                </li>
+              </>
+            )}
+
+            {role === "umum" && (
+              <>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-2" exact to="/">
+                    Beranda
+                  </NavLink>
+                </li>
+                <li className="nav-item dropdown mx-2">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="!#"
+                    id="booksDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Buku
+                  </a>
+                  <ul
+                    className="dropdown-menu text-center text-xl-start"
+                    aria-labelledby="booksDropdown"
+                  >
+                    <li>
+                      <NavLink className="dropdown-item" to="/buku-teks">
+                        Buku Teks
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/buku-nonteks">
+                        Buku Nonteks
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item"
+                        to="/buku-sekolah-penggerak"
+                      >
+                        Buku Sekolah Penggerak
+                      </NavLink>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-2" exact to="/panduan">
+                    Panduan
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-2" exact to="/tentang-kami">
+                    Tentang Kami
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
           {localStorage.getItem("user-info") ? (
             <ul className="navbar-nav mb-2 mb-lg-0 text-center text-xl-start">

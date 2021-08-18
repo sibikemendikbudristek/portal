@@ -22,7 +22,7 @@ const Panduan = () => {
                         <img className="img-fluid d-block mx-auto" src={panduanImg1} alt="Buka halaman SIBI" />
                     </div>
                     <div className="col-md-6 text-center text-md-start">
-                        <h2 className="section-title">1. Buka laman https://buku.kemendikbud.go.id</h2>
+                        <h2 className="section-title">1. Buka laman https://buku.kemdikbud.go.id</h2>
                         <p className="my-5">Untuk menggunakan SIBI kamu tinggal membukanya di browser seperti
                         Google Chrome, Mozilla Firefox, Microsoft Edge dan lain-lain yang ada
                         pada gadget kamu. Sangat mudah bukan?</p>
