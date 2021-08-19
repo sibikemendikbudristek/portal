@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import Placeholder from "../../assets/img/placeholder.png";
 import bookImgPlaceholder from "../../assets/img/book-placeholder.jpg";
 import "./BookItem.scss";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const BookItem = ({
   bookImg,
@@ -13,11 +15,13 @@ const BookItem = ({
   return (
     <div id="BookItem">
       <div className="card shadow">
-        <img
+        <LazyLoadImage
           className="book-item-img"
-          loading="lazy"
+          height={'100%'}
+          placeholderSrc={Placeholder}
           src={bookImg || bookImgPlaceholder}
           alt={title || "Undefined"}
+          style={{borderRadius: '25px'}}
         />
         <div className="card-img-overlay h-100 d-flex flex-column justify-content-end">
           <div className="row">
