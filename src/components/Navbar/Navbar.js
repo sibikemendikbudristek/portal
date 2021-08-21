@@ -8,6 +8,14 @@ const Navbar = () => {
 
   const queryParams = new URLSearchParams(window.location.search);
   const role = queryParams.get("role");
+  if(role !== null){
+    sessionStorage.setItem('user-role', JSON.stringify(role));
+  }
+  
+  let userRole = JSON.parse(sessionStorage.getItem('user-role'));
+  if(window.location.pathname === '/') {
+    sessionStorage.clear();
+  }
 
   let userInfo = JSON.parse(localStorage.getItem("user-info"));
 
@@ -92,7 +100,7 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto me-2 mb-2 mb-lg-0 text-center text-xl-start">
-            {role === null && (
+            {userRole === null && (
               <>
                 <li className="nav-item">
                   <a className="nav-link mx-2" href="/">
@@ -112,7 +120,7 @@ const Navbar = () => {
               </>
             )}
 
-            {role === "siswa" && (
+            {userRole === "siswa" && (
               <>
                 <li className="nav-item">
                   <a className="nav-link mx-2" href="/">
@@ -135,19 +143,19 @@ const Navbar = () => {
                     aria-labelledby="booksDropdown"
                   >
                     <li>
-                      <NavLink className="dropdown-item" to="/buku-teks">
+                      <NavLink className="dropdown-item" to="/buku-teks?role=siswa">
                         Buku Teks
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink className="dropdown-item" to="/buku-nonteks">
+                      <NavLink className="dropdown-item" to="/buku-nonteks?role=siswa">
                         Buku Nonteks
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
                         className="dropdown-item"
-                        to="/buku-sekolah-penggerak"
+                        to="/buku-sekolah-penggerak?role=siswa"
                       >
                         Buku Sekolah Penggerak
                       </NavLink>
@@ -155,19 +163,19 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link mx-2" exact to="/panduan">
+                  <NavLink className="nav-link mx-2" exact to="/panduan?role=siswa">
                     Panduan
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link mx-2" exact to="/tentang-kami">
+                  <NavLink className="nav-link mx-2" exact to="/tentang-kami?role=siswa">
                     Tentang Kami
                   </NavLink>
                 </li>
               </>
             )}
 
-            {role === "guru" && (
+            {userRole === "guru" && (
               <>
                 <li className="nav-item">
                   <a className="nav-link mx-1" href="/">
@@ -190,19 +198,19 @@ const Navbar = () => {
                     aria-labelledby="booksDropdown"
                   >
                     <li>
-                      <NavLink className="dropdown-item" to="/buku-teks">
+                      <NavLink className="dropdown-item" to="/buku-teks?role=guru">
                         Buku Teks
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink className="dropdown-item" to="/buku-nonteks">
+                      <NavLink className="dropdown-item" to="/buku-nonteks?role=guru">
                         Buku Nonteks
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
                         className="dropdown-item"
-                        to="/buku-sekolah-penggerak"
+                        to="/buku-sekolah-penggerak?role=guru"
                       >
                         Buku Sekolah Penggerak
                       </NavLink>
@@ -220,19 +228,19 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link mx-1" exact to="/panduan">
+                  <NavLink className="nav-link mx-1" exact to="/panduan?role=guru">
                     Panduan
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link mx-1" exact to="/tentang-kami">
+                  <NavLink className="nav-link mx-1" exact to="/tentang-kami?role=guru">
                     Tentang Kami
                   </NavLink>
                 </li>
               </>
             )}
 
-            {role === "umum" && (
+            {userRole === "umum" && (
               <>
               <li className="nav-item">
               <a className="nav-link mx-1" href="/">
@@ -255,19 +263,19 @@ const Navbar = () => {
                 aria-labelledby="booksDropdown"
               >
                 <li>
-                  <NavLink className="dropdown-item" to="/buku-teks">
+                  <NavLink className="dropdown-item" to="/buku-teks?role=umum">
                     Buku Teks
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="dropdown-item" to="/buku-nonteks">
+                  <NavLink className="dropdown-item" to="/buku-nonteks?role=umum">
                     Buku Nonteks
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
                     className="dropdown-item"
-                    to="/buku-sekolah-penggerak"
+                    to="/buku-sekolah-penggerak?role=umum"
                   >
                     Buku Sekolah Penggerak
                   </NavLink>
@@ -285,12 +293,12 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link mx-1" exact to="/panduan">
+              <NavLink className="nav-link mx-1" exact to="/panduan?role=umum">
                 Panduan
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link mx-1" exact to="/tentang-kami">
+              <NavLink className="nav-link mx-1" exact to="/tentang-kami?role=umum">
                 Tentang Kami
               </NavLink>
             </li>
