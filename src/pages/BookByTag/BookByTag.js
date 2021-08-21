@@ -48,11 +48,11 @@ const BookByTag = () => {
             width={80}
           /> : books?.map((book, index) => {
             return (
-              <div className="col-md-4 col-lg-3" key={index}>
+              <div className="col-md-6 col-lg-4 col-xl-3 mb-4" key={index}>
                 <BookItem
                   readModal={"#" + book.slug}
                   bookImg={book.image}
-                  category={book.name}
+                  category={book.book_type}
                   title={book.title}
                   bookType={book.type}
                   detailUrl={

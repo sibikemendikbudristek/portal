@@ -95,7 +95,7 @@ const Navbar = () => {
             {role === null && (
               <>
                 <li className="nav-item">
-                  <a className="nav-link mx-2" exact href="/">
+                  <a className="nav-link mx-2" href="/">
                     Beranda
                   </a>
                 </li>
@@ -115,7 +115,7 @@ const Navbar = () => {
             {role === "siswa" && (
               <>
                 <li className="nav-item">
-                  <a className="nav-link mx-2" exact href="/">
+                  <a className="nav-link mx-2" href="/">
                     Beranda
                   </a>
                 </li>
@@ -170,7 +170,7 @@ const Navbar = () => {
             {role === "guru" && (
               <>
                 <li className="nav-item">
-                  <a className="nav-link mx-1" exact href="/">
+                  <a className="nav-link mx-1" href="/">
                     Beranda
                   </a>
                 </li>
@@ -235,7 +235,7 @@ const Navbar = () => {
             {role === "umum" && (
               <>
               <li className="nav-item">
-              <a className="nav-link mx-1" exact href="/">
+              <a className="nav-link mx-1" href="/">
                 Beranda
               </a>
             </li>

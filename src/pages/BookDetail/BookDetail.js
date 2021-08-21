@@ -222,7 +222,7 @@ const BookDetail = () => {
   };
 
   // Split tags
-  let tags = book?.tags?.split(/[ ,]+/);
+  let tags = book?.tags?.split(/[,]+/);
 
   return (
     <main style={{ minHeight: "100vh" }}>

@@ -50,7 +50,7 @@ const LatestBooksSection = ({data, seeMoreUrl}) => {
                             <SwiperSlide key={index}>
                                 <BookItem
                                     bookImg={item.image}
-                                    category={item.type}
+                                    category={item.book_type}
                                     title={item.title}
                                     bookType={item.type}
                                     detailUrl={item.code === 'BEI' ?

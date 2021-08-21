@@ -277,7 +277,7 @@ const BukuTeks = () => {
     }
 
     if (subjectPKNisChecked === true) {
-      setSubjectPKN("subject_pkn");
+      setSubjectPKN("subject_ppkn");
     } else {
       setSubjectPKN("");
     }
@@ -621,7 +621,7 @@ const BukuTeks = () => {
                             type="checkbox"
                             value="seni"
                           />
-                          <label className="form-check-label">S.Budaya</label>
+                          <label className="form-check-label">Seni Budaya</label>
                         </div>
                         <div className="form-check">
                           <input
@@ -761,7 +761,7 @@ const BukuTeks = () => {
                           <BookItem
                             readModal={"#" + book.slug}
                             bookImg={book.image}
-                            category={book.type}
+                            category={book.book_type}
                             title={book.title}
                             bookType={book.type}
                             detailUrl={

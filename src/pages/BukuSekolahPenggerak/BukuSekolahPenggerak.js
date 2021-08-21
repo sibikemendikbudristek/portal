@@ -282,7 +282,7 @@ const BukuSekolahPenggerak = () => {
     }
 
     if (subjectPKNisChecked === true) {
-      setSubjectPKN("subject_pkn");
+      setSubjectPKN("subject_ppkn");
     } else {
       setSubjectPKN("");
     }
@@ -324,7 +324,7 @@ const BukuSekolahPenggerak = () => {
     }
 
     if (subjectSTariisChecked === true) {
-      setSubjectSTari("subject_seni_rupa");
+      setSubjectSTari("subject_seni_tari");
     } else {
       setSubjectSTari("");
     }
@@ -843,7 +843,7 @@ const BukuSekolahPenggerak = () => {
                           <BookItem
                             readModal={"#" + book.slug}
                             bookImg={book.image}
-                            category={book.type}
+                            category={book.book_type}
                             title={book.title}
                             bookType={book.type}
                             detailUrl={

@@ -12,6 +12,7 @@ import TestimonySection from '../../components/TestimonySection/TestimonySection
 import data from '../../assets/data/dummy';
 import heroImg from '../../assets/img/guru-img.png';
 import readingBookVectorImg from "../../assets/img/reading-book-vector.png";
+import PenilaianSection from '../../components/PenilaianSection/PenilaianSection';
 
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
@@ -241,6 +242,7 @@ const TeacherPage = () => {
         </div>
       </div>
     </PanduanSection>
+    <PenilaianSection />
     <JenjangSection />
             <JenisBukuSection />
             {loading ? 

@@ -10,6 +10,7 @@ import TestimonySection from '../../components/TestimonySection/TestimonySection
 import data from '../../assets/data/dummy';
 import heroImg from '../../assets/img/hero-img.webp';
 import readingBookVectorImg from "../../assets/img/reading-book-vector.png";
+import PenilaianSection from '../../components/PenilaianSection/PenilaianSection';
 
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
 
@@ -238,6 +239,7 @@ const GeneralPage = () => {
         </div>
       </div>
     </PanduanSection>
+    <PenilaianSection />
             {loading ? 
                 <Loader
                     className="d-flex justify-content-center align-items-center vh-100"

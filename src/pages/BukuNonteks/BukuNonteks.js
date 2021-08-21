@@ -340,7 +340,7 @@ const BukuNonteks = () => {
                           <BookItem
                             readModal={"#" + book.slug}
                             bookImg={book.image}
-                            category={book.type}
+                            category={book.book_type}
                             title={book.title}
                             bookType={book.type}
                             detailUrl={
