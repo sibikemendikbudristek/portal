@@ -92,6 +92,7 @@ const Register = () => {
                       Daftar sebagai
                     </label>
                     <div className="nav">
+                    {console.log(role_id)}
                       <button
                         data-bs-toggle="pill"
                         className="btn btn-outline-primary me-2 active"
@@ -101,10 +102,17 @@ const Register = () => {
                       </button>
                       <button
                         data-bs-toggle="pill"
-                        className="btn btn-outline-primary"
+                        className="btn btn-outline-primary me-2"
                         onClick={() => setRoleId(6)}
                       >
                         <i className="fas fa-fw fa-user-graduate" /> Guru
+                      </button>
+                      <button
+                        data-bs-toggle="pill"
+                        className="btn btn-outline-primary"
+                        onClick={() => setRoleId(3)}
+                      >
+                        <i className="fas fa-fw fa-users" /> Umum
                       </button>
                     </div>
                   </div>

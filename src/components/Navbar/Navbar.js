@@ -6,17 +6,24 @@ import { NavLink, useHistory } from "react-router-dom";
 const Navbar = () => {
   const [toggleIcon, setToggleIcon] = useState(false);
 
+  // Menangkap parameter role dari siswa
   const queryParams = new URLSearchParams(window.location.search);
   const role = queryParams.get("role");
   if(role !== null){
+    // save ke session storage
     sessionStorage.setItem('user-role', JSON.stringify(role));
   }
   
+  // Hapus user role dari session storage saat berada di halaman home
   let userRole = JSON.parse(sessionStorage.getItem('user-role'));
   if(window.location.pathname === '/') {
     sessionStorage.clear();
+    if(userRole){
+      window.location.reload();
+    }
   }
 
+  // Cek User Info
   let userInfo = JSON.parse(localStorage.getItem("user-info"));
 
   let history = useHistory();
