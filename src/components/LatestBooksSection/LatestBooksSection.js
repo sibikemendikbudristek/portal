@@ -19,7 +19,7 @@ const LatestBooksSection = ({data, seeMoreUrl}) => {
             <div className="container py-5 px-5 px-md-0">
                 <div className="row my-5">
                     <div className="col">
-                        <h2 className="section-title text-center">Buku Terbaru</h2>
+                        <h2 className="section-title text-center">Buku Terpopuler</h2>
                         <p className="text-center w-75 mx-auto">Pelajari buku yang kamu mau</p>
                         <span className="section-line" />
                     </div>

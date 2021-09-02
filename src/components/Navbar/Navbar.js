@@ -110,9 +110,9 @@ const Navbar = () => {
             {userRole === null && (
               <>
                 <li className="nav-item">
-                  <a className="nav-link mx-2" href="/">
+                  <NavLink className="nav-link mx-2" exact to="/">
                     Beranda
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link mx-2" exact to="/panduan">
@@ -151,7 +151,7 @@ const Navbar = () => {
                   >
                     <li>
                       <NavLink className="dropdown-item" to="/buku-teks?role=siswa">
-                        Buku Teks
+                        Buku Teks K13
                       </NavLink>
                     </li>
                     <li>
@@ -206,7 +206,7 @@ const Navbar = () => {
                   >
                     <li>
                       <NavLink className="dropdown-item" to="/buku-teks?role=guru">
-                        Buku Teks
+                        Buku Teks K13
                       </NavLink>
                     </li>
                     <li>
@@ -271,7 +271,7 @@ const Navbar = () => {
               >
                 <li>
                   <NavLink className="dropdown-item" to="/buku-teks?role=umum">
-                    Buku Teks
+                    Buku Teks K13
                   </NavLink>
                 </li>
                 <li>
@@ -362,7 +362,7 @@ const Navbar = () => {
                   className="nav-link btn btn-primary btn-sm rounded-pill px-4"
                   to="/login"
                 >
-                  Login
+                  Masuk
                 </NavLink>
               </div>
               <div className="my-2 my-lg-0 mx-1">

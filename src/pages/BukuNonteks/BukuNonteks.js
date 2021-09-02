@@ -135,7 +135,7 @@ const BukuNonteks = () => {
     <main style={{ minHeight: "100vh" }}>
       <Banner
         bannerTitle="Buku Nonteks"
-        bannerDescription="Temukan buku-buku terbaru untuk update pengetahuanmu"
+        bannerDescription="Buku Nonteks adalah buku pengayaan, referensi, atau panduan yang memuat materi untuk pengembangan sikap, pengetahuan, dan keterampilan peserta didik, pendidik, dan tenaga kependidikan."
         bannerImg={bukuUmumImgBanner}
       />
       <section className="container my-5" style={{ minHeight: "100vh" }}>

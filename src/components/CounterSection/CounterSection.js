@@ -12,7 +12,7 @@ const CounterSection = ({counterData}) => {
                     <div className="col-lg-7">
                         <div className="row my-5">
                             <div className="col">
-                                <h2 className="section-title counter-title">Ayo Baca Buku<br />Untuk Indonesia Lebih Baik!</h2>
+                                <h2 className="section-title counter-title">Ayo Baca Buku<br />untuk Indonesia Lebih Baik!</h2>
                             </div>
                         </div>
                         <div className="row">

@@ -17,7 +17,6 @@ const BukuTeks = () => {
   const [loading, setLoading] = useState(false);
 
   // Check Filter
-  const [levelPaudisChecked, setlevelPaudisChecked] = useState(false);
   const [levelSDisChecked, setlevelSDisChecked] = useState(false);
   const [levelSMPisChecked, setLevelSMPisChecked] = useState(false);
   const [levelSMAisChecked, setLevelSMAisChecked] = useState(false);
@@ -46,12 +45,16 @@ const BukuTeks = () => {
   const [subjectPrakaryaisChecked, setSubjectPrakaryaisChecked] =
     useState(false);
   const [subjectSBudayaisChecked, setSubjectSBudayaisChecked] = useState(false);
-  const [subjectAgamaisChecked, setSubjectAgamaisChecked] = useState(false);
+  const [subjectAgamaIslamisChecked, setSubjectAgamaIslamisChecked] = useState(false);
+  const [subjectAgamaKristenisChecked, setSubjectAgamaKristenisChecked] = useState(false);
+  const [subjectAgamaKatolikisChecked, setSubjectAgamaKatolikisChecked] = useState(false);
+  const [subjectAgamaHinduisChecked, setSubjectAgamaHinduisChecked] = useState(false);
+  const [subjectAgamaBudhaisChecked, setSubjectAgamaBudhaisChecked] = useState(false);
+  const [subjectAgamaKhonghucuisChecked, setSubjectAgamaKhonghucuisChecked] = useState(false);
   const [subjectSejarahisChecked, setSubjectSejarahisChecked] = useState(false);
   const [subjectTematikisChecked, setSubjectTematikisChecked] = useState(false);
 
   // Filter
-  const [levelPaud, setLevelPaud] = useState("");
   const [levelSD, setLevelSD] = useState("");
   const [levelSMP, setLevelSMP] = useState("");
   const [levelSMA, setLevelSMA] = useState("");
@@ -76,7 +79,12 @@ const BukuTeks = () => {
   const [subjectMatematika, setSubjectMatematika] = useState("");
   const [subjectPrakarya, setSubjectPrakarya] = useState("");
   const [subjectSBudaya, setSubjectSBudaya] = useState("");
-  const [subjectAgama, setSubjectAgama] = useState("");
+  const [subjectAgamaIslam, setSubjectAgamaIslam] = useState("");
+  const [subjectAgamaKristen, setSubjectAgamaKristen] = useState("");
+  const [subjectAgamaKatolik, setSubjectAgamaKatolik] = useState("");
+  const [subjectAgamaHindu, setSubjectAgamaHindu] = useState("");
+  const [subjectAgamaBudha, setSubjectAgamaBudha] = useState("");
+  const [subjectAgamaKhonghucu, setSubjectAgamaKhonghucu] = useState("");
   const [subjectSejarah, setSubjectSejarah] = useState("");
   const [subjectTematik, setSubjectTematik] = useState("");
 
@@ -85,7 +93,7 @@ const BukuTeks = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelPaud}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgama}&${subjectSejarah}&${subjectTematik}`
+          `${base_url}/getTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgamaIslam}&${subjectAgamaKristen}&${subjectAgamaKatolik}&${subjectAgamaHindu}&${subjectAgamaBudha}&${subjectAgamaKhonghucu}&${subjectSejarah}&${subjectTematik}`
         );
         setTextBooks(response.data.results);
         setLoading(false);
@@ -99,7 +107,6 @@ const BukuTeks = () => {
     type,
     limit,
     searchTitle,
-    levelPaud,
     levelSD,
     levelSMP,
     levelSMA,
@@ -124,7 +131,12 @@ const BukuTeks = () => {
     subjectMatematika,
     subjectPrakarya,
     subjectSBudaya,
-    subjectAgama,
+    subjectAgamaIslam,
+    subjectAgamaKristen,
+    subjectAgamaKatolik,
+    subjectAgamaHindu,
+    subjectAgamaBudha,
+    subjectAgamaKhonghucu,
     subjectSejarah,
     subjectTematik,
   ]);
@@ -148,12 +160,6 @@ const BukuTeks = () => {
     e.preventDefault();
 
     // Level
-    if (levelPaudisChecked === true) {
-      setLevelPaud("level_paud");
-    } else {
-      setLevelPaud("");
-    }
-
     if (levelSDisChecked === true) {
       setLevelSD("level_sd");
     } else {
@@ -300,10 +306,40 @@ const BukuTeks = () => {
       setSubjectSBudaya("");
     }
 
-    if (subjectAgamaisChecked === true) {
-      setSubjectAgama("subject_agama");
+    if (subjectAgamaIslamisChecked === true) {
+      setSubjectAgamaIslam("subject_agama_islam");
     } else {
-      setSubjectAgama("");
+      setSubjectAgamaIslam("");
+    }
+
+    if (subjectAgamaKristenisChecked === true) {
+      setSubjectAgamaKristen("subject_agama_kristen");
+    } else {
+      setSubjectAgamaKristen("");
+    }
+
+    if (subjectAgamaKatolikisChecked === true) {
+      setSubjectAgamaKatolik("subject_agama_katolik");
+    } else {
+      setSubjectAgamaKatolik("");
+    }
+
+    if (subjectAgamaHinduisChecked === true) {
+      setSubjectAgamaHindu("subject_agama_hindu");
+    } else {
+      setSubjectAgamaHindu("");
+    }
+
+    if (subjectAgamaBudhaisChecked === true) {
+      setSubjectAgamaBudha("subject_agama_budha");
+    } else {
+      setSubjectAgamaBudha("");
+    }
+
+    if (subjectAgamaKhonghucuisChecked === true) {
+      setSubjectAgamaKhonghucu("subject_agama_khonghucu");
+    } else {
+      setSubjectAgamaKhonghucu("");
     }
 
     if (subjectSejarahisChecked === true) {
@@ -322,7 +358,7 @@ const BukuTeks = () => {
     <main style={{ minHeight: "100vh" }}>
       <Banner
         bannerTitle="Buku Teks"
-        bannerDescription="Temukan buku-buku teks terbaru sesuai kebutuhanmu"
+        bannerDescription="Buku Teks adalah buku yang disusun berdasarkan Standar Nasional Pendidikan dan Kurikulum 2013, untuk digunakan dalam proses pembelajaran."
         bannerImg={bukuPelajaranImgBanner}
       />
       <section className="container my-5" style={{ minHeight: "100vh" }}>
@@ -339,14 +375,6 @@ const BukuTeks = () => {
                     <h6>
                       <strong>Jenjang</strong>
                     </h6>
-                    <div className="form-check">
-                      <input
-                        onChange={(e) => setlevelPaudisChecked(e.target.checked)}
-                        className="form-check-input"
-                        type="checkbox"
-                      />
-                      <label className="form-check-label">PAUD</label>
-                    </div>
                     <div className="form-check">
                       <input
                         onChange={(e) => setlevelSDisChecked(e.target.checked)}
@@ -626,13 +654,68 @@ const BukuTeks = () => {
                         <div className="form-check">
                           <input
                             onChange={(e) =>
-                              setSubjectAgamaisChecked(e.target.checked)
+                              setSubjectAgamaIslamisChecked(e.target.checked)
                             }
                             className="form-check-input"
                             type="checkbox"
                             value="agama"
                           />
-                          <label className="form-check-label">Agama</label>
+                          <label className="form-check-label">Agama Islam</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaKristenisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Kristen</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaKatolikisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Katolik</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaHinduisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Hindu</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaBudhaisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Budha</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaKhonghucuisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Khonghucu</label>
                         </div>
                         <div className="form-check">
                           <input

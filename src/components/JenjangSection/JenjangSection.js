@@ -11,27 +11,27 @@ const JenjangSection = () => {
                         <img height="250" width="auto" className="d-block mx-auto mb-3" src={educationImg} alt="" />
                     </div>
                     <div className="col-md-6">
-                        <h2 className="section-title text-center text-md-start mb-4">SIBI Tersedia Untuk Berbagai Jenjang Pendidikan</h2>
+                        <h2 className="section-title text-center text-md-start mb-4">Buku untuk berbagai jenjang pendidikan</h2>
                         <JenjangSectionCard
-                            bgColor="#FDFD95"
+                            bgColor="#ffcccc"
                             thumbnail="PAUD"
                             title="PAUD"
                             description="Pendidikan Anak Usia Dini"
                         />
                         <JenjangSectionCard
-                            bgColor="#F69C9E"
+                            bgColor="#ffb733"
                             thumbnail="SD"
                             title="SD"
                             description="Sekolah Dasar"
                         />
                         <JenjangSectionCard
-                            bgColor="#99C3EC"
+                            bgColor="#add8e6"
                             thumbnail="SMP"
                             title="SMP"
                             description="Sekolah Menengah Pertama"
                         />
                         <JenjangSectionCard
-                            bgColor="#EEECF1"
+                            bgColor="#4dff4d"
                             thumbnail="SMA/SMK"
                             title="SMA/SMK"
                             description="Sekolah Menengah Atas/Kejuruan"

@@ -9,8 +9,8 @@ import RelatedSiteSection from "../../components/RelatedSiteSection/RelatedSiteS
 import TestimonySection from "../../components/TestimonySection/TestimonySection";
 import data from "../../assets/data/dummy";
 import heroImg from "../../assets/img/landing-page-img.png";
-import LatestInfoSection from "../../components/LatestInfoSection/LatestInfoSection";
-import readingBookVectorImg from "../../assets/img/reading-book-vector.png";
+import panduanImg from "../../assets/img/panduan-guru.png";
+import ArticleItem from "../../components/ArticleItem/ArticleItem";
 
 const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
 
@@ -37,60 +37,56 @@ const Home = () => {
     <main style={{ minHeight: "100vh" }}>
       <Hero>
         <div className="row justify-content-between text-center text-md-start">
-          <div className="col-lg-5 mt-5 pt-3">
-            <h1 className="hero-title">
-              Selamat Datang
+          <div className="col-lg-5 mt-5">
+            <h1 className="hero-title pt-5">
+              Buku untuk Semua, Akses
               <br />
-              di SIBI
+              di manapun dan kapanpun
             </h1>
-            <p>
-              SIBI adalah sistem terpusat dan terintegrasi yang mewadahi kebutuhan perbukuan Indonesia secara daring.<br />
-              Untuk masuk ke SIBI silahkan masuk sesuai peran yang dibutuhkan, nanti akan diarahkan untuk menggunakan fitur yang disediakan.
-            </p>
-            <p className="mt-3">Masuk sebagai:</p>
+            <p>Ayo baca buku sekarang!</p>
+            <p className="mt-5 pt-3">Masuk sebagai:</p>
             <div className="d-grid gap-2 d-md-block">
               <div className="row">
                 <div className="col">
-                <a
-                className="btn btn-outline-primary rounded me-2"
-                href="/siswa?role=siswa"
-              >
-                <i className="fas fa-fw fa-user" />
-                <small> Siswa</small>
-              </a>
-              <a
-                className="btn btn-outline-primary rounded me-2"
-                href="/guru?role=guru"
-              >
-                <i className="fas fa-fw fa-user-graduate" />
-                <small> Guru</small>
-              </a>
-              <a
-                className="btn btn-outline-primary rounded me-2"
-                href="/umum?role=umum"
-              >
-                <i className="fas fa-fw fa-users" />
-                <small> Umum</small>
-              </a>
+                  <a
+                    className="btn btn-primary rounded me-2"
+                    href="/siswa?role=siswa"
+                  >
+                    <i className="fas fa-fw fa-user" />
+                    <small> Siswa</small>
+                  </a>
+                  <a
+                    className="btn btn-primary rounded me-2"
+                    href="/guru?role=guru"
+                  >
+                    <i className="fas fa-fw fa-user-graduate" />
+                    <small> Guru</small>
+                  </a>
+                  <a
+                    className="btn btn-primary rounded me-2"
+                    href="/umum?role=umum"
+                  >
+                    <i className="fas fa-fw fa-users" />
+                    <small> Umum</small>
+                  </a>
                 </div>
               </div>
               <div className="row mt-2">
                 <div className="col">
-                <a
-                className="btn btn-outline-primary rounded"
-                href="https://sibi.sc.cloudapp.web.id/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-fw fa-book-reader" />
-                <small> Pelaku Perbukuan</small>
-              </a>
+                  <a
+                    className="btn btn-primary rounded"
+                    href="https://sibi.sc.cloudapp.web.id/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fas fa-fw fa-book-reader" />
+                    <small> Pelaku Perbukuan</small>
+                  </a>
                 </div>
               </div>
-              
             </div>
           </div>
-          <div className="col-lg-7 mt-5">
+          <div className="col-lg-7">
             <img
               className="img-fluid float-end"
               src={heroImg}
@@ -100,185 +96,71 @@ const Home = () => {
           </div>
         </div>
       </Hero>
-      <PanduanSection>
-        <div className="row justify-content-between">
-          <div className="col-md-6">
-            <img
-              className="img-fluid d-block mx-auto mb-3"
-              src={readingBookVectorImg}
-              alt="Panduan Sibi"
-            />
+      <PanduanSection image={panduanImg} />
+      <section className="bg-light bg-gradient">
+        <div className="container">
+          <div className="row pt-5 mb-3">
+            <div className="col">
+              <h2 className="section-title">Berita Terbaru</h2>
+            </div>
+            <div className="col text-end">
+              <a className="link" href="!#">
+                Lihat Semua
+              </a>
+            </div>
           </div>
-          <div className="col-md-6">
-            <h2 className="section-title text-center text-md-start">
-              Sering Ditanyakan
-            </h2>
-            <div className="accordion mt-4" id="accordionExample">
-              <div className="accordion-item">
-                <h3 className="accordion-header" id="headingOne">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Apa itu Buku Kemendikbud ristek?
-                  </button>
-                </h3>
-                <div
-                  id="collapseOne"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    <strong>This is the first item's accordion body.</strong> It
-                    is shown by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the <code>.accordion-body</code>, though the
-                    transition does limit overflow.
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h3 className="accordion-header" id="headingTwo">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    Bagaimana cara mendaftar di situs ini?
-                  </button>
-                </h3>
-                <div
-                  id="collapseTwo"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    <strong>This is the second item's accordion body.</strong>{" "}
-                    It is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the <code>.accordion-body</code>, though the
-                    transition does limit overflow.
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h3 className="accordion-header" id="headingThree">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Apakah itu Pelaku Perbukuan?
-                  </button>
-                </h3>
-                <div
-                  id="collapseThree"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingThree"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It
-                    is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the <code>.accordion-body</code>, though the
-                    transition does limit overflow.
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h3 className="accordion-header" id="headingFour">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour"
-                    aria-expanded="false"
-                    aria-controls="collapseFour"
-                  >
-                    Mengapa saya tidak menerima email konfirmasi?
-                  </button>
-                </h3>
-                <div
-                  id="collapseFour"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingFour"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It
-                    is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the <code>.accordion-body</code>, though the
-                    transition does limit overflow.
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h3 className="accordion-header" id="headingFive">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFive"
-                    aria-expanded="false"
-                    aria-controls="collapseFive"
-                  >
-                    Apakah boleh mencetak buku dari situs ini?
-                  </button>
-                </h3>
-                <div
-                  id="collapseFive"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingFive"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It
-                    is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the <code>.accordion-body</code>, though the
-                    transition does limit overflow.
-                  </div>
-                </div>
-              </div>
+          <div className="row justify-content-between pb-5">
+            <div className="col-md-6 mb-3">
+              <ArticleItem
+                thumbnail="https://placeimg.com/640/480/tech"
+                title="Test 1"
+                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
+                link="/test"
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <ArticleItem
+                thumbnail="https://placeimg.com/640/480/tech"
+                title="Test 2"
+                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
+                link="/test"
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <ArticleItem
+                thumbnail="https://placeimg.com/640/480/tech"
+                title="Test 3"
+                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
+                link="/test"
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <ArticleItem
+                thumbnail="https://placeimg.com/640/480/tech"
+                title="Test 4"
+                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
+                link="/test"
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <ArticleItem
+                thumbnail="https://placeimg.com/640/480/tech"
+                title="Test 5"
+                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
+                link="/test"
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <ArticleItem
+                thumbnail="https://placeimg.com/640/480/tech"
+                title="Test 6"
+                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
+                link="/test"
+              />
             </div>
           </div>
         </div>
-      </PanduanSection>
-      <LatestInfoSection />
+      </section>
       {loading ? (
         <Loader
           className="d-flex justify-content-center align-items-center vh-100"

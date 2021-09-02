@@ -21,7 +21,6 @@ const TestimonySection = ({testimonyData}) => {
                 <div className="row text-center text-white py-5">
                     <div className="col">
                         <h2 className="section-title-white">Apa Kata Mereka?</h2>
-                        <p>Inilah pendapat mereka yang telah merasakan manfaat SIBI</p>
                     </div>
                 </div>
                 <div className="row justify-content-center pb-5">
@@ -35,14 +34,14 @@ const TestimonySection = ({testimonyData}) => {
                             breakpoints={{
                                 // when window width is >= 640px
                                 640: {
-                                slidesPerView: 1,
+                                slidesPerView: 2,
                                 },
                                 // when window width is >= 768px
                                 768: {
-                                slidesPerView: 2,
+                                slidesPerView: 3,
                                 },
                                 1024: {
-                                slidesPerView: 3,
+                                slidesPerView: 4,
                                 },
                             }}
                             style={{paddingBottom: '60px'}}

@@ -17,21 +17,14 @@ const BukuSekolahPenggerak = () => {
   const [loading, setLoading] = useState(false);
 
   // Check Filter
+  const [levelPaudisChecked, setlevelPaudisChecked] = useState(false);
   const [levelSDisChecked, setlevelSDisChecked] = useState(false);
   const [levelSMPisChecked, setLevelSMPisChecked] = useState(false);
   const [levelSMAisChecked, setLevelSMAisChecked] = useState(false);
   const [class1isChecked, setClass1isChecked] = useState(false);
-  const [class2isChecked, setClass2isChecked] = useState(false);
-  const [class3isChecked, setClass3isChecked] = useState(false);
   const [class4isChecked, setClass4isChecked] = useState(false);
-  const [class5isChecked, setClass5isChecked] = useState(false);
-  const [class6isChecked, setClass6isChecked] = useState(false);
   const [class7isChecked, setClass7isChecked] = useState(false);
-  const [class8isChecked, setClass8isChecked] = useState(false);
-  const [class9isChecked, setClass9isChecked] = useState(false);
   const [class10isChecked, setClass10isChecked] = useState(false);
-  const [class11isChecked, setClass11isChecked] = useState(false);
-  const [class12isChecked, setClass12isChecked] = useState(false);
   const [subjectIPAisChecked, setSubjectIPAisChecked] = useState(false);
   const [subjectIPSisChecked, setSubjectIPSisChecked] = useState(false);
   const [subjectBIndonesiaisChecked, setSubjectBIndonesiaisChecked] =
@@ -47,28 +40,26 @@ const BukuSekolahPenggerak = () => {
   const [subjectSTariisChecked, setSubjectSTariisChecked] = useState(false);
   const [subjectSMusikisChecked, setSubjectSMusikisChecked] = useState(false);
   const [subjectSTeaterisChecked, setSubjectSTeaterisChecked] = useState(false);
-  const [subjectAgamaisChecked, setSubjectAgamaisChecked] = useState(false);
+  const [subjectAgamaIslamisChecked, setSubjectAgamaIslamisChecked] = useState(false);
+  const [subjectAgamaKristenisChecked, setSubjectAgamaKristenisChecked] = useState(false);
+  const [subjectAgamaKatolikisChecked, setSubjectAgamaKatolikisChecked] = useState(false);
+  const [subjectAgamaHinduisChecked, setSubjectAgamaHinduisChecked] = useState(false);
+  const [subjectAgamaBudhaisChecked, setSubjectAgamaBudhaisChecked] = useState(false);
+  const [subjectAgamaKhonghucuisChecked, setSubjectAgamaKhonghucuisChecked] = useState(false);
   const [subjectSejarahisChecked, setSubjectSejarahisChecked] = useState(false);
   const [subjectInformatikaisChecked, setSubjectInformatikaisChecked] = useState(false);
   const [subjectKepercayaanisChecked, setSubjectKepercayaanisChecked] = useState(false);
   const [subjectIPASisChecked, setSubjectIPASisChecked] = useState(false);
 
   // Filter
+  const [levelPaud, setLevelPaud] = useState("");
   const [levelSD, setLevelSD] = useState("");
   const [levelSMP, setLevelSMP] = useState("");
   const [levelSMA, setLevelSMA] = useState("");
   const [class1, setClass1] = useState("");
-  const [class2, setClass2] = useState("");
-  const [class3, setClass3] = useState("");
   const [class4, setClass4] = useState("");
-  const [class5, setClass5] = useState("");
-  const [class6, setClass6] = useState("");
   const [class7, setClass7] = useState("");
-  const [class8, setClass8] = useState("");
-  const [class9, setClass9] = useState("");
   const [class10, setClass10] = useState("");
-  const [class11, setClass11] = useState("");
-  const [class12, setClass12] = useState("");
   const [subjectIPA, setSubjectIPA] = useState("");
   const [subjectIPS, setSubjectIPS] = useState("");
   const [subjectBIndonesia, setSubjectBIndonesia] = useState("");
@@ -81,7 +72,12 @@ const BukuSekolahPenggerak = () => {
   const [subjectSRupa, setSubjectSRupa] = useState("");
   const [subjectSTari, setSubjectSTari] = useState("");
   const [subjectSTeater, setSubjectSTeater] = useState("");
-  const [subjectAgama, setSubjectAgama] = useState("");
+  const [subjectAgamaIslam, setSubjectAgamaIslam] = useState("");
+  const [subjectAgamaKristen, setSubjectAgamaKristen] = useState("");
+  const [subjectAgamaKatolik, setSubjectAgamaKatolik] = useState("");
+  const [subjectAgamaHindu, setSubjectAgamaHindu] = useState("");
+  const [subjectAgamaBudha, setSubjectAgamaBudha] = useState("");
+  const [subjectAgamaKhonghucu, setSubjectAgamaKhonghucu] = useState("");
   const [subjectSejarah, setSubjectSejarah] = useState("");
   const [subjectInformatika, setSubjectInformatika] = useState("");
   const [subjectKepercayaan, setSubjectKepercayaan] = useState("");
@@ -92,7 +88,7 @@ const BukuSekolahPenggerak = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getPenggerakTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectSBudaya}&${subjectAgama}&${subjectSejarah}&${subjectSRupa}&${subjectSMusik}&${subjectSTari}&${subjectSTeater}&${subjectInformatika}&${subjectIPAS}&${subjectKepercayaan}`
+          `${base_url}/getPenggerakTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelPaud}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class4}&${class7}&${class10}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectSBudaya}&${subjectAgamaIslam}&${subjectAgamaKristen}&${subjectAgamaKatolik}&${subjectAgamaHindu}&${subjectAgamaBudha}&${subjectAgamaKhonghucu}&${subjectSejarah}&${subjectSRupa}&${subjectSMusik}&${subjectSTari}&${subjectSTeater}&${subjectInformatika}&${subjectIPAS}&${subjectKepercayaan}`
         );
         setTextBooks(response.data.results);
         setLoading(false);
@@ -106,21 +102,14 @@ const BukuSekolahPenggerak = () => {
     type,
     limit,
     searchTitle,
+    levelPaud,
     levelSD,
     levelSMP,
     levelSMA,
     class1,
-    class2,
-    class3,
     class4,
-    class5,
-    class6,
     class7,
-    class8,
-    class9,
     class10,
-    class11,
-    class12,
     subjectIPA,
     subjectIPS,
     subjectBIndonesia,
@@ -129,7 +118,12 @@ const BukuSekolahPenggerak = () => {
     subjectPKN,
     subjectMatematika,
     subjectSBudaya,
-    subjectAgama,
+    subjectAgamaIslam,
+    subjectAgamaKristen,
+    subjectAgamaKatolik,
+    subjectAgamaHindu,
+    subjectAgamaBudha,
+    subjectAgamaKhonghucu,
     subjectSejarah,
     subjectSRupa,
     subjectSMusik,
@@ -159,6 +153,12 @@ const BukuSekolahPenggerak = () => {
     e.preventDefault();
 
     // Level
+    if (levelPaudisChecked === true) {
+      setLevelPaud("level_paud");
+    } else {
+      setLevelPaud("");
+    }
+
     if (levelSDisChecked === true) {
       setLevelSD("level_sd");
     } else {
@@ -184,34 +184,10 @@ const BukuSekolahPenggerak = () => {
       setClass1("");
     }
 
-    if (class2isChecked === true) {
-      setClass2("class_2");
-    } else {
-      setClass2("");
-    }
-
-    if (class3isChecked === true) {
-      setClass3("class_3");
-    } else {
-      setClass3("");
-    }
-
     if (class4isChecked === true) {
       setClass4("class_4");
     } else {
       setClass4("");
-    }
-
-    if (class5isChecked === true) {
-      setClass5("class_5");
-    } else {
-      setClass5("");
-    }
-
-    if (class6isChecked === true) {
-      setClass6("class_6");
-    } else {
-      setClass6("");
     }
 
     if (class7isChecked === true) {
@@ -220,34 +196,10 @@ const BukuSekolahPenggerak = () => {
       setClass7("");
     }
 
-    if (class8isChecked === true) {
-      setClass8("class_8");
-    } else {
-      setClass8("");
-    }
-
-    if (class9isChecked === true) {
-      setClass9("class_9");
-    } else {
-      setClass9("");
-    }
-
     if (class10isChecked === true) {
       setClass10("class_10");
     } else {
       setClass10("");
-    }
-
-    if (class11isChecked === true) {
-      setClass11("class_11");
-    } else {
-      setClass11("");
-    }
-
-    if (class12isChecked === true) {
-      setClass12("class_12");
-    } else {
-      setClass12("");
     }
 
     // Subject
@@ -341,10 +293,40 @@ const BukuSekolahPenggerak = () => {
       setSubjectSTeater("");
     }
 
-    if (subjectAgamaisChecked === true) {
-      setSubjectAgama("subject_agama");
+    if (subjectAgamaIslamisChecked === true) {
+      setSubjectAgamaIslam("subject_agama_islam");
     } else {
-      setSubjectAgama("");
+      setSubjectAgamaIslam("");
+    }
+
+    if (subjectAgamaKristenisChecked === true) {
+      setSubjectAgamaKristen("subject_agama_kristen");
+    } else {
+      setSubjectAgamaKristen("");
+    }
+
+    if (subjectAgamaKatolikisChecked === true) {
+      setSubjectAgamaKatolik("subject_agama_katolik");
+    } else {
+      setSubjectAgamaKatolik("");
+    }
+
+    if (subjectAgamaHinduisChecked === true) {
+      setSubjectAgamaHindu("subject_agama_hindu");
+    } else {
+      setSubjectAgamaHindu("");
+    }
+
+    if (subjectAgamaBudhaisChecked === true) {
+      setSubjectAgamaBudha("subject_agama_budha");
+    } else {
+      setSubjectAgamaBudha("");
+    }
+
+    if (subjectAgamaKhonghucuisChecked === true) {
+      setSubjectAgamaKhonghucu("subject_agama_khonghucu");
+    } else {
+      setSubjectAgamaKhonghucu("");
     }
 
     if (subjectSejarahisChecked === true) {
@@ -357,7 +339,7 @@ const BukuSekolahPenggerak = () => {
     <main style={{ minHeight: "100vh" }}>
       <Banner
         bannerTitle="Buku Sekolah Penggerak"
-        bannerDescription="Buku-buku eksklusif dari sekolah penggerak"
+        bannerDescription="Buku Sekolah Penggerak adalah buku yang disusun berdasarkan Capaian Pembelajaran dengan mengusung semangat merdeka belajar. Buku sekolah penggerak diimplementasikan secara terbatas di Sekolah Penggerak dan SMK Pusat Keunggulan."
         bannerImg={bukuPelajaranImgBanner}
       />
       <section className="container my-5" style={{ minHeight: "100vh" }}>
@@ -374,6 +356,14 @@ const BukuSekolahPenggerak = () => {
                     <h6>
                       <strong>Jenjang</strong>
                     </h6>
+                    <div className="form-check">
+                      <input
+                        onChange={(e) => setlevelPaudisChecked(e.target.checked)}
+                        className="form-check-input"
+                        type="checkbox"
+                      />
+                      <label className="form-check-label">PAUD</label>
+                    </div>
                     <div className="form-check">
                       <input
                         onChange={(e) => setlevelSDisChecked(e.target.checked)}
@@ -396,7 +386,7 @@ const BukuSekolahPenggerak = () => {
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">SMA/MA/SMK</label>
+                      <label className="form-check-label">SMA/MA/SMK/MAK</label>
                     </div>
                   </div>
                   <div className="mb-3">
@@ -418,28 +408,6 @@ const BukuSekolahPenggerak = () => {
                         <div className="form-check">
                           <input
                             onChange={(e) =>
-                              setClass2isChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="2"
-                          />
-                          <label className="form-check-label">II</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
-                              setClass3isChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="3"
-                          />
-                          <label className="form-check-label">III</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
                               setClass4isChecked(e.target.checked)
                             }
                             className="form-check-input"
@@ -447,28 +415,6 @@ const BukuSekolahPenggerak = () => {
                             value="4"
                           />
                           <label className="form-check-label">IV</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
-                              setClass5isChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="5"
-                          />
-                          <label className="form-check-label">V</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
-                              setClass6isChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="6"
-                          />
-                          <label className="form-check-label">VI</label>
                         </div>
                       </div>
                       <div className="col">
@@ -486,28 +432,6 @@ const BukuSekolahPenggerak = () => {
                         <div className="form-check">
                           <input
                             onChange={(e) =>
-                              setClass8isChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="8"
-                          />
-                          <label className="form-check-label">VIII</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
-                              setClass9isChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="9"
-                          />
-                          <label className="form-check-label">IX</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
                               setClass10isChecked(e.target.checked)
                             }
                             className="form-check-input"
@@ -515,28 +439,6 @@ const BukuSekolahPenggerak = () => {
                             value="10"
                           />
                           <label className="form-check-label">X</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
-                              setClass11isChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="11"
-                          />
-                          <label className="form-check-label">XI</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
-                              setClass12isChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="12"
-                          />
-                          <label className="form-check-label">XII</label>
                         </div>
                       </div>
                     </div>
@@ -568,6 +470,17 @@ const BukuSekolahPenggerak = () => {
                             value="Ilmu%20Pengetahuan%20Sosial"
                           />
                           <label className="form-check-label">IPS</label>
+                        </div>
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectIPASisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="seni"
+                          />
+                          <label className="form-check-label">IPAS</label>
                         </div>
                         <div className="form-check">
                           <input
@@ -653,17 +566,6 @@ const BukuSekolahPenggerak = () => {
                         <div className="form-check">
                           <input
                             onChange={(e) =>
-                              setSubjectIPASisChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="seni"
-                          />
-                          <label className="form-check-label">IPAS</label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
                               setSubjectSTariisChecked(e.target.checked)
                             }
                             className="form-check-input"
@@ -719,13 +621,73 @@ const BukuSekolahPenggerak = () => {
                         <div className="form-check">
                           <input
                             onChange={(e) =>
-                              setSubjectAgamaisChecked(e.target.checked)
+                              setSubjectAgamaIslamisChecked(e.target.checked)
                             }
                             className="form-check-input"
                             type="checkbox"
                             value="agama"
                           />
-                          <label className="form-check-label">Agama</label>
+                          <label className="form-check-label">Agama Islam</label>
+                        </div>
+
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaKristenisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Kristen</label>
+                        </div>
+
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaKatolikisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Katolik</label>
+                        </div>
+
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaHinduisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Hindu</label>
+                        </div>
+
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaBudhaisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Budha</label>
+                        </div>
+
+                        <div className="form-check">
+                          <input
+                            onChange={(e) =>
+                              setSubjectAgamaKhonghucuisChecked(e.target.checked)
+                            }
+                            className="form-check-input"
+                            type="checkbox"
+                            value="agama"
+                          />
+                          <label className="form-check-label">Agama Khonghucu</label>
                         </div>
                         <div className="form-check">
                           <input

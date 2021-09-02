@@ -16,6 +16,28 @@ const JenisBukuSection = () => {
         </div>
         <div className="row mt-5 justify-content-center text-white text-center">
           <div className="col-md-4 col-lg-3 my-5">
+            <img width="auto" height="100px" src={pdfIcon} alt="Buku PDF" />
+            <h5 className="my-5">
+              <strong>Buku PDF</strong>
+            </h5>
+            <p>
+              <small>
+              Buku PDF adalah Buku yang disajikan dalam format PDF, yang dapat diunduh dan dibaca secara daring.
+              </small>
+            </p>
+          </div>
+          <div className="col-md-4 col-lg-3 my-5">
+            <img width="auto" height="100px" src={audioIcon} alt="Buku Audio" />
+            <h5 className="my-5">
+              <strong>Buku Audio</strong>
+            </h5>
+            <p>
+              <small>
+              Buku Audio adalah rekaman isi buku yang dinarasikan secara menarik, sehingga belajar menjadi menyenangkan dan memberi pengalaman baru dalam belajar. Buku audio merupakan konversi buku teks pelajaran dari bentuk cetak menjadi bentuk audio (suara).
+              </small>
+            </p>
+          </div>
+          <div className="col-md-4 col-lg-3 my-5">
             <img
               width="auto"
               height="100px"
@@ -27,33 +49,7 @@ const JenisBukuSection = () => {
             </h5>
             <p>
               <small>
-                Buku dalam format aplikasi online / interaktif yang berisi
-                berbagai konten seperti suara, video, animasi, games, dan
-                Virtual Reality.
-              </small>
-            </p>
-          </div>
-          <div className="col-md-4 col-lg-3 my-5">
-            <img width="auto" height="100px" src={pdfIcon} alt="Buku PDF" />
-            <h5 className="my-5">
-              <strong>Buku PDF</strong>
-            </h5>
-            <p>
-              <small>
-                Buku dalam format PDF, dapat dibaca secara daring dan diunduh
-                kapan pun. Terdapat ribuan buku PDF yang dapat kamu pelajari.
-              </small>
-            </p>
-          </div>
-          <div className="col-md-4 col-lg-3 my-5">
-            <img width="auto" height="100px" src={audioIcon} alt="Buku Audio" />
-            <h5 className="my-5">
-              <strong>Buku Audio</strong>
-            </h5>
-            <p>
-              <small>
-                Buku berupa materi suara dengan format mp3 atau ogg yang dapat
-                kamu dengarkan kapanpun dimanapun.
+              Buku Elektronik Interaktif adalah buku elektronik yang disajikan dengan fitur-fitur interaktif, berisi konten-konten digital yang menarik seperti: audio, video, animasi, simulasi, ar (Augmented Reality), dan gambar. Buku interaktif merupakan konversi buku teks pelajaran dari bentuk cetak menjadi bentuk elektronik interaktif.
               </small>
             </p>
           </div>

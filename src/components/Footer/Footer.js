@@ -1,7 +1,6 @@
 import {Link} from 'react-router-dom';
 import kemendikbudLogo from '../../assets/img/kemendikbud.webp';
 import './Footer.scss';
-import sitemap from '../Navbar/NavbarItems';
 
 const Footer = () => {
     return (
@@ -22,9 +21,6 @@ const Footer = () => {
                         <span className="footer-social-icon">
                             <i className="fab fa-twitter" />
                         </span>
-                        <span className="footer-social-icon">
-                            <i className="fab fa-linkedin" />
-                        </span>
                     </div>
                 </div>
                 <hr />
@@ -35,11 +31,14 @@ const Footer = () => {
                     <div className="col-md-3 mt-4 mt-md-0">
                         <h5 className="footer-section-title">Peta Situs</h5>
                         <ul className="nav flex-column">
-                            {sitemap.map((link, index) => {
-                                return(
-                                    <Link key={index} className="nav-link" to={link.url}>{link.name}</Link>        
-                                );
-                            })}
+                            <Link className="nav-link" to="/">Beranda</Link>
+                            <Link className="nav-link" to="/buku-teks">Buku Teks K13</Link>
+                            <Link className="nav-link" to="/buku-nonteks">Buku Nonteks</Link>
+                            <Link className="nav-link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                            <a className="nav-link" href="https://sibi.sc.cloudapp.web.id/penilaian">Penilaian</a>
+                            <a className="nav-link" href="https://sibi.sc.cloudapp.web.id/kebijakan">Kebijakan</a>
+                            <Link className="nav-link" to="/panduan">Panduan</Link>
+                            <Link className="nav-link" to="/tentang-kami">Tentang Kami</Link>
                         </ul>
                     </div>
                     <div className="col-md-5 mt-4 mt-md-0">

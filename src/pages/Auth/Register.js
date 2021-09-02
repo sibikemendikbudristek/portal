@@ -69,7 +69,7 @@ const Register = () => {
                 role="alert"
               >
                 Mantap! Daftar berhasil, silahkan cek inbox di {email} untuk
-                aktivasi akun. Cek spam juga.
+                aktivasi akun. Jika tidak ada email masuk, cek folder spam.
                 <button
                   type="button"
                   className="btn-close"
@@ -97,7 +97,7 @@ const Register = () => {
             {alert !== "success" && (
               <div className="card">
                 <div className="card-header bg-white">
-                  <h1 className="section-title">Register</h1>
+                  <h1 className="section-title">Daftar</h1>
                 </div>
                 <div className="card-body">
                   <form onSubmit={signupHandler}>
@@ -106,7 +106,6 @@ const Register = () => {
                         Daftar sebagai
                       </label>
                       <div className="nav">
-                        {console.log(role_id)}
                         <button
                           data-bs-toggle="pill"
                           className="btn btn-outline-primary me-2 active"

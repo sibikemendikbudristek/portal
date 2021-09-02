@@ -22,10 +22,8 @@ const Panduan = () => {
                         <img className="img-fluid d-block mx-auto" src={panduanImg1} alt="Buka halaman SIBI" />
                     </div>
                     <div className="col-md-6 text-center text-md-start">
-                        <h2 className="section-title">1. Buka laman https://buku.kemdikbud.go.id</h2>
-                        <p className="my-5">Untuk menggunakan SIBI kamu tinggal membukanya di browser seperti
-                        Google Chrome, Mozilla Firefox, Microsoft Edge dan lain-lain yang ada
-                        pada gadget kamu. Sangat mudah bukan?</p>
+                        <h2 className="section-title">Siswa</h2>
+                        <p className="my-3">Jika kalian siswa PAUD, SD/MI, SMP/MTs, SMA/MA/SMK, disarankan masuk akun  siswa.  Di sini kalian dapat mengakses berbagai macam buku yang menarik, baik buku teks maupun buku nonteks. Kalian dapat memilih, membaca, dan mengunduh buku sesuai kebutuhan.</p>
                     </div>
                 </div>
                 <div className="row my-5">
@@ -33,8 +31,8 @@ const Panduan = () => {
                         <img className="img-fluid d-block mx-auto" src={panduanImg2} alt="Buka halaman SIBI" />
                     </div>
                     <div className="col-md-6 text-center text-md-start">
-                        <h2 className="section-title">2. Daftar dan login sebagai siswa dan guru</h2>
-                        <p className="my-5">Untuk mendapatkan akses ke SIBI caranya sangat mudah kita cukup mendaftarkan diri dengan mengisi form yang telah disediakan lalu tinggal login sebagai siswa atau guru.</p>
+                        <h2 className="section-title">Guru</h2>
+                        <p className="my-3">Untuk Bapak/Ibu guru, disarankan masuk akun guru. Di sini  Anda dapat mengakses berbagai macam buku (buku teks dan nonteks) jenjang PAUD, SD/MI, SMP/MTs, SMA/MA/SMK, data buku-buku yang sudah lolos penilaian, serta kebijakan yang terkait dengan Perbukuan.</p>
                     </div>
                     <div className="col-md-6 my-5 d-none d-md-block">
                         <img className="img-fluid d-block mx-auto" src={panduanImg2} alt="Buka halaman SIBI" />
@@ -45,9 +43,8 @@ const Panduan = () => {
                         <img className="img-fluid d-block mx-auto" src={panduanImg3} alt="Buka halaman SIBI" />
                     </div>
                     <div className="col-md-6 text-center text-md-start">
-                        <h2 className="section-title">3. Cari Buku yang kamu mau</h2>
-                        <p className="my-5">Kamu dapat dengan mudah mencari buku yang kamu inginkan di halaman
-                        buku atau lewat fitur cari buku yang telah disediakan</p>
+                        <h2 className="section-title">Umum</h2>
+                        <p className="my-3">Jika Anda bukan guru, siswa, dan pelaku perbukuan, sangat disarankan masuk akun Umum. Di sini Anda dapat mengakses berbagai macam buku teks dan nonteks dari jenjang PAUD sd. SMA/SMK, informasi buku-buku yang telah lolos Penilaian, serta Kebijakan tentang Perbukuan</p>
                     </div>
                 </div>
                 <div className="row my-5">
@@ -55,10 +52,16 @@ const Panduan = () => {
                         <img className="img-fluid d-block mx-auto" src={panduanImg4} alt="Buka halaman SIBI" />
                     </div>
                     <div className="col-md-6 text-center text-md-start">
-                        <h2 className="section-title">4. Klik buku untuk baca langsung, atau klik selengkapnya untuk baca detail beserta review buku</h2>
-                        <p className="my-5">Kamu bias memilih opsi untuk membaca buku secara langsung
-                        atau melihat detail dan ulasannya terlebih dahulu sebelum
-                        membacanya</p>
+                        <h2 className="section-title">Pelaku Perbukuan</h2>
+                        <p className="my-3">Jika Anda sebagai Pelaku Perbukuan (Penulis, Penerjemah, Penyadur, Editor, Desainer, Ilustrator, Pencetak, Pengembang Buku Elektronik, Penerbit, dan Toko Buku), disarankan masuk akun Pelaku Perbukuan.  Di sini Anda dapat mengakses:</p>
+                        <ul>
+                            <li>Buku teks Kurikulum 2013, buku teks Sekolah Penggerak, dan buku nonteks</li>
+                            <li>Data buku yang telah lolos Penilaian</li>
+                            <li>Data tentang Pelaku Perbukuan </li>
+                            <li>Pembinaan Pelaku Perbukuan</li>
+                            <li>Kebijakan terkait Perbukuan</li>
+                        </ul>
+                        <p>Khusus untuk buku teks yang diterbitkan pemerintah, Anda dapat mengunduhnya file untuk cetak.</p>
                     </div>
                     <div className="col-md-6 my-5 d-none d-md-block">
                         <img className="img-fluid d-block mx-auto" src={panduanImg4} alt="Buka halaman SIBI" />
@@ -69,9 +72,50 @@ const Panduan = () => {
                         <img className="img-fluid d-block mx-auto" src={panduanImg5} alt="Buka halaman SIBI" />
                     </div>
                     <div className="col-md-6 text-center text-md-start">
-                        <h2 className="section-title">5. Buka dashboard kamu di link /dashboard untuk melihat history buku yang sudah kamu baca atau unduh</h2>
-                        <p className="my-5">SIBI menyediakan dashboard untuk memudahkanmu dalam melihat history
-                        buku apa saja yang pernah kamu baca atau unduh</p>
+                        <h2 className="section-title">Mengakses Buku</h2>
+                        <p className="my-3">Saat Anda mengakes Buku, akan ada 3 pilihan jenis Buku, yaitu Buku Teks K-13, Buku Non Teks, dan Buku Sekolah Penggerak.</p>
+                    </div>
+                </div>
+                <div className="row my-5">
+                    <div className="col-md-6 my-5 d-block d-md-none">
+                        <img className="img-fluid d-block mx-auto" src={panduanImg4} alt="Buka halaman SIBI" />
+                    </div>
+                    <div className="col-md-6 text-center text-md-start">
+                        <h2 className="section-title">Fitur Buku Teks K-13</h2>
+                        <p className="my-3">Dalam Fitur Buku Teks K-13, ada 3 versi buku yang dapat anda akses, yaitu buku PDF, buku Audio, dan buku Interaktif. Anda dapat memilih sesuai dengan kebutuhan Anda.</p>
+                    </div>
+                    <div className="col-md-6 my-5 d-none d-md-block">
+                        <img className="img-fluid d-block mx-auto" src={panduanImg4} alt="Buka halaman SIBI" />
+                    </div>
+                </div>
+                <div className="row my-5">
+                    <div className="col-md-6 my-5">
+                        <img className="img-fluid d-block mx-auto" src={panduanImg5} alt="Buka halaman SIBI" />
+                    </div>
+                    <div className="col-md-6 text-center text-md-start">
+                        <h2 className="section-title">Fitur Buku Sekolah Penggerak</h2>
+                        <p className="my-3">Dalam Fitur Buku Sekolah Penggerak, ada 2 versi buku yang dapat anda akses, yaitu buku PDF dan buku Audio.</p>
+                    </div>
+                </div>
+                <div className="row my-5">
+                    <div className="col-md-6 my-5 d-block d-md-none">
+                        <img className="img-fluid d-block mx-auto" src={panduanImg4} alt="Buka halaman SIBI" />
+                    </div>
+                    <div className="col-md-6 text-center text-md-start">
+                        <h2 className="section-title">Fitur Buku</h2>
+                        <p className="my-3">Saat mengakses buku, ada 3 pilihan, yaitu baca, unduh, dan Lapor. Anda dapat memilih opsi sesuai kebutuhan kalian. Jika Anda menemukan kesalahan pada buku, Anda dapat melaporkan dengan klik fitur Lapor (tampilkan tombol ikonnya).</p>
+                    </div>
+                    <div className="col-md-6 my-5 d-none d-md-block">
+                        <img className="img-fluid d-block mx-auto" src={panduanImg4} alt="Buka halaman SIBI" />
+                    </div>
+                </div>
+                <div className="row my-5">
+                    <div className="col-md-6 my-5">
+                        <img className="img-fluid d-block mx-auto" src={panduanImg5} alt="Buka halaman SIBI" />
+                    </div>
+                    <div className="col-md-6 text-center text-md-start">
+                        <h2 className="section-title">Lapor</h2>
+                        <p className="my-3">Jika Anda menemukan kesalahan pada buku, Anda dapat melaporkan dengan klik fitur Lapor. (tampilkan tombol iconnya) letakan di Panduan.</p>
                     </div>
                 </div>
             </section>
