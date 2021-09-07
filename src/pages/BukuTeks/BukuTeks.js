@@ -357,7 +357,7 @@ const BukuTeks = () => {
   return (
     <main style={{ minHeight: "100vh" }}>
       <Banner
-        bannerTitle="Buku Teks"
+        bannerTitle="Buku Teks K-13"
         bannerDescription="Buku Teks adalah buku yang disusun berdasarkan Standar Nasional Pendidikan dan Kurikulum 2013, untuk digunakan dalam proses pembelajaran."
         bannerImg={bukuPelajaranImgBanner}
       />

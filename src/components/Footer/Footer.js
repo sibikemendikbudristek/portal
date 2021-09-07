@@ -26,7 +26,7 @@ const Footer = () => {
                 <hr />
                 <div className="row justify-content-between my-5">
                     <div className="col-md-4 pe-md-5">
-                        <p className="text-white"><small><strong>Pusat Kurikulum dan Perbukuan</strong><br />Badan Penelitian dan Pengembangan dan Perbukuan. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</small></p>
+                        <p className="text-white"><strong>Pusat Perbukuan</strong><br /><small>Badan Standar, Kurikulum, dan Asesmen Pendidikan. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</small></p>
                     </div>
                     <div className="col-md-3 mt-4 mt-md-0">
                         <h5 className="footer-section-title">Peta Situs</h5>

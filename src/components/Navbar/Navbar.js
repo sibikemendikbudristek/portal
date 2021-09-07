@@ -151,7 +151,7 @@ const Navbar = () => {
                   >
                     <li>
                       <NavLink className="dropdown-item" to="/buku-teks?role=siswa">
-                        Buku Teks K13
+                        Buku Teks K-13
                       </NavLink>
                     </li>
                     <li>
@@ -206,7 +206,7 @@ const Navbar = () => {
                   >
                     <li>
                       <NavLink className="dropdown-item" to="/buku-teks?role=guru">
-                        Buku Teks K13
+                        Buku Teks K-13
                       </NavLink>
                     </li>
                     <li>
@@ -271,7 +271,7 @@ const Navbar = () => {
               >
                 <li>
                   <NavLink className="dropdown-item" to="/buku-teks?role=umum">
-                    Buku Teks K13
+                    Buku Teks K-13
                   </NavLink>
                 </li>
                 <li>

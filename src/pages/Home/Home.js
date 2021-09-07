@@ -52,22 +52,22 @@ const Home = () => {
                     className="btn btn-primary rounded me-2"
                     href="/siswa?role=siswa"
                   >
-                    <i className="fas fa-fw fa-user" />
-                    <small> Siswa</small>
+                    <i className="fas fa-fw me-1 fa-user" />
+                     Siswa
                   </a>
                   <a
                     className="btn btn-primary rounded me-2"
                     href="/guru?role=guru"
                   >
-                    <i className="fas fa-fw fa-user-graduate" />
-                    <small> Guru</small>
+                    <i className="fas fa-fw me-1 fa-user-graduate" />
+                    Guru
                   </a>
                   <a
                     className="btn btn-primary rounded me-2"
                     href="/umum?role=umum"
                   >
-                    <i className="fas fa-fw fa-users" />
-                    <small> Umum</small>
+                    <i className="fas fa-fw me-1 fa-users" />
+                    Umum
                   </a>
                 </div>
               </div>
@@ -79,8 +79,8 @@ const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fas fa-fw fa-book-reader" />
-                    <small> Pelaku Perbukuan</small>
+                    <i className="fas fa-fw me-1 fa-book-reader" />
+                    Pelaku Perbukuan
                   </a>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const Home = () => {
         </div>
       </Hero>
       <PanduanSection image={panduanImg} />
-      <section className="bg-light bg-gradient">
+      <section id="ArticleSection">
         <div className="container">
           <div className="row pt-5 mb-3">
             <div className="col">
