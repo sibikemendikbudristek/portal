@@ -1,0 +1,17 @@
+#ArticleItem {
+  .article-item-img {
+    height: 10rem;
+    width: 10rem;
+    overflow: hidden;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  #ArticleItem {
+    .article-item-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

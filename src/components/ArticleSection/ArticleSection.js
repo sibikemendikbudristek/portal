@@ -6,11 +6,11 @@ const ArticleSection = () => {
     return (
         <section id="ArticleSection">
         <div className="container">
-          <div className="row pt-5 mb-3">
-            <div className="col">
+          <div className="row pt-5 mb-3 text-center text-lg-start">
+            <div className="col-lg-6">
               <h2 className="section-title">Berita Terbaru</h2>
             </div>
-            <div className="col text-end">
+            <div className="col-lg-6 text-center text-lg-end">
               <Link className="link">
                 Lihat Semua
               </Link>
@@ -19,7 +19,7 @@ const ArticleSection = () => {
           <div className="row justify-content-between pb-5">
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/5TWxnyh/Pengumuman-Hasil-Penilaian-dan-Permendikbud-Kelayakan-Buku-Buku-Non-Teks-Pelajaran-Tahun-2020-1024x3.jpg"
+                thumbnail="https://i.ibb.co/Qd3X5jQ/penilaian.jpg"
                 title="Pengumuman Hasil Penilaian"
                 description="Pengumuman hasil penilaian dan Kepmendikbud Buku Non Teks Pelajaran tahun 2020"
                 link="https://penilaian.buku.kemdikbud.go.id"
@@ -27,7 +27,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://buku.kemdikbud.go.id/sites/sibi//themes/default/assets/images/beranda-4.jpg"
+                thumbnail="https://i.ibb.co/Cv4m53n/pelaku-perbukuan.jpg"
                 title="Pelaku Perbukuan"
                 description="Data pelaku perbukuan terbaru yang terlah disertifikasi"
                 link="https://sibi.sc.cloudapp.web.id/pembinaan/sertifikasi"
@@ -35,7 +35,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://buku.kemdikbud.go.id/sites/sibi//themes/default/assets/images/beranda-5.jpg"
+                thumbnail="https://i.ibb.co/zSLWNQr/kebijakan.jpg"
                 title="Kebijakan Perbukuan"
                 description="Daftar undang-undang kemendikbud dan keputusan Mentri terkait Perbukuan"
                 link="https://sibi.sc.cloudapp.web.id/kebijakan"
