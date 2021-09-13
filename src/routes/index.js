@@ -14,6 +14,8 @@ import BookByTag from '../pages/BookByTag/BookByTag';
 import StudentPage from '../pages/StudentPage/StudentPage';
 import TeacherPage from '../pages/TeacherPage/TeacherPage';
 import GeneralPage from '../pages/GeneralPage/GeneralPage';
+import Article from '../pages/ArticlePage/Article';
+import ArticleDetail from '../pages/ArticlePage/ArticleDetail';
 
 const Routes = () => {
     const isLoggin = JSON.parse(localStorage.getItem('user-info'));
@@ -27,8 +29,10 @@ const Routes = () => {
             <Route exact path="/buku-teks" component={BukuTeks} />
             <Route exact path="/buku-nonteks" component={BukuNonteks} />
             <Route exact path="/buku-sekolah-penggerak" component={BukuSekolahPenggerak} />
-            <Route path="/book/detail/:slug" component={BookDetail} />
-            <Route path="/book/tag/:tag" component={BookByTag} />
+            <Route exact path="/book/detail/:slug" component={BookDetail} />
+            <Route exact path="/book/tag/:tag" component={BookByTag} />
+            <Route exact path="/artikel" component={Article} />
+            <Route exact path="/artikel/:slug" component={ArticleDetail} />
             <Route path="/panduan" component={Panduan} />
             <Route path="/tentang-kami" component={About} />
             <Route path="/dashboard">

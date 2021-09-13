@@ -32,6 +32,7 @@ const Footer = () => {
                         <h5 className="footer-section-title">Peta Situs</h5>
                         <ul className="nav flex-column">
                             <Link className="nav-link" to="/">Beranda</Link>
+                            <Link className="nav-link" to="/artikel">Berita Terbaru</Link>
                             <Link className="nav-link" to="/buku-teks">Buku Teks K13</Link>
                             <Link className="nav-link" to="/buku-nonteks">Buku Nonteks</Link>
                             <Link className="nav-link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>

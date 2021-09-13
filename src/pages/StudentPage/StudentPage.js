@@ -10,7 +10,7 @@ import PanduanSection from '../../components/PanduanSection/PanduanSection';
 import RelatedSiteSection from '../../components/RelatedSiteSection/RelatedSiteSection';
 import TestimonySection from '../../components/TestimonySection/TestimonySection';
 import data from '../../assets/data/dummy';
-import heroImg from '../../assets/img/hero-img.webp';
+import heroImg from '../../assets/img/hero-img.png';
 import panduanImg from '../../assets/img/panduan-siswa.png';
 
 const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';

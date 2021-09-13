@@ -10,7 +10,7 @@ import TestimonySection from "../../components/TestimonySection/TestimonySection
 import data from "../../assets/data/dummy";
 import heroImg from "../../assets/img/landing-page-img.png";
 import panduanImg from "../../assets/img/panduan-guru.png";
-import ArticleItem from "../../components/ArticleItem/ArticleItem";
+import ArticleSection from "../../components/ArticleSection/ArticleSection";
 
 const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
 
@@ -97,70 +97,7 @@ const Home = () => {
         </div>
       </Hero>
       <PanduanSection image={panduanImg} />
-      <section id="ArticleSection">
-        <div className="container">
-          <div className="row pt-5 mb-3">
-            <div className="col">
-              <h2 className="section-title">Berita Terbaru</h2>
-            </div>
-            <div className="col text-end">
-              <a className="link" href="!#">
-                Lihat Semua
-              </a>
-            </div>
-          </div>
-          <div className="row justify-content-between pb-5">
-            <div className="col-md-6 mb-3">
-              <ArticleItem
-                thumbnail="https://placeimg.com/640/480/tech"
-                title="Test 1"
-                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
-                link="/test"
-              />
-            </div>
-            <div className="col-md-6 mb-3">
-              <ArticleItem
-                thumbnail="https://placeimg.com/640/480/tech"
-                title="Test 2"
-                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
-                link="/test"
-              />
-            </div>
-            <div className="col-md-6 mb-3">
-              <ArticleItem
-                thumbnail="https://placeimg.com/640/480/tech"
-                title="Test 3"
-                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
-                link="/test"
-              />
-            </div>
-            <div className="col-md-6 mb-3">
-              <ArticleItem
-                thumbnail="https://placeimg.com/640/480/tech"
-                title="Test 4"
-                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
-                link="/test"
-              />
-            </div>
-            <div className="col-md-6 mb-3">
-              <ArticleItem
-                thumbnail="https://placeimg.com/640/480/tech"
-                title="Test 5"
-                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
-                link="/test"
-              />
-            </div>
-            <div className="col-md-6 mb-3">
-              <ArticleItem
-                thumbnail="https://placeimg.com/640/480/tech"
-                title="Test 6"
-                description="Lorem ipsum dolor sit amet consectaur adipisicing elit"
-                link="/test"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ArticleSection />
       {loading ? (
         <Loader
           className="d-flex justify-content-center align-items-center vh-100"

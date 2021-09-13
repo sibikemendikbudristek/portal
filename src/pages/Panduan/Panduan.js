@@ -103,7 +103,7 @@ const Panduan = () => {
                     </div>
                     <div className="col-md-6 text-center text-md-start">
                         <h2 className="section-title">Fitur Buku</h2>
-                        <p className="my-3">Saat mengakses buku, ada 3 pilihan, yaitu baca, unduh, dan Lapor. Anda dapat memilih opsi sesuai kebutuhan kalian. Jika Anda menemukan kesalahan pada buku, Anda dapat melaporkan dengan klik fitur Lapor (tampilkan tombol ikonnya).</p>
+                        <p className="my-3">Saat mengakses buku, ada 3 pilihan, yaitu baca, unduh, dan Lapor. Anda dapat memilih opsi sesuai kebutuhan.</p>
                     </div>
                     <div className="col-md-6 my-5 d-none d-md-block">
                         <img className="img-fluid d-block mx-auto" src={panduanImg4} alt="Buka halaman SIBI" />
@@ -115,7 +115,7 @@ const Panduan = () => {
                     </div>
                     <div className="col-md-6 text-center text-md-start">
                         <h2 className="section-title">Lapor</h2>
-                        <p className="my-3">Jika Anda menemukan kesalahan pada buku, Anda dapat melaporkan dengan klik fitur Lapor. (tampilkan tombol iconnya) letakan di Panduan.</p>
+                        <p className="my-3">Jika Anda menemukan kesalahan pada buku, Anda dapat melaporkan dengan klik fitur Lapor. (<span className="btn btn-sm btn-danger"><i className="fas fa-exclamation-triangle" /> Lapor</span>).</p>
                     </div>
                 </div>
             </section>

@@ -6,7 +6,7 @@ const ArticleItem = ({title, description, thumbnail, link}) => {
                 <div className="card-body">
                   <div className="row">
                     <div className="col-4">
-                      <img className="img-fluid rounded" src={thumbnail} alt={title} />
+                      <img loading="lazy" height="125" width="135" style={{objectFit: 'cover'}} className="rounded" src={thumbnail} alt={title} />
                     </div>
                     <div className="col">
                         <a className="link" href={link}>

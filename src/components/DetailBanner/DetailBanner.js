@@ -29,9 +29,9 @@ const DetailBanner = ({
           </div>
           <div className="col-md-8 col-lg-9 ps-md-5">
             <h1>
-              <strong>{title || "Tidak diketahui"}</strong>
+              <strong>{title || "-"}</strong>
             </h1>
-            <span><strong>Oleh :</strong> {writer || "Tidak diketahui"}</span>
+            <span><strong>Oleh :</strong> {writer || "-"}</span>
             <h5 className="mt-4">
               <strong>Deskripsi</strong>
             </h5>
