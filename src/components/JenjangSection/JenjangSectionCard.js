@@ -1,6 +1,6 @@
 import './JenjangSectionCard.scss';
 
-const JenjangSectionCard = ({bgColor, thumbnail, title, description}) => {
+const JenjangSectionCard = ({bgColor, thumbnail, title, description, links}) => {
     return (
         <div id="JenjangSectionCard">
             <div className="card border-0 shadow mt-3">
@@ -12,6 +12,7 @@ const JenjangSectionCard = ({bgColor, thumbnail, title, description}) => {
                         <div className="card-body">
                             <h5><strong>{title}</strong></h5>
                             <p>{description}</p>
+                            {links}
                         </div>
                     </div>
                 </div>

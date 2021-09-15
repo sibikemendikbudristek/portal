@@ -11,7 +11,7 @@ const ArticleSection = () => {
               <h2 className="section-title">Berita Terbaru</h2>
             </div>
             <div className="col-lg-6 text-center text-lg-end">
-              <Link className="link">
+              <Link className="link" to="">
                 Lihat Semua
               </Link>
             </div>
@@ -19,7 +19,7 @@ const ArticleSection = () => {
           <div className="row justify-content-between pb-5">
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/Qd3X5jQ/penilaian.jpg"
+                thumbnail="https://i.ibb.co/wQ3Hn66/penilaian.jpg"
                 title="Pengumuman Hasil Penilaian"
                 description="Pengumuman hasil penilaian dan Kepmendikbud Buku Non Teks Pelajaran tahun 2020"
                 link="https://penilaian.buku.kemdikbud.go.id"
@@ -35,7 +35,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/zSLWNQr/kebijakan.jpg"
+                thumbnail="https://i.ibb.co/d5sZPSF/kebijakan.jpg"
                 title="Kebijakan Perbukuan"
                 description="Daftar undang-undang kemendikbud dan keputusan Mentri terkait Perbukuan"
                 link="https://sibi.sc.cloudapp.web.id/kebijakan"
@@ -43,7 +43,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/hX44FRP/buku-sekolah-penggerak.png"
+                thumbnail="https://i.ibb.co/JvjKRJc/buku-sekolah-penggerak.webp"
                 title="Buku Sekolah Penggerak"
                 description="Buku Sekolah Penggerak adalah buku yang disusun berdasarkan capaian pembelajaran dengan mengusung sem..."
                 link="/buku-sekolah-penggerak?role=siswa"
@@ -51,7 +51,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/4Rs1swf/manfaat-bergabung-dengan-sibi.png"
+                thumbnail="https://i.ibb.co/MVYnhFQ/manfaat-bergabung-dengan-sibi.webp"
                 title="Manfaat Bergabung dengan SIBI"
                 description="Mari berkolaborasi dan dapatkan berbagai peluang dalam ekosistem SIBI"
                 link="https://sibi.sc.cloudapp.web.id"

@@ -1,6 +1,7 @@
 import educationImg from '../../assets/img/education.png';
 import JenjangSectionCard from './JenjangSectionCard';
 import './JenjangSection.scss';
+import { Link } from 'react-router-dom';
 
 const JenjangSection = () => {
     return (
@@ -17,24 +18,44 @@ const JenjangSection = () => {
                             thumbnail="PAUD"
                             title="PAUD"
                             description="Pendidikan Anak Usia Dini"
+                            links={
+                                <>
+                                <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                                </>
+                            }
                         />
                         <JenjangSectionCard
                             bgColor="#ffb733"
                             thumbnail="SD"
                             title="SD"
                             description="Sekolah Dasar"
+                            links={
+                                <>
+                                <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                                </>
+                            }
                         />
                         <JenjangSectionCard
                             bgColor="#add8e6"
                             thumbnail="SMP"
                             title="SMP"
                             description="Sekolah Menengah Pertama"
+                            links={
+                                <>
+                                <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                                </>
+                            }
                         />
                         <JenjangSectionCard
                             bgColor="#4dff4d"
                             thumbnail="SMA/SMK"
                             title="SMA/SMK"
                             description="Sekolah Menengah Atas/Kejuruan"
+                            links={
+                                <>
+                                <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                                </>
+                            }
                         />
                     </div>
                     <div className="col-md-6 d-none d-md-block">

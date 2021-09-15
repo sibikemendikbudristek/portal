@@ -326,8 +326,7 @@ const BookDetail = () => {
                 {reviews.length < 1 ? (
                   <p className="text-center">Belum ada review untuk buku ini</p>
                 ) : (
-                  reviews
-                    .map((review, index) => {
+                  reviews?.map((review, index) => {
                       return (
                         <div className="col-12 my-2" key={index}>
                           <ReviewItem

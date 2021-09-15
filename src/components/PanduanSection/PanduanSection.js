@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./PanduanSection.scss";
 
 const IntroSection = ({image}) => {
@@ -136,6 +137,11 @@ const IntroSection = ({image}) => {
                 Buku yang diunggah di SIBI merupakan buku yang diterbitkan oleh Pemerintah Indonesia, sehingga masyarakat Indonesia diizinkan memanfaatkan buku ini termasuk mengunduh dan mencetaknya. Namun, jika akan diperjual belikan, dilarang menjual lebih dari harga eceran tertinggi (HET) yang tertera di sampul belakang buku.
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="row mt-5 text-center text-lg-end">
+            <div className="col">
+              <Link className="link" to="/faq">Selengkapnya</Link>
             </div>
           </div>
         </div>
