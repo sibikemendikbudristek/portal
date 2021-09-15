@@ -139,9 +139,9 @@ const IntroSection = ({image}) => {
               </div>
             </div>
           </div>
-          <div className="row mt-5 text-center text-lg-end">
+          <div className="row mt-3 text-center text-lg-end">
             <div className="col">
-              <Link className="link" to="/faq">Selengkapnya</Link>
+              <Link className="link" to="/faq">Lihat selengkapnya</Link>
             </div>
           </div>
         </div>
