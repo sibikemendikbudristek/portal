@@ -115,7 +115,7 @@ const BookDetail = () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "*/*",
-        Authorization: isLoggin.data.token,
+        Authorization: isLoggin ? isLoggin.data.token : "",
       },
       data: JSON.stringify({
         activity: 'read',
@@ -142,7 +142,7 @@ const BookDetail = () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "*/*",
-        Authorization: isLoggin.data.token,
+        Authorization: isLoggin ? isLoggin.data.token : "",
       },
       data: JSON.stringify({
         activity: 'download',
@@ -252,8 +252,8 @@ const BookDetail = () => {
             btnType={book.type}
             readModal="#readModal"
             reportModal="#reportModal"
-            onClickRead={isLoggin && postRead}
-            onClickDownload={isLoggin && postDownload}
+            onClickRead={postRead}
+            onClickDownload={postDownload}
           />
           <BookInfoSection data={book} />
           {book.type === 'audio' && <PlaylistSection data={book.audio_attachment} />}
