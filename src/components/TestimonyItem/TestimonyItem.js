@@ -11,13 +11,13 @@ const TestimonyItem = ({ name, institution, text, picture }) => {
             alt={name}
           />
           <h5 className="username">
-            <strong>{name}</strong>
+            <strong><small>{name}</small></strong>
           </h5>
           <h6>
             <small>{institution}</small>
           </h6>
           <p className="text-muted mt-3" style={{ fontStyle: "italic" }}>
-            "{text}"
+            "<small>{text}</small>"
           </p>
         </div>
       </div>

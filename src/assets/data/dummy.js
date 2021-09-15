@@ -25,7 +25,7 @@ const data = [
                 picture: pic3,
                 name: 'Mochamad Firman',
                 institution: 'SMP 1 Padalarang',
-                text: 'Sangat membantu saya buat belajar, bukunya lengkap dan menarik'
+                text: 'Sangat membantu saya buat belajar!'
             },
             {
                 id: 4,

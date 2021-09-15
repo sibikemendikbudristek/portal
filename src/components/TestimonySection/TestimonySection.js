@@ -16,15 +16,15 @@ const TestimonySection = ({testimonyData}) => {
     let testimonyItems = testimonyData[0].testimony;
     
     return (
-        <section id="TestimonySection">
-            <div className="container pt-5">
-                <div className="row text-center text-white py-5">
+        <section id="TestimonySection">        
+            <div className="container">
+                <div className="row text-center text-white pt-5 pb-3">
                     <div className="col">
                         <h2 className="section-title-white">Apa Kata Mereka?</h2>
                     </div>
                 </div>
-                <div className="row justify-content-center pb-5">
-                    <div className="col">
+                <div className="row justify-content-center py-5">
+                    <div className="col-lg-10">
                         <Swiper
                             spaceBetween={20}
                             grabCursor={true}
@@ -41,10 +41,10 @@ const TestimonySection = ({testimonyData}) => {
                                 slidesPerView: 3,
                                 },
                                 1024: {
-                                slidesPerView: 4,
+                                slidesPerView: 3,
                                 },
                             }}
-                            style={{paddingBottom: '60px'}}
+                            style={{paddingBottom: '60px', paddingLeft: '10px', paddingRight: '10px'}}
                         >
                             {testimonyItems.map((item) => {
                                 return(
