@@ -37,7 +37,7 @@ const Home = () => {
     <main style={{ minHeight: "100vh" }}>
       <Hero>
         <div className="row justify-content-between text-center text-md-start">
-          <div className="col-lg-5 mt-5">
+          <div className="col-lg-6 mt-5">
             <h1 className="hero-title pt-5">
               Buku untuk Semua, Akses
               <br />
@@ -49,44 +49,48 @@ const Home = () => {
               <div className="row">
                 <div className="col">
                   <a
-                    className="btn btn-primary rounded me-2"
+                    className="btn btn-primary rounded me-2 mb-2"
                     href="/siswa?role=siswa"
                   >
-                    <i className="fas fa-fw me-1 fa-user" />
-                     Siswa
+                    <small>
+                      <i className="fas fa-fw me-1 fa-user" />
+                      Siswa
+                    </small>
                   </a>
                   <a
-                    className="btn btn-primary rounded me-2"
+                    className="btn btn-primary rounded me-2 mb-2"
                     href="/guru?role=guru"
                   >
-                    <i className="fas fa-fw me-1 fa-user-graduate" />
-                    Guru
+                    <small>
+                      <i className="fas fa-fw me-1 fa-user-graduate" />
+                      Guru
+                    </small>
                   </a>
                   <a
-                    className="btn btn-primary rounded me-2"
+                    className="btn btn-primary rounded me-2 mb-2"
                     href="/umum?role=umum"
                   >
-                    <i className="fas fa-fw me-1 fa-users" />
-                    Umum
+                    <small>
+                      <i className="fas fa-fw me-1 fa-users" />
+                      Umum
+                    </small>
                   </a>
-                </div>
-              </div>
-              <div className="row mt-2">
-                <div className="col">
                   <a
-                    className="btn btn-primary rounded"
+                    className="btn btn-primary rounded mb-2"
                     href="https://sibi.sc.cloudapp.web.id/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fas fa-fw me-1 fa-book-reader" />
-                    Pelaku Perbukuan
+                    <small>
+                      <i className="fas fa-fw me-1 fa-book-reader" />
+                      Pelaku Perbukuan
+                    </small>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-7">
+          <div className="col-lg-6">
             <img
               className="img-fluid float-end"
               src={heroImg}
