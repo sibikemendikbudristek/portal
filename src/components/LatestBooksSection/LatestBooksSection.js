@@ -1,6 +1,7 @@
 import BookItem from "../BookItem/BookItem";
 import "./LatestBooksSection.scss";
 import { Link } from "react-router-dom";
+import Modal from "../../components/Modal/Modal";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +16,7 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
-const LatestBooksSection = ({ data, seeMoreUrl }) => {
+const LatestBooksSection = ({ data, seeMoreUrl, onClickRead }) => {
   return (
     <section id="LatestBooksSection">
       <div className="container py-5 px-5 px-md-0">
@@ -54,6 +55,8 @@ const LatestBooksSection = ({ data, seeMoreUrl }) => {
               return (
                 <SwiperSlide key={index}>
                   <BookItem
+                    onClickRead={onClickRead}
+                    readModal={"#" + item.slug}
                     bookImg={item.image}
                     category={item.book_type}
                     title={item.title}
@@ -79,6 +82,18 @@ const LatestBooksSection = ({ data, seeMoreUrl }) => {
             </Link>
           </div>
         </div>
+        {data?.map((item, index) => {
+          return (
+            <Modal id={item.slug} title={item.title} key={index}>
+              <embed
+                type="application/pdf"
+                src={item.attachment}
+                width="100%"
+                height="800"
+              />
+            </Modal>
+          );
+        })}
       </div>
     </section>
   );

@@ -27,11 +27,6 @@ const BookDetail = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [alert, setAlert] = useState("");
 
-  // //Related Books
-  // const [bookUrl, setBookUrl] = useState("");
-  // const [bookCategory, setBookCategory] = useState("");
-  // const [type, setType] = useState("type_pdf");
-
   // Review
   const [feedback_star, setFeedbackStar] = useState(0);
   const [reviewMessage, setReviewMessage] = useState("");
@@ -59,23 +54,6 @@ const BookDetail = () => {
     const getRelatedBooks = async () => {
       setLoading(true);
       try {
-        // if(book.category === 'buku_teks') {
-        //   setBookUrl('getTextBooks');
-        //   setBookCategory('category_buku_teks=true');
-        // } else if(book.category === 'buku_non_teks') {
-        //   setBookUrl('getNonTextBooks');
-        //   setBookCategory('');
-        // } else {
-        //   setBookUrl('getTextBooks');
-        //   setBookCategory('category_buku_sekolah_penggerak=true');
-        // }
-
-        // if(book.type === 'pdf') {
-        //   setType('type_pdf');
-        // } else {
-        //   setType('type_audio');
-        // }
-
         let response = await axios.get(
           `${base_url}/api/catalogue/getLatest?qty=10`
         );
@@ -257,7 +235,10 @@ const BookDetail = () => {
           />
           <BookInfoSection data={book} />
           {book.type === 'audio' && <PlaylistSection data={book.audio_attachment} />}
-          <RelatedBooksSection data={relatedBooks} />
+          <RelatedBooksSection 
+            data={relatedBooks} 
+            onClickRead={postRead}  
+          />
           <section className="bg-light">
             <div className="container py-5">
               <div className="row mt-5">

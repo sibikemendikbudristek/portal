@@ -1,5 +1,6 @@
 import "./RelatedBooksSection.scss";
 import BookItem from "../BookItem/BookItem";
+import Modal from "../../components/Modal/Modal";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +15,7 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
-const RelatedBooksSection = ({ data }) => {
+const RelatedBooksSection = ({ data, onClickRead }) => {
   const relatedBooks = data;
 
   return (
@@ -54,6 +55,8 @@ const RelatedBooksSection = ({ data }) => {
                 return (
                   <SwiperSlide key={index}>
                     <BookItem
+                      onClickRead={onClickRead}
+                      readModal={"#" + relatedBook.slug}
                       bookImg={relatedBook.image}
                       category={relatedBook.book_type}
                       title={relatedBook.title}
@@ -70,6 +73,18 @@ const RelatedBooksSection = ({ data }) => {
             </Swiper>
           </div>
         </div>
+        {relatedBooks?.map((item, index) => {
+          return (
+            <Modal id={item.slug} title={item.title} key={index}>
+              <embed
+                type="application/pdf"
+                src={item.attachment}
+                width="100%"
+                height="800"
+              />
+            </Modal>
+          );
+        })}
       </div>
     </section>
   );

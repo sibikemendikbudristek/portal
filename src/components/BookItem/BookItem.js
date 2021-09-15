@@ -11,6 +11,7 @@ const BookItem = ({
   bookType,
   detailUrl,
   readModal,
+  onClickRead
 }) => {
   return (
     <div id="BookItem">
@@ -42,6 +43,7 @@ const BookItem = ({
                 </h5>
               ) : (
                 <a
+                  onClick={onClickRead}
                   className="link"
                   href="!#"
                   data-bs-toggle="modal"
