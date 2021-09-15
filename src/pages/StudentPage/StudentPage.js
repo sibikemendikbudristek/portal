@@ -13,7 +13,7 @@ import data from '../../assets/data/dummy';
 import heroImg from '../../assets/img/hero-img.png';
 import panduanImg from '../../assets/img/panduan-siswa.png';
 
-const base_url = 'https://sibi.sc.cloudapp.web.id/api/catalogue';
+const base_url = 'https://sibi.sc.cloudapp.web.id/api/statistic';
 
 const StudentPage = () => {
 
@@ -24,7 +24,7 @@ const StudentPage = () => {
         const getLatestBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getLatest?qty=10`);
+                let response = await axios.get(`${base_url}/getPopularCatalogue?qty=10`);
                 setLatestBooks(response.data.results);
                 setLoading(false);
             } catch(err) {
