@@ -48,7 +48,7 @@ const RelatedBooksSection = ({ data }) => {
                   slidesPerView: 4,
                 },
               }}
-              style={{ paddingBottom: "40px" }}
+              style={{ paddingBottom: "60px" }}
             >
               {relatedBooks?.map((relatedBook, index) => {
                 return (
