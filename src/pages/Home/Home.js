@@ -12,7 +12,7 @@ import heroImg from "../../assets/img/landing-page-img.webp";
 import panduanImg from "../../assets/img/panduan-guru.webp";
 import ArticleSection from "../../components/ArticleSection/ArticleSection";
 
-const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
+const base_url = "https://sibi.sc.cloudapp.web.id/api/statistic";
 
 const Home = () => {
   const [latestbooks, setLatestBooks] = useState([]);
@@ -22,7 +22,7 @@ const Home = () => {
     const getLatestBooks = async () => {
       setLoading(true);
       try {
-        let response = await axios.get(`${base_url}/getLatest?qty=10`);
+        let response = await axios.get(`${base_url}/getPopularCatalogue?qty=10`);
         setLatestBooks(response.data.results);
         setLoading(false);
       } catch (err) {
