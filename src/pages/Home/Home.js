@@ -90,7 +90,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 mt-lg-5 pt-lg-5">
             <img
               className="img-fluid float-end"
               src={heroImg}
