@@ -19,7 +19,7 @@ const ArticleSection = () => {
           <div className="row justify-content-between pb-5">
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/wQ3Hn66/penilaian.jpg"
+                thumbnail="https://i.ibb.co/2706hFB/penilaian.webp"
                 title="Pengumuman Hasil Penilaian"
                 description="Pengumuman hasil penilaian dan Kepmendikbud Buku Non Teks Pelajaran tahun 2020"
                 link="https://penilaian.buku.kemdikbud.go.id"
@@ -27,7 +27,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/Cv4m53n/pelaku-perbukuan.jpg"
+                thumbnail="https://i.ibb.co/qYRZWnQ/pelaku-perbukuan.webp"
                 title="Pelaku Perbukuan"
                 description="Data pelaku perbukuan terbaru yang terlah disertifikasi"
                 link="https://sibi.sc.cloudapp.web.id/pembinaan/sertifikasi"
@@ -35,7 +35,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/d5sZPSF/kebijakan.jpg"
+                thumbnail="https://i.ibb.co/47wFV6J/kebijakan.webp"
                 title="Kebijakan Perbukuan"
                 description="Daftar undang-undang kemendikbud dan keputusan Mentri terkait Perbukuan"
                 link="https://sibi.sc.cloudapp.web.id/kebijakan"
@@ -59,7 +59,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/4sJX5JM/images-35.jpg"
+                thumbnail="https://i.ibb.co/VVRKmpX/images-35.webp"
                 title="Pembinaan Terbaru"
                 description="Salah satu upaya yang dilakukan oleh Pusat Kurikulum dan Perbukuan untuk mewujudkan buku bermutu dan me..."
                 link="https://sibi.sc.cloudapp.web.id/pembinaan"
