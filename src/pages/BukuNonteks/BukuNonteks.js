@@ -10,6 +10,8 @@ import Modal from "../../components/Modal/Modal";
 const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
 
 const BukuNonteks = () => {
+  const [filterToggle, setFilterToggle] = useState(false);
+
   const [nontextbooks, setNonTextBooks] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
   const [limit, setLimit] = useState(6);
@@ -21,7 +23,8 @@ const BukuNonteks = () => {
   const [nonFiksiisChecked, setNonFiksiisChecked] = useState(false);
 
   const [praMembacaisChecked, setPraMembacaisChecked] = useState(false);
-  const [pembacaDiniDanAwalisChecked, setPembacaDiniDanAwalisChecked] = useState(false);
+  const [pembacaDiniDanAwalisChecked, setPembacaDiniDanAwalisChecked] =
+    useState(false);
   const [pembacaLancarisChecked, setPembacaLancarisChecked] = useState(false);
   const [pembacaLanjutisChecked, setPembacaLanjutisChecked] = useState(false);
   const [pembacaMahirisChecked, setPembacaMahirisChecked] = useState(false);
@@ -56,7 +59,20 @@ const BukuNonteks = () => {
       }
     };
     getNonTextBooks();
-  }, [type, limit, searchTitle, fiksi, nonFiksi, praMembaca, pembacaDiniDanAwal, pembacaLancar, pembacaLanjut, pembacaMahir, pembacaKritis, submittedTags]);
+  }, [
+    type,
+    limit,
+    searchTitle,
+    fiksi,
+    nonFiksi,
+    praMembaca,
+    pembacaDiniDanAwal,
+    pembacaLancar,
+    pembacaLanjut,
+    pembacaMahir,
+    pembacaKritis,
+    submittedTags,
+  ]);
 
   const typePdfHandler = () => {
     setType("type_pdf");
@@ -90,46 +106,45 @@ const BukuNonteks = () => {
     }
 
     // Perjenjangan
-    if(praMembacaisChecked === true){
-        setPraMembaca("level_pra=true");
-    }else{
-        setPraMembaca("");
+    if (praMembacaisChecked === true) {
+      setPraMembaca("level_pra=true");
+    } else {
+      setPraMembaca("");
     }
 
-    if(pembacaDiniDanAwalisChecked === true){
-        setPembacaDiniDanAwal("level_dini=true");
-    }else{
-        setPembacaDiniDanAwal("");
+    if (pembacaDiniDanAwalisChecked === true) {
+      setPembacaDiniDanAwal("level_dini=true");
+    } else {
+      setPembacaDiniDanAwal("");
     }
 
-    if(pembacaLancarisChecked === true){
-        setPembacaLancar("level_lancar=true");
-    }else{
-        setPembacaLancar("");
+    if (pembacaLancarisChecked === true) {
+      setPembacaLancar("level_lancar=true");
+    } else {
+      setPembacaLancar("");
     }
 
-    if(pembacaLanjutisChecked === true){
-        setPembacaLanjut("level_lanjut=true");
-    }else{
-        setPembacaLanjut("");
+    if (pembacaLanjutisChecked === true) {
+      setPembacaLanjut("level_lanjut=true");
+    } else {
+      setPembacaLanjut("");
     }
 
-    if(pembacaMahirisChecked === true){
-        setPembacaMahir("level_mahir=true");
-    }else{
-        setPembacaMahir("");
+    if (pembacaMahirisChecked === true) {
+      setPembacaMahir("level_mahir=true");
+    } else {
+      setPembacaMahir("");
     }
 
-    if(pembacaKritisisChecked === true){
-        setPembacaKritis("level_kritis=true");
-    }else{
-        setPembacaKritis("");
+    if (pembacaKritisisChecked === true) {
+      setPembacaKritis("level_kritis=true");
+    } else {
+      setPembacaKritis("");
     }
 
     // Filter by tag
     setSubmittedTags(tags);
-    
-  }
+  };
 
   return (
     <main style={{ minHeight: "100vh" }}>
@@ -139,11 +154,33 @@ const BukuNonteks = () => {
         bannerImg={bukuUmumImgBanner}
       />
       <section className="container my-5" style={{ minHeight: "100vh" }}>
+        <div className="row my-4 d-block d-lg-none">
+          <div className="col text-center">
+            <button
+              onClick={() => setFilterToggle((filterToggle) => !filterToggle)}
+              className="btn"
+              type="button"
+            >
+              {filterToggle ? (
+                filterToggle && <i className="fas fa-times" />
+              ) : (
+                <i className="fas fa-filter" />
+              )}{" "}
+              Filter
+            </button>
+          </div>
+        </div>
         <div className="row justify-content-between">
-          <aside className="col-lg-3 d-none d-lg-block">
+          <aside
+            className={
+              filterToggle
+                ? filterToggle && "col-lg-3"
+                : "col-lg-3 d-none d-lg-block"
+            }
+          >
             {/* Sidebar */}
             <div
-              className="card border-0 shadow"
+              className="card border-0 shadow mb-5"
               style={{ borderRadius: "20px" }}
             >
               <div className="card-body" style={{ borderRadius: "20px" }}>
@@ -175,51 +212,105 @@ const BukuNonteks = () => {
                     </h6>
                     <div className="form-check">
                       <input
-                        onChange={(e) => setPraMembacaisChecked(e.target.checked)}
+                        onChange={(e) =>
+                          setPraMembacaisChecked(e.target.checked)
+                        }
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">Pra Membaca <i className="fas fa-fw fa-question-circle" data-bs-toggle="tooltip" title="PAUD" /></label>
+                      <label className="form-check-label">
+                        Pra Membaca{" "}
+                        <i
+                          className="fas fa-fw fa-question-circle"
+                          data-bs-toggle="tooltip"
+                          title="PAUD"
+                        />
+                      </label>
                     </div>
                     <div className="form-check">
                       <input
-                        onChange={(e) => setPembacaDiniDanAwalisChecked(e.target.checked)}
+                        onChange={(e) =>
+                          setPembacaDiniDanAwalisChecked(e.target.checked)
+                        }
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">Pembaca dini & awal <i className="fas fa-fw fa-question-circle" data-bs-toggle="tooltip" title="SD/MI Kelas I sampai dengan kelas III" /></label>
+                      <label className="form-check-label">
+                        Pembaca dini & awal{" "}
+                        <i
+                          className="fas fa-fw fa-question-circle"
+                          data-bs-toggle="tooltip"
+                          title="SD/MI Kelas I sampai dengan kelas III"
+                        />
+                      </label>
                     </div>
                     <div className="form-check">
                       <input
-                        onChange={(e) => setPembacaLancarisChecked(e.target.checked)}
+                        onChange={(e) =>
+                          setPembacaLancarisChecked(e.target.checked)
+                        }
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">Pembaca lancar <i className="fas fa-fw fa-question-circle" data-bs-toggle="tooltip" title="SD/MI Kelas IV sampai dengan kelas VI" /></label>
+                      <label className="form-check-label">
+                        Pembaca lancar{" "}
+                        <i
+                          className="fas fa-fw fa-question-circle"
+                          data-bs-toggle="tooltip"
+                          title="SD/MI Kelas IV sampai dengan kelas VI"
+                        />
+                      </label>
                     </div>
                     <div className="form-check">
                       <input
-                        onChange={(e) => setPembacaLanjutisChecked(e.target.checked)}
+                        onChange={(e) =>
+                          setPembacaLanjutisChecked(e.target.checked)
+                        }
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">Pembaca lanjut <i className="fas fa-fw fa-question-circle" data-bs-toggle="tooltip" title="SMP/MTS" /></label>
+                      <label className="form-check-label">
+                        Pembaca lanjut{" "}
+                        <i
+                          className="fas fa-fw fa-question-circle"
+                          data-bs-toggle="tooltip"
+                          title="SMP/MTS"
+                        />
+                      </label>
                     </div>
                     <div className="form-check">
                       <input
-                        onChange={(e) => setPembacaMahirisChecked(e.target.checked)}
+                        onChange={(e) =>
+                          setPembacaMahirisChecked(e.target.checked)
+                        }
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">Pembaca mahir <i className="fas fa-fw fa-question-circle" data-bs-toggle="tooltip" title="SMA/MA/SMK" /></label>
+                      <label className="form-check-label">
+                        Pembaca mahir{" "}
+                        <i
+                          className="fas fa-fw fa-question-circle"
+                          data-bs-toggle="tooltip"
+                          title="SMA/MA/SMK"
+                        />
+                      </label>
                     </div>
                     <div className="form-check">
                       <input
-                        onChange={(e) => setPembacaKritisisChecked(e.target.checked)}
+                        onChange={(e) =>
+                          setPembacaKritisisChecked(e.target.checked)
+                        }
                         className="form-check-input"
                         type="checkbox"
                       />
-                      <label className="form-check-label">Pembaca kritis <i className="fas fa-fw fa-question-circle" data-bs-toggle="tooltip" title="PT dan Pendidik" /></label>
+                      <label className="form-check-label">
+                        Pembaca kritis{" "}
+                        <i
+                          className="fas fa-fw fa-question-circle"
+                          data-bs-toggle="tooltip"
+                          title="PT dan Pendidik"
+                        />
+                      </label>
                     </div>
                   </div>
                   <div className="mb-3">
@@ -227,7 +318,14 @@ const BukuNonteks = () => {
                       <strong>Filter Tag</strong>
                     </h6>
                     <div className="form">
-                      <textarea className="form-control" placeholder="Contoh: Sejarah, Komputer, dst." value={tags} onChange={(e) => setTags(e.target.value)} id="floatingTextarea" style={{height: '80px'}} />
+                      <textarea
+                        className="form-control"
+                        placeholder="Contoh: Sejarah, Komputer, dst."
+                        value={tags}
+                        onChange={(e) => setTags(e.target.value)}
+                        id="floatingTextarea"
+                        style={{ height: "80px" }}
+                      />
                     </div>
                   </div>
                   <div className="d-grid gap-2">
@@ -250,8 +348,7 @@ const BukuNonteks = () => {
               <div
                 className="card-footer border-0 bg-white"
                 style={{ borderRadius: "20px" }}
-              >
-              </div>
+              ></div>
             </div>
             {/* End of sidebar */}
           </aside>
@@ -350,12 +447,18 @@ const BukuNonteks = () => {
                             }
                           />
                           <Modal id={book.slug} title={book.title}>
-                            <embed
+                            <object
                               type="application/pdf"
-                              src={book.attachment}
+                              data={book.attachment}
                               width="100%"
                               height="800"
-                            />
+                              aria-label={book.title}
+                            >
+                              <p>
+                                Ops, perangkat kamu tidak bisa membuka file ini
+                              </p>
+                              <a href={book.attachment}>Download</a>
+                            </object>
                           </Modal>
                         </div>
                       );

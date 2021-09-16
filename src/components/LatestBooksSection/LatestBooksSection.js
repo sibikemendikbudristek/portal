@@ -82,15 +82,19 @@ const LatestBooksSection = ({ data, seeMoreUrl, onClickRead }) => {
             </Link>
           </div>
         </div>
-        {data?.map((item, index) => {
+        {data?.map((book, index) => {
           return (
-            <Modal id={item.slug} title={item.title} key={index}>
-              <embed
+            <Modal id={book.slug} title={book.title} key={index}>
+              <object
                 type="application/pdf"
-                src={item.attachment}
+                data={book.attachment}
                 width="100%"
                 height="800"
-              />
+                aria-label={book.title}
+              >
+                <p>Ops, perangkat kamu tidak bisa membuka file ini</p>
+                <a href={book.attachment}>Download</a>
+              </object>
             </Modal>
           );
         })}

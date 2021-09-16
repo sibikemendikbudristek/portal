@@ -10,6 +10,8 @@ import Modal from "../../components/Modal/Modal";
 const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
 
 const BukuSekolahPenggerak = () => {
+  const [filterToggle, setFilterToggle] = useState(false);
+
   const [textbooks, setTextBooks] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
   const [limit, setLimit] = useState(6);
@@ -40,15 +42,23 @@ const BukuSekolahPenggerak = () => {
   const [subjectSTariisChecked, setSubjectSTariisChecked] = useState(false);
   const [subjectSMusikisChecked, setSubjectSMusikisChecked] = useState(false);
   const [subjectSTeaterisChecked, setSubjectSTeaterisChecked] = useState(false);
-  const [subjectAgamaIslamisChecked, setSubjectAgamaIslamisChecked] = useState(false);
-  const [subjectAgamaKristenisChecked, setSubjectAgamaKristenisChecked] = useState(false);
-  const [subjectAgamaKatolikisChecked, setSubjectAgamaKatolikisChecked] = useState(false);
-  const [subjectAgamaHinduisChecked, setSubjectAgamaHinduisChecked] = useState(false);
-  const [subjectAgamaBudhaisChecked, setSubjectAgamaBudhaisChecked] = useState(false);
-  const [subjectAgamaKhonghucuisChecked, setSubjectAgamaKhonghucuisChecked] = useState(false);
+  const [subjectAgamaIslamisChecked, setSubjectAgamaIslamisChecked] =
+    useState(false);
+  const [subjectAgamaKristenisChecked, setSubjectAgamaKristenisChecked] =
+    useState(false);
+  const [subjectAgamaKatolikisChecked, setSubjectAgamaKatolikisChecked] =
+    useState(false);
+  const [subjectAgamaHinduisChecked, setSubjectAgamaHinduisChecked] =
+    useState(false);
+  const [subjectAgamaBudhaisChecked, setSubjectAgamaBudhaisChecked] =
+    useState(false);
+  const [subjectAgamaKhonghucuisChecked, setSubjectAgamaKhonghucuisChecked] =
+    useState(false);
   const [subjectSejarahisChecked, setSubjectSejarahisChecked] = useState(false);
-  const [subjectInformatikaisChecked, setSubjectInformatikaisChecked] = useState(false);
-  const [subjectKepercayaanisChecked, setSubjectKepercayaanisChecked] = useState(false);
+  const [subjectInformatikaisChecked, setSubjectInformatikaisChecked] =
+    useState(false);
+  const [subjectKepercayaanisChecked, setSubjectKepercayaanisChecked] =
+    useState(false);
   const [subjectIPASisChecked, setSubjectIPASisChecked] = useState(false);
 
   // Filter
@@ -131,7 +141,7 @@ const BukuSekolahPenggerak = () => {
     subjectSTeater,
     subjectInformatika,
     subjectIPAS,
-    subjectKepercayaan
+    subjectKepercayaan,
   ]);
 
   const typePdfHandler = () => {
@@ -343,11 +353,33 @@ const BukuSekolahPenggerak = () => {
         bannerImg={bukuPelajaranImgBanner}
       />
       <section className="container my-5" style={{ minHeight: "100vh" }}>
+        <div className="row my-4 d-block d-lg-none">
+          <div className="col text-center">
+            <button
+              onClick={() => setFilterToggle((filterToggle) => !filterToggle)}
+              className="btn"
+              type="button"
+            >
+              {filterToggle ? (
+                filterToggle && <i className="fas fa-times" />
+              ) : (
+                <i className="fas fa-filter" />
+              )}{" "}
+              Filter
+            </button>
+          </div>
+        </div>
         <div className="row justify-content-between">
-          <aside className="col-lg-3 d-none d-lg-block">
+          <aside
+            className={
+              filterToggle
+                ? filterToggle && "col-lg-3"
+                : "col-lg-3 d-none d-lg-block"
+            }
+          >
             {/* Sidebar */}
             <div
-              className="card border-0 shadow"
+              className="card border-0 shadow mb-5"
               style={{ borderRadius: "20px" }}
             >
               <div className="card-body" style={{ borderRadius: "20px" }}>
@@ -358,7 +390,9 @@ const BukuSekolahPenggerak = () => {
                     </h6>
                     <div className="form-check">
                       <input
-                        onChange={(e) => setlevelPaudisChecked(e.target.checked)}
+                        onChange={(e) =>
+                          setlevelPaudisChecked(e.target.checked)
+                        }
                         className="form-check-input"
                         type="checkbox"
                       />
@@ -550,7 +584,9 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="seni"
                           />
-                          <label className="form-check-label">Informatika</label>
+                          <label className="form-check-label">
+                            Informatika
+                          </label>
                         </div>
                         <div className="form-check">
                           <input
@@ -561,7 +597,9 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="seni"
                           />
-                          <label className="form-check-label">Kepercayaan</label>
+                          <label className="form-check-label">
+                            Kepercayaan
+                          </label>
                         </div>
                         <div className="form-check">
                           <input
@@ -605,7 +643,9 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="seni"
                           />
-                          <label className="form-check-label">Seni Teater</label>
+                          <label className="form-check-label">
+                            Seni Teater
+                          </label>
                         </div>
                         <div className="form-check">
                           <input
@@ -616,7 +656,9 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="seni"
                           />
-                          <label className="form-check-label">Seni Budaya</label>
+                          <label className="form-check-label">
+                            Seni Budaya
+                          </label>
                         </div>
                         <div className="form-check">
                           <input
@@ -627,7 +669,9 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="agama"
                           />
-                          <label className="form-check-label">Agama Islam</label>
+                          <label className="form-check-label">
+                            Agama Islam
+                          </label>
                         </div>
 
                         <div className="form-check">
@@ -639,7 +683,9 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="agama"
                           />
-                          <label className="form-check-label">Agama Kristen</label>
+                          <label className="form-check-label">
+                            Agama Kristen
+                          </label>
                         </div>
 
                         <div className="form-check">
@@ -651,7 +697,9 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="agama"
                           />
-                          <label className="form-check-label">Agama Katolik</label>
+                          <label className="form-check-label">
+                            Agama Katolik
+                          </label>
                         </div>
 
                         <div className="form-check">
@@ -663,7 +711,9 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="agama"
                           />
-                          <label className="form-check-label">Agama Hindu</label>
+                          <label className="form-check-label">
+                            Agama Hindu
+                          </label>
                         </div>
 
                         <div className="form-check">
@@ -675,19 +725,25 @@ const BukuSekolahPenggerak = () => {
                             type="checkbox"
                             value="agama"
                           />
-                          <label className="form-check-label">Agama Budha</label>
+                          <label className="form-check-label">
+                            Agama Budha
+                          </label>
                         </div>
 
                         <div className="form-check">
                           <input
                             onChange={(e) =>
-                              setSubjectAgamaKhonghucuisChecked(e.target.checked)
+                              setSubjectAgamaKhonghucuisChecked(
+                                e.target.checked
+                              )
                             }
                             className="form-check-input"
                             type="checkbox"
                             value="agama"
                           />
-                          <label className="form-check-label">Agama Khonghucu</label>
+                          <label className="form-check-label">
+                            Agama Khonghucu
+                          </label>
                         </div>
                         <div className="form-check">
                           <input
@@ -801,7 +857,10 @@ const BukuSekolahPenggerak = () => {
                   ) : (
                     textbooks.map((book, index) => {
                       return (
-                        <div className="col-sm-6 col-md-4 my-3 px-5 px-sm-3" key={index}>
+                        <div
+                          className="col-sm-6 col-md-4 my-3 px-5 px-sm-3"
+                          key={index}
+                        >
                           <BookItem
                             readModal={"#" + book.slug}
                             bookImg={book.image}
@@ -815,12 +874,18 @@ const BukuSekolahPenggerak = () => {
                             }
                           />
                           <Modal id={book.slug} title={book.title}>
-                            <embed
+                            <object
                               type="application/pdf"
-                              src={book.attachment}
+                              data={book.attachment}
                               width="100%"
                               height="800"
-                            />
+                              aria-label={book.title}
+                            >
+                              <p>
+                                Ops, perangkat kamu tidak bisa membuka file ini
+                              </p>
+                              <a href={book.attachment}>Download</a>
+                            </object>
                           </Modal>
                         </div>
                       );

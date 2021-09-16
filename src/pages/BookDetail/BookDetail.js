@@ -339,12 +339,16 @@ const BookDetail = () => {
             </div>
           </section>
           <Modal id="readModal" title={book.title}>
-            <embed
+            <object
               type="application/pdf"
-              src={book.attachment}
+              data={book.attachment}
               width="100%"
               height="800"
-            />
+              aria-label={book.title}
+            >
+              <p>Ops, perangkat kamu tidak bisa membuka file ini</p>
+              <a href={book.attachment}>Download</a>
+            </object>
           </Modal>
           <Modal id="reportModal" title="Lapor">
             {isLoggin ? (
