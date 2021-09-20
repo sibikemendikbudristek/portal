@@ -225,12 +225,12 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link mx-1" href="https://sibi.sc.cloudapp.web.id/penilaian">
+                  <a className="nav-link mx-1" href="https://app.buku.kemdikbud.go.id/penilaian">
                     Penilaian
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link mx-1" href="https://sibi.sc.cloudapp.web.id/kebijakan">
+                  <a className="nav-link mx-1" href="https://app.buku.kemdikbud.go.id/kebijakan">
                     Kebijakan
                   </a>
                 </li>
@@ -290,12 +290,12 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link mx-1" href="https://sibi.sc.cloudapp.web.id/penilaian">
+              <a className="nav-link mx-1" href="https://app.buku.kemdikbud.go.id/penilaian">
                 Penilaian
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link mx-1" href="https://sibi.sc.cloudapp.web.id/kebijakan">
+              <a className="nav-link mx-1" href="https://app.buku.kemdikbud.go.id/kebijakan">
                 Kebijakan
               </a>
             </li>

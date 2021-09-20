@@ -77,7 +77,7 @@ const Home = () => {
                   </a>
                   <a
                     className="btn btn-primary rounded mb-2"
-                    href="https://sibi.sc.cloudapp.web.id/"
+                    href="https://app.buku.kemdikbud.go.id/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
