@@ -322,7 +322,7 @@ const BookDetail = () => {
                     .reverse()
                 )}
               </div>
-              {reviews.length > 5 ? (
+              {reviews.length > 5 && (
                 <div className="row mt-3">
                   <div className="col text-center">
                     <button
@@ -333,8 +333,6 @@ const BookDetail = () => {
                     </button>
                   </div>
                 </div>
-              ) : (
-                ""
               )}
             </div>
           </section>
@@ -347,7 +345,7 @@ const BookDetail = () => {
               aria-label={book.title}
             >
               <p>Ops, perangkat kamu tidak bisa membuka file ini</p>
-              <a href={book.attachment}>Download</a>
+              <a onClick={postDownload} href={book.attachment}>Download</a>
             </object>
           </Modal>
           <Modal id="reportModal" title="Lapor">
