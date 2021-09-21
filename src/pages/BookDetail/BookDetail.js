@@ -12,7 +12,7 @@ import Modal from "../../components/Modal/Modal";
 import PlaylistSection from "../../components/PlaylistSection/PlaylistSection";
 
 // Base Url
-const base_url = "https://sibi.sc.cloudapp.web.id";
+const base_url = "https://app.buku.kemdikbud.go.id";
 
 // Validation
 const isLoggin = JSON.parse(localStorage.getItem("user-info"));
