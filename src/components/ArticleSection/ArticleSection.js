@@ -30,7 +30,7 @@ const ArticleSection = () => {
                 thumbnail="https://i.ibb.co/qYRZWnQ/pelaku-perbukuan.webp"
                 title="Pelaku Perbukuan"
                 description="Data pelaku perbukuan terbaru yang terlah disertifikasi"
-                link="https://sibi.sc.cloudapp.web.id/pembinaan/sertifikasi"
+                link="https://app.buku.kemdikbud.go.id/pembinaan/sertifikasi"
               />
             </div>
             <div className="col-md-6 mb-3">
@@ -38,7 +38,7 @@ const ArticleSection = () => {
                 thumbnail="https://i.ibb.co/47wFV6J/kebijakan.webp"
                 title="Kebijakan Perbukuan"
                 description="Daftar undang-undang kemendikbud dan keputusan Mentri terkait Perbukuan"
-                link="https://sibi.sc.cloudapp.web.id/kebijakan"
+                link="https://app.buku.kemdikbud.go.id/kebijakan"
               />
             </div>
             <div className="col-md-6 mb-3">
@@ -62,7 +62,7 @@ const ArticleSection = () => {
                 thumbnail="https://i.ibb.co/VVRKmpX/images-35.webp"
                 title="Pembinaan Terbaru"
                 description="Salah satu upaya yang dilakukan oleh Pusat Kurikulum dan Perbukuan untuk mewujudkan buku bermutu dan me..."
-                link="https://sibi.sc.cloudapp.web.id/pembinaan"
+                link="https://app.buku.kemdikbud.go.id/pembinaan"
               />
             </div>
           </div>

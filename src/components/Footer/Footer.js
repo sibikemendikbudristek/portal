@@ -36,8 +36,8 @@ const Footer = () => {
                             <Link className="nav-link" to="/buku-teks">Buku Teks K13</Link>
                             <Link className="nav-link" to="/buku-nonteks">Buku Nonteks</Link>
                             <Link className="nav-link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
-                            <a className="nav-link" href="https://sibi.sc.cloudapp.web.id/penilaian">Penilaian</a>
-                            <a className="nav-link" href="https://sibi.sc.cloudapp.web.id/kebijakan">Kebijakan</a>
+                            <a className="nav-link" href="https://app.buku.kemdikbud.go.id/penilaian">Penilaian</a>
+                            <a className="nav-link" href="https://app.buku.kemdikbud.go.id/kebijakan">Kebijakan</a>
                             <Link className="nav-link" to="/panduan">Panduan</Link>
                             <Link className="nav-link" to="/tentang-kami">Tentang Kami</Link>
                         </ul>

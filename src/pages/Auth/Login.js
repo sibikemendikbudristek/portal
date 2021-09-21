@@ -97,7 +97,7 @@ const Login = () => {
                   </div>
                   <div className="row">
                     <div className="col">
-                      <a className="link" href="https://sibi.sc.cloudapp.web.id/user/recovery">
+                      <a className="link" href="https://app.buku.kemdikbud.go.id/user/recovery">
                         Lupa kata sandi?
                       </a>
                     </div>

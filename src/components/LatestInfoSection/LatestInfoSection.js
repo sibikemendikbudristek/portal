@@ -18,7 +18,7 @@ const LatestInfoSection = () => {
                 </div>
                 <div className="row mt-5">
                     <div className="col text-center">
-                        <a className="btn btn-primary rounded-pill btn-lg" href="https://sibi.sc.cloudapp.web.id/kebijakan">Baca Selengkapnya</a>
+                        <a className="btn btn-primary rounded-pill btn-lg" href="https://app.buku.kemdikbud.go.id/kebijakan">Baca Selengkapnya</a>
                     </div>
                 </div>
             </div>

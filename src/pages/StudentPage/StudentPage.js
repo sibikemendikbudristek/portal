@@ -13,7 +13,7 @@ import data from '../../assets/data/dummy';
 import heroImg from '../../assets/img/hero-img.png';
 import panduanImg from '../../assets/img/panduan-siswa.png';
 
-const base_url = 'https://sibi.sc.cloudapp.web.id/api/statistic';
+const base_url = 'https://app.buku.kemdikbud.go.id/api/statistic';
 
 const StudentPage = () => {
 

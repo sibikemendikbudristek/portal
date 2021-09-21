@@ -7,7 +7,7 @@ import bukuUmumImgBanner from "../../assets/img/nonteks-img.png";
 import BookItem from "../../components/BookItem/BookItem";
 import Modal from "../../components/Modal/Modal";
 
-const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
+const base_url = "https://app.buku.kemdikbud.go.id/api/catalogue";
 
 const BukuNonteks = () => {
   const [filterToggle, setFilterToggle] = useState(false);

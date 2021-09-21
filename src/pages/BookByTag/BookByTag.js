@@ -5,7 +5,7 @@ import Modal from "../../components/Modal/Modal";
 import { useParams } from "react-router-dom";
 import Loader from "react-loader-spinner";
 
-const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
+const base_url = "https://app.buku.kemdikbud.go.id/api/catalogue";
 
 const BookByTag = () => {
   const { tag } = useParams();

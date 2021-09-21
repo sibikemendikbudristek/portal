@@ -7,7 +7,7 @@ import bukuPelajaranImgBanner from "../../assets/img/buku-tekss.png";
 import BookItem from "../../components/BookItem/BookItem";
 import Modal from "../../components/Modal/Modal";
 
-const base_url = "https://sibi.sc.cloudapp.web.id/api/catalogue";
+const base_url = "https://app.buku.kemdikbud.go.id/api/catalogue";
 
 const BukuSekolahPenggerak = () => {
   const [filterToggle, setFilterToggle] = useState(false);

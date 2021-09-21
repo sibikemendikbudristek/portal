@@ -12,7 +12,7 @@ import heroImg from "../../assets/img/landing-page-img.webp";
 import panduanImg from "../../assets/img/panduan-guru.webp";
 import ArticleSection from "../../components/ArticleSection/ArticleSection";
 
-const base_url = "https://sibi.sc.cloudapp.web.id/api/statistic";
+const base_url = "https://app.buku.kemdikbud.go.id/api/statistic";
 
 const Home = () => {
   const [latestbooks, setLatestBooks] = useState([]);
