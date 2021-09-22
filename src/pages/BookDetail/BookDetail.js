@@ -55,7 +55,7 @@ const BookDetail = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/api/catalogue/getLatest?qty=10`
+          `${base_url}/api/catalogue/getRecommendCatalogue?slug=${slug}&qty=10`
         );
         setRelatedBooks(response.data.results);
         setLoading(false);
