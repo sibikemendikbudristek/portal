@@ -881,10 +881,12 @@ const BukuSekolahPenggerak = () => {
                               height="800"
                               aria-label={book.title}
                             >
-                              <p>
-                                Ops, perangkat kamu tidak bisa membuka file ini
-                              </p>
-                              <a href={book.attachment}>Download</a>
+                            <p>
+                            Silahkan klik tombol unduh untuk membaca
+                          </p>
+                          <a className="btn btn-light" href={book.attachment}>
+                            <i className="fas fa-fw fa-download" /> Unduh
+                          </a>
                             </object>
                           </Modal>
                         </div>

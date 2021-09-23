@@ -44,7 +44,7 @@ const DetailBanner = ({
             <div className="d-grid gap-2 d-md-block">
               {btnType === "pdf" ? (
                 <button
-                  className="btn btn-light btn-md px-4 mx-2 mx-lg-0 me-lg-2"
+                  className="btn btn-light btn-md px-4 mx-2 mx-lg-0 me-lg-2 d-none d-lg-inline"
                   data-bs-toggle="modal"
                   data-bs-target={readModal}
                   onClick={onClickRead}
@@ -68,7 +68,16 @@ const DetailBanner = ({
                 >
                   <i className="fas fa-fw fa-download" /> Unduh
                 </a>
-              ) : (
+              ) : (<>
+                <a
+                  className="btn btn-light btn-md px-4 mx-2 d-lg-none"
+                  href={attachment}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onClickRead}
+                >
+                <i className="fab fa-fw fa-readme" /> Baca
+                </a>
                 <a
                   className="btn btn-light btn-md px-4 mx-2"
                   href={attachment}
@@ -78,6 +87,7 @@ const DetailBanner = ({
                 >
                   <i className="fas fa-fw fa-download" /> Unduh
                 </a>
+                </>
               )}
               <button
                 className="btn btn-danger btn-md px-4 mx-2"

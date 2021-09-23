@@ -344,8 +344,8 @@ const BookDetail = () => {
               height="800"
               aria-label={book.title}
             >
-              <p>Ops, perangkat kamu tidak bisa membuka file ini</p>
-              <a onClick={postDownload} href={book.attachment}>Download</a>
+              <p>Silahkan klik tombol unduh untuk membaca</p>
+              <a className="btn btn-light" onClick={postDownload} href={book.attachment}><i className="fas fa-fw fa-download" /> Unduh</a>
             </object>
           </Modal>
           <Modal id="reportModal" title="Lapor">

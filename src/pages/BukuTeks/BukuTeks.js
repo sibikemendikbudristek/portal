@@ -911,9 +911,11 @@ const BukuTeks = () => {
                               aria-label={book.title}
                             >
                               <p>
-                                Ops, perangkat kamu tidak bisa membuka file ini
+                                Silahkan klik tombol unduh untuk membaca
                               </p>
-                              <a href={book.attachment}>Download</a>
+                              <a className="btn btn-light" href={book.attachment}>
+                                <i className="fas fa-fw fa-download" /> Unduh
+                              </a>
                             </object>
                           </Modal>
                         </div>
