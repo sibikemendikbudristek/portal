@@ -69,7 +69,7 @@ const Navbar = () => {
                 style={{ width: "40px", height: "40px" }}
               />
             </a>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <li>
                 <NavLink
                   activeClassName="dropdown"
@@ -335,7 +335,7 @@ const Navbar = () => {
                     style={{ width: "40px", height: "40px" }}
                   />
                 </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                   <li>
                     <NavLink
                       activeClassName="dropdown"

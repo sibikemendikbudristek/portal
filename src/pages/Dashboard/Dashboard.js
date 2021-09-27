@@ -15,13 +15,13 @@ const Dashboard = () => {
   // Get Profile
   const {user} = useRecoilValue(authenticatedUser);
   // Update Profile
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [birthday, setBirthday] = useState("");
-  const [portfolio_link, setPortfolioLink] = useState("");
-  const [description, setDescription] = useState("");
+  const [name, setName] = useState(user.name || "");
+  const [username, setUsername] = useState(user.username ||"");
+  const [phone, setPhone] = useState(user.phone || "");
+  const [address, setAddress] = useState(user.address || "");
+  const [birthday, setBirthday] = useState(user.birthday || "");
+  const [portfolio_link, setPortfolioLink] = useState(user.portfolio_link || "");
+  const [description, setDescription] = useState(user.description || "");
 
   // Read Histories
   const [readHistories, setReadHistories] = useState([]);
@@ -34,32 +34,6 @@ const Dashboard = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    const getProfile = async () => {
-      setLoading(true);
-      try {
-        let response = await axios.get(`${base_url}/api/user/getProfile`, {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "*/*",
-            Authorization: isLoggin.data.token,
-          },
-        });
-        setName(response.data.result.name || "");
-        setUsername(response.data.result.username || "");
-        setBirthday(response.data.result.birthday || "");
-        setPhone(response.data.result.phone || "");
-        setPortfolioLink(response.data.result.portfolio_link || "");
-        setAddress(response.data.result.address || "");
-        setDescription(response.data.result.description || "");
-
-        setLoading(false);
-      } catch (err) {
-        setLoading(true);
-        return err.message;
-      }
-    };
-    getProfile();
-
     const getReadHistories = async () => {
       setLoading(true);
       try {
@@ -406,7 +380,7 @@ const Dashboard = () => {
                                   value={description}
                                   className="form-control"
                                   type="text"
-                                  placeholder="Deskrisi tentang dirimu..."
+                                  placeholder="Deskripsi tentang dirimu..."
                                 />
                               </div>
                             </div>

@@ -21,8 +21,6 @@ export const authenticatedUser = selector({
         }catch(error){
             user = { user: error.message }
         }
-
-        console.log(user)
-        return user;
+         return user;
     }
 })
