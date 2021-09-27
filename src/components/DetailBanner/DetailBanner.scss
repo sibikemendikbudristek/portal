@@ -2,8 +2,10 @@
   margin-top: 30px;
   padding-top: 100px;
   padding-bottom: 50px;
-  background: url("../../assets/img/detail-banner-bg.webp") center center
-    no-repeat;
+  background-color: #0080ca;
+  background-image: url("../../assets/img/detail-banner-bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   color: white;
 }
