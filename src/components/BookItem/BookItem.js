@@ -61,18 +61,11 @@ const BookItem = ({
                   </p>
                 </a>
               ) : (
-                <>
-                <Link className="card-link d-none d-lg-block" to={detailUrl || null}>
+                <Link className="card-link" to={detailUrl || null}>
                   <p className="card-text text-warning">
                     Baca Selengkapnya <i className="fas fa-fw fa-arrow-right" />
                   </p>
                 </Link>
-                <a className="card-link d-lg-none" href={detailUrl || null}>
-                  <p className="card-text text-warning">
-                    Baca Selengkapnya <i className="fas fa-fw fa-arrow-right" />
-                  </p>
-                </a>
-                </>
               )}
             </div>
           </div>

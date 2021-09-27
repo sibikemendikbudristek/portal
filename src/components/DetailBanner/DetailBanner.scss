@@ -9,3 +9,10 @@
   background-size: cover;
   color: white;
 }
+
+@media screen and (max-width: 700px) {
+  #DetailBanner {
+    background-color: #0080ca;
+    background-image: url("../../assets/img/detail-banner-bg-small.jpg");
+  }
+}
