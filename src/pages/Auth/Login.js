@@ -34,6 +34,7 @@ const Login = () => {
       setPassword("");
       setLoading(false);
       setAlert(response.data.message);
+      window.scrollTo(0,0);
     }
   };
 

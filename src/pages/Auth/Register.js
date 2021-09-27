@@ -44,6 +44,7 @@ const Register = () => {
       setLoading(false);
       setAlert(response.data.status);
       setAlertMessage(response.data.message);
+      window.scrollTo(0,0);
     } else {
       setName("");
       setUsername("");
@@ -54,6 +55,7 @@ const Register = () => {
       setLoading(false);
       setAlert(response.data.status);
       setAlertMessage(response.data.message);
+      window.scrollTo(0,0);
     }
   };
 

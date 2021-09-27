@@ -107,6 +107,7 @@ const Dashboard = () => {
       setIsSubmitting(false);
       setAlert(response.data.message);
       console.log(response.data);
+      window.scrollTo(0,0);
     } else {
       setIsSubmitting(false);
       setAlert(response.data.message);
@@ -216,7 +217,7 @@ const Dashboard = () => {
                       <strong>Dashboard</strong>
                     </h2>
                     <p className="mb-5">
-                      Selamat datang {isLoggin.data.result.fullname}. Selamat
+                      Selamat datang {user.name}. Selamat
                       beraktivitas, semoga sehat selalu.
                     </p>
                     <img
