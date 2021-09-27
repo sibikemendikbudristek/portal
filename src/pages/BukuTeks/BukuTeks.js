@@ -6,8 +6,7 @@ import Banner from "../../components/Banner/Banner";
 import bukuPelajaranImgBanner from "../../assets/img/buku-tekss.png";
 import BookItem from "../../components/BookItem/BookItem";
 import Modal from "../../components/Modal/Modal";
-
-const base_url = "https://app.buku.kemdikbud.go.id/api/catalogue";
+import { base_url } from "../../utils";
 
 const BukuTeks = () => {
   const [filterToggle, setFilterToggle] = useState(false);
@@ -101,7 +100,7 @@ const BukuTeks = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgamaIslam}&${subjectAgamaKristen}&${subjectAgamaKatolik}&${subjectAgamaHindu}&${subjectAgamaBudha}&${subjectAgamaKhonghucu}&${subjectSejarah}&${subjectTematik}`
+          `${base_url}/api/catalogue/getTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class2}&${class3}&${class4}&${class5}&${class6}&${class7}&${class8}&${class9}&${class10}&${class11}&${class12}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectPrakarya}&${subjectSBudaya}&${subjectAgamaIslam}&${subjectAgamaKristen}&${subjectAgamaKatolik}&${subjectAgamaHindu}&${subjectAgamaBudha}&${subjectAgamaKhonghucu}&${subjectSejarah}&${subjectTematik}`
         );
         setTextBooks(response.data.results);
         setLoading(false);

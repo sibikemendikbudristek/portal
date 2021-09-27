@@ -13,8 +13,7 @@ import data from '../../assets/data/dummy';
 import heroImg from '../../assets/img/guru-img.png';
 import PenilaianSection from '../../components/PenilaianSection/PenilaianSection';
 import panduanImg from '../../assets/img/panduan-guru.png';
-
-const base_url = 'https://app.buku.kemdikbud.go.id/api/statistic';
+import { base_url } from '../../utils';
 
 const TeacherPage = () => {
 
@@ -25,7 +24,7 @@ const TeacherPage = () => {
         const getLatestBooks = async () => {
             setLoading(true);
             try {
-                let response = await axios.get(`${base_url}/getPopularCatalogue?qty=10`);
+                let response = await axios.get(`${base_url}/api/statistic/getPopularCatalogue?qty=10`);
                 setLatestBooks(response.data.results);
                 setLoading(false);
             } catch(err) {

@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useRecoilValue } from "recoil";
+import { authenticatedUser } from "../../store";
 import dashboardImg from "../../assets/img/dashboard-img.png";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { base_url } from "../../utils";
 
 // Validation
 const isLoggin = JSON.parse(localStorage.getItem("user-info"));
 
-// Base Url
-const base_url = "https://sibi.sc.cloudapp.web.id";
-
 const Dashboard = () => {
   const [alert, setAlert] = useState("");
+  // Get Profile
+  const {user} = useRecoilValue(authenticatedUser);
   // Update Profile
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -153,10 +155,10 @@ const Dashboard = () => {
                 <div className="row">
                   <div className="col">
                     <h1 style={{ fontSize: "17px" }}>
-                      Halo {isLoggin.data.result.fullname}
+                      Halo {user.name}
                     </h1>
                     <p>
-                      <strong>{isLoggin.data.result.role_name}</strong>
+                      <strong>{user.role_name}</strong>
                     </p>
                   </div>
                 </div>
@@ -268,15 +270,13 @@ const Dashboard = () => {
                           className="alert alert-info alert-dismissible fade show"
                           role="alert"
                         >
-                          <strong>{alert}</strong>
-                          <p>
-                            Logout dan login kembali untuk melihat perubahannya
-                          </p>
+                          <strong>{alert && 'Profile berhasil diperbaharui'}</strong>
                           <button
                             type="button"
                             className="btn-close"
                             data-bs-dismiss="alert"
                             aria-label="Close"
+                            onClick={() => window.location.reload()}
                           />
                         </div>
                       )}

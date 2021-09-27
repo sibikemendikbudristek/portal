@@ -4,8 +4,7 @@ import BookItem from "../../components/BookItem/BookItem";
 import Modal from "../../components/Modal/Modal";
 import { useParams } from "react-router-dom";
 import Loader from "react-loader-spinner";
-
-const base_url = "https://app.buku.kemdikbud.go.id/api/catalogue";
+import { base_url } from '../../utils';
 
 const BookByTag = () => {
   const { tag } = useParams();
@@ -17,7 +16,7 @@ const BookByTag = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getBooksByTag?tag=${tag}&offset=0`
+          `${base_url}/api/catalogue/getBooksByTag?tag=${tag}&offset=0`
         );
         setBooks(response.data.results);
         setLoading(false);

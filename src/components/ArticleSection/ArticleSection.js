@@ -54,7 +54,7 @@ const ArticleSection = () => {
                 thumbnail="https://i.ibb.co/MVYnhFQ/manfaat-bergabung-dengan-sibi.webp"
                 title="Manfaat Bergabung dengan SIBI"
                 description="Mari berkolaborasi dan dapatkan berbagai peluang dalam ekosistem SIBI"
-                link="https://sibi.sc.cloudapp.web.id"
+                link="https://app.buku.kemdikbud.go.id/"
               />
             </div>
             <div className="col-md-6 mb-3">

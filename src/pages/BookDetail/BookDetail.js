@@ -10,9 +10,7 @@ import RelatedBooksSection from "../../components/RelatedBooksSection/RelatedBoo
 import ReviewItem from "../../components/ReviewItem/ReviewItem";
 import Modal from "../../components/Modal/Modal";
 import PlaylistSection from "../../components/PlaylistSection/PlaylistSection";
-
-// Base Url
-const base_url = "https://app.buku.kemdikbud.go.id";
+import { base_url } from "../../utils";
 
 // Validation
 const isLoggin = JSON.parse(localStorage.getItem("user-info"));

@@ -2,6 +2,8 @@ import { useState } from "react";
 import SibiLogo from "../../assets/img/sibi-nav-logo.webp";
 import "./Navbar.scss";
 import { NavLink, useHistory } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { authenticatedUser } from "../../store";
 
 const Navbar = () => {
   const [toggleIcon, setToggleIcon] = useState(false);
@@ -25,6 +27,7 @@ const Navbar = () => {
 
   // Cek User Info
   let userInfo = JSON.parse(localStorage.getItem("user-info"));
+  const { user } = useRecoilValue(authenticatedUser);
 
   let history = useHistory();
 
@@ -312,7 +315,7 @@ const Navbar = () => {
               </>
             )}
           </ul>
-          {localStorage.getItem("user-info") ? (
+          {userInfo ? (
             <ul className="navbar-nav mb-2 mb-lg-0 text-center text-xl-start">
               <li className="nav-item dropdown d-none d-xl-block">
                 <a
@@ -324,7 +327,7 @@ const Navbar = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <strong>{userInfo && userInfo.data.result.fullname}</strong>
+                  <strong>{user && user.name}</strong>
                   <img
                     className="rounded-circle ms-2"
                     src={userInfo && userInfo.data.result.avatar}

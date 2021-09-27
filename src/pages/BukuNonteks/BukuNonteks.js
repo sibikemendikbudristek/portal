@@ -6,8 +6,7 @@ import Banner from "../../components/Banner/Banner";
 import bukuUmumImgBanner from "../../assets/img/nonteks-img.png";
 import BookItem from "../../components/BookItem/BookItem";
 import Modal from "../../components/Modal/Modal";
-
-const base_url = "https://app.buku.kemdikbud.go.id/api/catalogue";
+import { base_url } from "../../utils";
 
 const BukuNonteks = () => {
   const [filterToggle, setFilterToggle] = useState(false);
@@ -49,7 +48,7 @@ const BukuNonteks = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/getNonTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${fiksi}&${nonFiksi}&${praMembaca}&${pembacaDiniDanAwal}&${pembacaLancar}&${pembacaLanjut}&${pembacaMahir}&${pembacaKritis}&tag=${submittedTags}`
+          `${base_url}/api/catalogue/getNonTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${fiksi}&${nonFiksi}&${praMembaca}&${pembacaDiniDanAwal}&${pembacaLancar}&${pembacaLanjut}&${pembacaMahir}&${pembacaKritis}&tag=${submittedTags}`
         );
         setNonTextBooks(response.data.results);
         setLoading(false);

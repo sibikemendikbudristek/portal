@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-const base_url = "https://sibi.sc.cloudapp.web.id";
+import { base_url } from "../../utils";
 
 const Register = () => {
   const [name, setName] = useState("");
