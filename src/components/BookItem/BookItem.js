@@ -13,7 +13,6 @@ const BookItem = ({
   readModal,
   onClickRead
 }) => {
-  console.log(bookType)
   return (
     <div id="BookItem">
       <div className="card shadow">
