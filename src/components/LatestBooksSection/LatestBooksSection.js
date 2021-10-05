@@ -62,7 +62,7 @@ const LatestBooksSection = ({ data, seeMoreUrl, onClickRead }) => {
                     title={item.title}
                     bookType={item.type}
                     detailUrl={
-                      item.code === "BEI"
+                      item.type === "interactive"
                         ? item.attachment
                         : `/book/detail/${item.slug}`
                     }

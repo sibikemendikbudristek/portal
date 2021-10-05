@@ -48,7 +48,6 @@ const Dashboard = () => {
           }
         );
         setReadHistories(response.data.results);
-        // console.log(response.data.results);
         setLoading(false);
       } catch (err) {
         setLoading(true);

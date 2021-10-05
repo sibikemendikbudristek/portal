@@ -55,7 +55,7 @@ const BookByTag = () => {
                   title={book.title}
                   bookType={book.type}
                   detailUrl={
-                    book.code === "BEI"
+                    book.type === "interactive"
                       ? book.attachment
                       : `/book/detail/${book.slug}`
                   }

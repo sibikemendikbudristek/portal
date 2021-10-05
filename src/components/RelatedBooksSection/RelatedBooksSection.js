@@ -62,7 +62,7 @@ const RelatedBooksSection = ({ data, onClickRead }) => {
                       title={relatedBook.title}
                       bookType={relatedBook.type}
                       detailUrl={
-                        relatedBook.code === "BEI"
+                        relatedBook.type === "interactive"
                           ? relatedBook.attachment
                           : `/book/detail/${relatedBook.slug}`
                       }
