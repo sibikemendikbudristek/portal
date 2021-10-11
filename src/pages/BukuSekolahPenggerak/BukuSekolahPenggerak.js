@@ -273,7 +273,7 @@ const BukuSekolahPenggerak = () => {
     }
 
     if (subjectSBudayaisChecked === true) {
-      setSubjectSBudaya("subject_seni");
+      setSubjectSBudaya("subject_seni_budaya");
     } else {
       setSubjectSBudaya("");
     }
