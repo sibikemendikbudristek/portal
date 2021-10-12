@@ -37,6 +37,7 @@ const BookItem = ({
               {bookType !== "pdf" ? (
                 <h5
                   className="card-title text-white"
+                  title={ title }
                   style={{ pointerEvents: "none" }}
                 >
                   {title || "Undefined"}
@@ -49,7 +50,7 @@ const BookItem = ({
                   data-bs-toggle="modal"
                   data-bs-target={readModal}
                 >
-                  <h5 className="card-title text-white">
+                  <h5 title={title} className="card-title text-white">
                     {title || "Undefined"}
                   </h5>
                 </a>
