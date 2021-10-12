@@ -36,7 +36,7 @@ const BukuSekolahPenggerak = () => {
   const [subjectPKNisChecked, setSubjectPKNisChecked] = useState(false);
   const [subjectMatematikaisChecked, setSubjectMatematikaisChecked] =
     useState(false);
-  const [subjectSBudayaisChecked, setSubjectSBudayaisChecked] = useState(false);
+  // const [subjectSBudayaisChecked, setSubjectSBudayaisChecked] = useState(false);
   const [subjectSRupaisChecked, setSubjectSRupaisChecked] = useState(false);
   const [subjectSTariisChecked, setSubjectSTariisChecked] = useState(false);
   const [subjectSMusikisChecked, setSubjectSMusikisChecked] = useState(false);
@@ -76,7 +76,7 @@ const BukuSekolahPenggerak = () => {
   const [subjectPJOK, setSubjectPJOK] = useState("");
   const [subjectPKN, setSubjectPKN] = useState("");
   const [subjectMatematika, setSubjectMatematika] = useState("");
-  const [subjectSBudaya, setSubjectSBudaya] = useState("");
+  // const [subjectSBudaya, setSubjectSBudaya] = useState("");
   const [subjectSMusik, setSubjectSMusik] = useState("");
   const [subjectSRupa, setSubjectSRupa] = useState("");
   const [subjectSTari, setSubjectSTari] = useState("");
@@ -97,7 +97,7 @@ const BukuSekolahPenggerak = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `${base_url}/api/catalogue/getPenggerakTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelPaud}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class4}&${class7}&${class10}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectSBudaya}&${subjectAgamaIslam}&${subjectAgamaKristen}&${subjectAgamaKatolik}&${subjectAgamaHindu}&${subjectAgamaBudha}&${subjectAgamaKhonghucu}&${subjectSejarah}&${subjectSRupa}&${subjectSMusik}&${subjectSTari}&${subjectSTeater}&${subjectInformatika}&${subjectIPAS}&${subjectKepercayaan}`
+          `${base_url}/api/catalogue/getPenggerakTextBooks?limit=${limit}&offset=0&title=${searchTitle}&${type}&${levelPaud}&${levelSD}&${levelSMP}&${levelSMA}&${class1}&${class4}&${class7}&${class10}&${subjectIPA}&${subjectIPS}&${subjectBIndonesia}&${subjectBInggris}&${subjectPJOK}&${subjectPKN}&${subjectMatematika}&${subjectAgamaIslam}&${subjectAgamaKristen}&${subjectAgamaKatolik}&${subjectAgamaHindu}&${subjectAgamaBudha}&${subjectAgamaKhonghucu}&${subjectSejarah}&${subjectSRupa}&${subjectSMusik}&${subjectSTari}&${subjectSTeater}&${subjectInformatika}&${subjectIPAS}&${subjectKepercayaan}`
         );
         setTextBooks(response.data.results);
         setLoading(false);
@@ -126,7 +126,6 @@ const BukuSekolahPenggerak = () => {
     subjectPJOK,
     subjectPKN,
     subjectMatematika,
-    subjectSBudaya,
     subjectAgamaIslam,
     subjectAgamaKristen,
     subjectAgamaKatolik,
@@ -272,11 +271,11 @@ const BukuSekolahPenggerak = () => {
       setSubjectKepercayaan("");
     }
 
-    if (subjectSBudayaisChecked === true) {
-      setSubjectSBudaya("subject_seni_budaya");
-    } else {
-      setSubjectSBudaya("");
-    }
+    // if (subjectSBudayaisChecked === true) {
+    //   setSubjectSBudaya("subject_seni_budaya");
+    // } else {
+    //   setSubjectSBudaya("");
+    // }
 
     if (subjectSRupaisChecked === true) {
       setSubjectSRupa("subject_seni_rupa");
@@ -644,19 +643,6 @@ const BukuSekolahPenggerak = () => {
                           />
                           <label className="form-check-label">
                             Seni Teater
-                          </label>
-                        </div>
-                        <div className="form-check">
-                          <input
-                            onChange={(e) =>
-                              setSubjectSBudayaisChecked(e.target.checked)
-                            }
-                            className="form-check-input"
-                            type="checkbox"
-                            value="seni"
-                          />
-                          <label className="form-check-label">
-                            Seni Budaya
                           </label>
                         </div>
                         <div className="form-check">
