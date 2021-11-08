@@ -59,7 +59,7 @@ const ArticleSection = () => {
             </div>
             <div className="col-md-6 mb-3">
               <ArticleItem
-                thumbnail="https://i.ibb.co/VVRKmpX/images-35.webp"
+                thumbnail="https://i.ibb.co/b6FkPKN/images-35.webp"
                 title="Pembinaan Terbaru"
                 description="Salah satu upaya yang dilakukan oleh Pusat Kurikulum dan Perbukuan untuk mewujudkan buku bermutu dan me..."
                 link="https://app.buku.kemdikbud.go.id/pembinaan"
