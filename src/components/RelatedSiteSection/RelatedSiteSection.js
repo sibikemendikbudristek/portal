@@ -15,7 +15,7 @@ const RelatedSiteSection = () => {
           </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-8 col-md-3 col-lg-2 my-2">
+          <div className="col-4 col-md-3 col-lg-2 my-2">
             <a
               href="https://balaipustaka.co.id/"
               target="_blank"
@@ -34,7 +34,7 @@ const RelatedSiteSection = () => {
             </a>
           </div>
 
-          <div className="col-8 col-md-3 col-lg-2 my-2">
+          <div className="col-4 col-md-3 col-lg-2 my-2">
             <a href="https://www.belajar.id/" target="_blank" rel="noreferrer">
               <div className="card">
                 <div className="card-body">
@@ -49,7 +49,7 @@ const RelatedSiteSection = () => {
             </a>
           </div>
 
-          <div className="col-8 col-md-3 col-lg-2 my-2">
+          <div className="col-4 col-md-3 col-lg-2 my-2">
             <a
               href="https://belajar.kemdikbud.go.id"
               target="_blank"
@@ -68,7 +68,7 @@ const RelatedSiteSection = () => {
             </a>
           </div>
 
-          <div className="col-8 col-md-3 col-lg-2 my-2">
+          <div className="col-4 col-md-3 col-lg-2 my-2">
             <a
               href="https://play.google.com/store/apps/details?id=go.id.kemendikbud.bukunesia"
               target="_blank"
@@ -87,7 +87,7 @@ const RelatedSiteSection = () => {
             </a>
           </div>
 
-          <div className="col-8 col-md-3 col-lg-2 my-2">
+          <div className="col-4 col-md-3 col-lg-2 my-2">
             <a href="https://ikapi.org" target="_blank" rel="noreferrer">
               <div className="card">
                 <div className="card-body">
