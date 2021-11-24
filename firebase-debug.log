@@ -78,3 +78,48 @@
     at async C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
 [error] 
 [error] Error: Failed to get Firebase project sibi-prototype. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-11-24T12:14:48.375Z] ----------------------------------------------------------------------
+[debug] [2021-11-24T12:14:48.377Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-24T12:14:48.378Z] CLI Version:   9.19.0
+[debug] [2021-11-24T12:14:48.378Z] Platform:      win32
+[debug] [2021-11-24T12:14:48.378Z] Node Version:  v14.16.1
+[debug] [2021-11-24T12:14:48.381Z] Time:          Wed Nov 24 2021 19:14:48 GMT+0700 (Western Indonesia Time)
+[debug] [2021-11-24T12:14:48.381Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-24T12:14:48.385Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-11-24T12:14:48.468Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-24T12:14:48.468Z] > authorizing via signed-in user (novan@codepolitan.com)
+[debug] [2021-11-24T12:14:48.468Z] [iam] checking project sibi-prototype for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-24T12:14:48.470Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-24T12:14:48.470Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-24T12:14:48.582Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 24 Nov 2021 12:14:48 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-24T12:14:48.591Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sibi-prototype:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-11-24T12:14:49.181Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-11-24T12:14:49.181Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-11-24T12:14:49.761Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 24 Nov 2021 12:14:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1079","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-24T12:14:49.761Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project sibi-prototype:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-11-24T12:14:49.762Z] > refreshing access token with scopes: []
+[debug] [2021-11-24T12:14:49.762Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-24T12:14:49.873Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 24 Nov 2021 12:14:49 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-24T12:14:49.885Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sibi-prototype [none]
+[debug] [2021-11-24T12:14:50.237Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sibi-prototype 403
+[debug] [2021-11-24T12:14:50.237Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sibi-prototype {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-11-24T12:14:50.238Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-11-24T12:14:50.320Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Client.doRequest (C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:238:23)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Client.request (C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:20)
+    at async Object.getFirebaseProject (C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:65:9)
+    at async C:\Users\novanjunaedi\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project sibi-prototype. Please make sure the project exists and your account has permission to access it.

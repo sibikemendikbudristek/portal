@@ -114,7 +114,7 @@ const Home = () => {
       )}
       <TestimonySection testimonyData={data} />
       <RelatedSiteSection />
-      <CounterSection counterData={data} />
+      <CounterSection />
     </main>
   );
 };

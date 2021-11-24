@@ -8,15 +8,15 @@ import 'swiper/components/pagination/pagination.min.css';
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination } from 'swiper/core';
-  
+
 // install Swiper modules
 SwiperCore.use([Pagination]);
 
-const TestimonySection = ({testimonyData}) => {
+const TestimonySection = ({ testimonyData }) => {
     let testimonyItems = testimonyData[0].testimony;
-    
+
     return (
-        <section id="TestimonySection">        
+        <section id="TestimonySection">
             <div className="container">
                 <div className="row text-center text-white pt-5 pb-3">
                     <div className="col">
@@ -34,26 +34,26 @@ const TestimonySection = ({testimonyData}) => {
                             breakpoints={{
                                 // when window width is >= 640px
                                 640: {
-                                slidesPerView: 2,
+                                    slidesPerView: 2,
                                 },
                                 // when window width is >= 768px
                                 768: {
-                                slidesPerView: 3,
+                                    slidesPerView: 2,
                                 },
                                 1024: {
-                                slidesPerView: 3,
+                                    slidesPerView: 3,
                                 },
                             }}
-                            style={{paddingBottom: '60px', paddingLeft: '10px', paddingRight: '10px'}}
+                            style={{ paddingBottom: '60px', paddingLeft: '10px', paddingRight: '10px' }}
                         >
                             {testimonyItems.map((item) => {
-                                return(
+                                return (
                                     <SwiperSlide key={item.id}>
-                                        <TestimonyItem 
-                                                name={item.name}
-                                                institution={item.institution}
-                                                text={item.text}
-                                                picture={item.picture}
+                                        <TestimonyItem
+                                            name={item.name}
+                                            institution={item.institution}
+                                            text={item.text}
+                                            picture={item.picture}
                                         />
                                     </SwiperSlide>
                                 );
