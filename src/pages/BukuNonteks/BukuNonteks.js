@@ -3,7 +3,7 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Banner from "../../components/Banner/Banner";
-import bukuUmumImgBanner from "../../assets/img/nonteks-img.png";
+import bukuUmumImgBanner from "../../assets/img/buku-nonteks-cover.webp";
 import BookItem from "../../components/BookItem/BookItem";
 import Modal from "../../components/Modal/Modal";
 import { base_url } from "../../utils";
@@ -453,12 +453,12 @@ const BukuNonteks = () => {
                               height="800"
                               aria-label={book.title}
                             >
-                            <p>
-                            Silahkan klik tombol unduh untuk membaca
-                          </p>
-                          <a className="btn btn-light" href={book.attachment}>
-                            <i className="fas fa-fw fa-download" /> Unduh
-                          </a>
+                              <p>
+                                Silahkan klik tombol unduh untuk membaca
+                              </p>
+                              <a className="btn btn-light" href={book.attachment}>
+                                <i className="fas fa-fw fa-download" /> Unduh
+                              </a>
                             </object>
                           </Modal>
                         </div>

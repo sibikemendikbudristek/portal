@@ -1,7 +1,7 @@
 import Banner from '../../components/Banner/Banner';
 import panduanImgBanner from '../../assets/img/panduan-img.png';
 import CTASection from '../../components/CTASection/CTASection';
-import ctaPanduanImg from '../../assets/img/cta-panduan-img.webp';
+import ctaPanduanImg from '../../assets/img/cta-img-panduan.webp';
 import panduanImg1 from '../../assets/img/panduan-img-1.png';
 import panduanImg2 from '../../assets/img/panduan-img-2.png';
 import panduanImg3 from '../../assets/img/panduan-img-3.png';
@@ -10,8 +10,8 @@ import panduanImg5 from '../../assets/img/panduan-img-5.png';
 
 const Panduan = () => {
     return (
-        <main style={{minHeight: '100vh'}}>
-            <Banner 
+        <main style={{ minHeight: '100vh' }}>
+            <Banner
                 bannerTitle="Panduan"
                 bannerDescription="Kamu kebingungan? Tenang SIBI punya panduannya!"
                 bannerImg={panduanImgBanner}
@@ -119,7 +119,7 @@ const Panduan = () => {
                     </div>
                 </div>
             </section>
-            <CTASection 
+            <CTASection
                 ctaImg={ctaPanduanImg}
             />
         </main>

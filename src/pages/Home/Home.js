@@ -8,7 +8,7 @@ import PanduanSection from "../../components/PanduanSection/PanduanSection";
 import RelatedSiteSection from "../../components/RelatedSiteSection/RelatedSiteSection";
 import TestimonySection from "../../components/TestimonySection/TestimonySection";
 import data from "../../assets/data/dummy";
-import heroImg from "../../assets/img/landing-page-img.webp";
+import heroImg from "../../assets/img/hero-home.webp";
 import panduanImg from "../../assets/img/panduan-guru.webp";
 import ArticleSection from "../../components/ArticleSection/ArticleSection";
 import { base_url } from "../../utils";
@@ -36,8 +36,8 @@ const Home = () => {
     <main style={{ minHeight: "100vh" }}>
       <Hero>
         <div className="row justify-content-between text-center text-md-start">
-          <div className="col-lg-6 mt-5">
-            <h1 className="hero-title pt-5">
+          <div className="col-lg-6 mt-5 my-lg-auto">
+            <h1 className="hero-title">
               Buku untuk Semua, Akses
               <br />
               di manapun dan kapanpun
@@ -89,7 +89,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6 mt-lg-5 pt-lg-5">
+          <div className="col-lg-6 mt-5 pt-5">
             <img
               className="img-fluid float-end"
               src={heroImg}

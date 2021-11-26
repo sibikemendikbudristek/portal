@@ -1,9 +1,9 @@
 import Banner from '../../components/Banner/Banner';
 import CTASection from '../../components/CTASection/CTASection';
 import TestimonySection from '../../components/TestimonySection/TestimonySection';
-import aboutImgBanner from '../../assets/img/about-img.webp';
+import aboutImgBanner from '../../assets/img/about-cover.webp';
 import aboutImg from '../../assets/img/about-img-2.webp';
-import aboutImgCTA from '../../assets/img/about-img-3.webp';
+import aboutImgCTA from '../../assets/img/cta-img.webp';
 import data from '../../assets/data/dummy';
 
 const About = () => {

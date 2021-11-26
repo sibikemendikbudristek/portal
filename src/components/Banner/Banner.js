@@ -1,11 +1,11 @@
 import './Banner.scss';
 
-const Banner = ({bannerTitle, bannerDescription, bannerImg}) => {
+const Banner = ({ bannerTitle, bannerDescription, bannerImg }) => {
     return (
         <section id="Banner">
             <div className="container">
                 <div className="row justify-content-between">
-                    <div className="col-md-6 pb-5 text-center text-md-start">
+                    <div className="col-md-6 py-auto text-center text-md-start">
                         <h1 className="section-title">{bannerTitle}</h1>
                         <p>{bannerDescription}</p>
                     </div>
