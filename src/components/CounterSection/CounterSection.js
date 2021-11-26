@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import CountUp from 'react-countup';
 import counterSectionImg from '../../assets/img/counter-section-img.webp';
 import { base_url } from '../../utils';
 import './CounterSection.scss';
@@ -25,10 +24,10 @@ const CounterSection = () => {
         getSummary();
     }, [])
 
-    const total_read = parseInt(summary?.total_read);
-    const total_download = parseInt(summary?.total_download);
-    const total_book = parseInt(summary?.total_book);
-    const total_assessment = parseInt(summary?.total_assessment);
+    const total_read = summary.total_read;
+    const total_download = summary.total_download;
+    const total_book = summary.total_book;
+    const total_assessment = summary.total_assessment;
 
 
     return (
@@ -46,12 +45,7 @@ const CounterSection = () => {
                             <div className="col-6 col-md-3 my-2">
                                 <h2 className="section-title">
                                     {loading ? '0' :
-                                        (<CountUp
-                                            start={0}
-                                            end={total_read}
-                                            duration={3}
-                                            delay={3}
-                                        />)
+                                        total_read
                                     }
                                 </h2>
                                 <p><small>Total Baca</small></p>
@@ -60,12 +54,7 @@ const CounterSection = () => {
                             <div className="col-6 col-md-3 my-2">
                                 <h2 className="section-title">
                                     {loading ? '0' :
-                                        (<CountUp
-                                            start={0}
-                                            end={total_download}
-                                            duration={3}
-                                            delay={3}
-                                        />)
+                                        total_download
                                     }
                                 </h2>
                                 <p><small>Total Unduh</small></p>
@@ -74,12 +63,7 @@ const CounterSection = () => {
                             <div className="col-6 col-md-3 my-2">
                                 <h2 className="section-title">
                                     {loading ? '0' :
-                                        (<CountUp
-                                            start={0}
-                                            end={total_book}
-                                            duration={3}
-                                            delay={3}
-                                        />)
+                                        total_book
                                     }
                                 </h2>
                                 <p><small>Buku Tersedia</small></p>
@@ -88,12 +72,7 @@ const CounterSection = () => {
                             <div className="col-6 col-md-3 my-2">
                                 <h2 className="section-title">
                                     {loading ? '0' :
-                                        (<CountUp
-                                            start={0}
-                                            end={total_assessment}
-                                            duration={3}
-                                            delay={3}
-                                        />)
+                                        total_assessment
                                     }
                                 </h2>
                                 <p><small>Buku Lulus Penilaian</small></p>
