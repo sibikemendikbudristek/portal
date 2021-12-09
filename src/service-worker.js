@@ -7,11 +7,12 @@
 // You can also remove this file if you'd prefer not to use a
 // service worker, and the Workbox build step will be skipped.
 
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 
 clientsClaim();
 
@@ -50,8 +51,8 @@ registerRoute(
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'), // Customize this strategy as needed, e.g., by changing to CacheFirst.
-  new StaleWhileRevalidate({
+  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png' || '.gif' || '.jpg' || '.jpeg' || '.svg' || '.ico' || '.webp'), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  new CacheFirst({
     cacheName: 'images',
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
@@ -70,3 +71,18 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+registerRoute(
+  new RegExp('https://api.buku.kemdikbud.cloudapp.web.id'),
+  new StaleWhileRevalidate({
+    cacheName: 'sibi-api',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [200],
+      }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 60 * 60 * 24 * 365,
+        maxEntries: 30,
+      }),
+    ]
+  })
+);
