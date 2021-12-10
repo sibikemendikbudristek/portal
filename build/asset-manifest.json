@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.037fbbab.chunk.css",
-    "main.js": "/static/js/main.8fbbdfe9.chunk.js",
-    "main.js.map": "/static/js/main.8fbbdfe9.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.351f63a4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.351f63a4.js.map",
-    "static/css/2.a8622c85.chunk.css": "/static/css/2.a8622c85.chunk.css",
-    "static/js/2.8713c5d9.chunk.js": "/static/js/2.8713c5d9.chunk.js",
-    "static/js/2.8713c5d9.chunk.js.map": "/static/js/2.8713c5d9.chunk.js.map",
+    "main.css": "/static/css/main.599e833e.chunk.css",
+    "main.js": "/static/js/main.d5d3209a.chunk.js",
+    "main.js.map": "/static/js/main.d5d3209a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.469f613b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.469f613b.js.map",
+    "static/css/2.f3a2e3f4.chunk.css": "/static/css/2.f3a2e3f4.chunk.css",
+    "static/js/2.c769f173.chunk.js": "/static/js/2.c769f173.chunk.js",
+    "static/js/2.c769f173.chunk.js.map": "/static/js/2.c769f173.chunk.js.map",
     "index.html": "/index.html",
     "service-worker.js": "/service-worker.js",
     "service-worker.js.map": "/service-worker.js.map",
-    "static/css/2.a8622c85.chunk.css.map": "/static/css/2.a8622c85.chunk.css.map",
-    "static/css/main.037fbbab.chunk.css.map": "/static/css/main.037fbbab.chunk.css.map",
-    "static/js/2.8713c5d9.chunk.js.LICENSE.txt": "/static/js/2.8713c5d9.chunk.js.LICENSE.txt",
+    "static/css/2.f3a2e3f4.chunk.css.map": "/static/css/2.f3a2e3f4.chunk.css.map",
+    "static/css/main.599e833e.chunk.css.map": "/static/css/main.599e833e.chunk.css.map",
+    "static/js/2.c769f173.chunk.js.LICENSE.txt": "/static/js/2.c769f173.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/coolvetica.42f59941.ttf",
     "static/media/about-cover.18b18dc9.webp": "/static/media/about-cover.18b18dc9.webp",
     "static/media/about-img-2.87295b1b.webp": "/static/media/about-img-2.87295b1b.webp",
@@ -62,10 +62,10 @@
     "static/media/TestimonySection.scss": "/static/media/testimony-section-bg.c913b044.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.351f63a4.js",
-    "static/css/2.a8622c85.chunk.css",
-    "static/js/2.8713c5d9.chunk.js",
-    "static/css/main.037fbbab.chunk.css",
-    "static/js/main.8fbbdfe9.chunk.js"
+    "static/js/runtime-main.469f613b.js",
+    "static/css/2.f3a2e3f4.chunk.css",
+    "static/js/2.c769f173.chunk.js",
+    "static/css/main.599e833e.chunk.css",
+    "static/js/main.d5d3209a.chunk.js"
   ]
 }

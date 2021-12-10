@@ -38,7 +38,7 @@ const Home = () => {
         <div className="row justify-content-between text-center text-md-start">
           <div className="col-lg-6 mt-5 my-lg-auto">
             <h1 className="hero-title">
-              Buku untuk Semua, Akses
+              Buku untuk semua, akses
               <br />
               di manapun dan kapanpun
             </h1>
