@@ -3,8 +3,8 @@ import axios from "axios";
 import BookItem from "../../components/BookItem/BookItem";
 import Modal from "../../components/Modal/Modal";
 import { useParams } from "react-router-dom";
-import Loader from "react-loader-spinner";
 import { base_url } from '../../utils';
+import SkeletonBookItem from "../../skeletons/SkeletonBookItem/SkeletonBookItem";
 
 const BookByTag = () => {
   const { tag } = useParams();
@@ -39,13 +39,11 @@ const BookByTag = () => {
           </div>
         </div>
         <div className="row my-4">
-          {loading ? <Loader
-            className="d-flex justify-content-center align-items-center mt-5"
-            type="TailSpin"
-            color="#00BFFF"
-            height={80}
-            width={80}
-          /> : books?.map((book, index) => {
+          {loading ? [1, 2, 3, 4].map(index => (
+            <div className="col-md-6 col-lg-4 col-xl-3 mb-4" key={index}>
+              <SkeletonBookItem />
+            </div>
+          )) : books?.map((book, index) => {
             return (
               <div className="col-md-6 col-lg-4 col-xl-3 mb-4" key={index}>
                 <BookItem
@@ -68,12 +66,12 @@ const BookByTag = () => {
                     height="800"
                     aria-label={book.title}
                   >
-                  <p>
-                  Silahkan klik tombol unduh untuk membaca
-                </p>
-                <a className="btn btn-light" href={book.attachment}>
-                  <i className="fas fa-fw fa-download" /> Unduh
-                </a>
+                    <p>
+                      Silahkan klik tombol unduh untuk membaca
+                    </p>
+                    <a className="btn btn-light" href={book.attachment}>
+                      <i className="fas fa-fw fa-download" /> Unduh
+                    </a>
                   </object>
                 </Modal>
               </div>

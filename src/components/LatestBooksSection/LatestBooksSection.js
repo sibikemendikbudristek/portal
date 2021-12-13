@@ -12,11 +12,12 @@ import "swiper/components/navigation/navigation.min.css";
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper";
+import SkeletonBookItem from "../../skeletons/SkeletonBookItem/SkeletonBookItem";
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
-const LatestBooksSection = ({ data, seeMoreUrl, onClickRead }) => {
+const LatestBooksSection = ({ loading, data, seeMoreUrl, onClickRead }) => {
   return (
     <section id="LatestBooksSection">
       <div className="container py-5 px-5 px-md-0">
@@ -51,7 +52,14 @@ const LatestBooksSection = ({ data, seeMoreUrl, onClickRead }) => {
             }}
             style={{ paddingBottom: "60px" }}
           >
-            {data?.map((item, index) => {
+            {loading && [1, 2, 3, 4, 5].map((item, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <SkeletonBookItem />
+                </SwiperSlide>
+              );
+            })}
+            {!loading && data?.map((item, index) => {
               return (
                 <SwiperSlide key={index}>
                   <BookItem
@@ -92,12 +100,12 @@ const LatestBooksSection = ({ data, seeMoreUrl, onClickRead }) => {
                 height="800"
                 aria-label={book.title}
               >
-              <p>
-              Silahkan klik tombol unduh untuk membaca
-            </p>
-            <a className="btn btn-light" href={book.attachment}>
-              <i className="fas fa-fw fa-download" /> Unduh
-            </a>
+                <p>
+                  Silahkan klik tombol unduh untuk membaca
+                </p>
+                <a className="btn btn-light" href={book.attachment}>
+                  <i className="fas fa-fw fa-download" /> Unduh
+                </a>
               </object>
             </Modal>
           );

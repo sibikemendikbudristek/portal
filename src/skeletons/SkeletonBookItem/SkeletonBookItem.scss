@@ -1,0 +1,27 @@
+#SkeletonBookItem {
+    .card {
+        height: 400px;
+        border-radius: 25px;
+            .type {
+                border-radius: 25px;
+                background: #eee;
+                background-repeat: no-repeat;
+                height: 20px;
+                width: 30%;
+            }
+            .title {
+                border-radius: 25px;
+                background: #eee;
+                background-repeat: no-repeat;
+                height: 35px;
+                width: 100%;
+            }
+            .link {
+                border-radius: 25px;
+                background: #eee;
+                background-repeat: no-repeat;
+                height: 25px;
+                width: 60%;
+            }
+        }
+    }

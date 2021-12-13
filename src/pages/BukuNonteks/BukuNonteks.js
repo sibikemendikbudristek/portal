@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Banner from "../../components/Banner/Banner";
 import bukuUmumImgBanner from "../../assets/img/buku-nonteks-cover.webp";
 import BookItem from "../../components/BookItem/BookItem";
 import Modal from "../../components/Modal/Modal";
 import { base_url } from "../../utils";
+import SkeletonBookItem from "../../skeletons/SkeletonBookItem/SkeletonBookItem";
 
 const BukuNonteks = () => {
   const [filterToggle, setFilterToggle] = useState(false);
@@ -403,15 +402,14 @@ const BukuNonteks = () => {
                 </div>
               </div>
             </div>
-            {loading ? (
-              <Loader
-                className="text-center my-3"
-                type="TailSpin"
-                color="#00BFFF"
-                height={80}
-                width={80}
-              />
-            ) : (
+            <div className="row">
+              {loading && [1, 2, 3, 4, 5, 6].map(index => (
+                <div className="col-sm-6 col-md-4 my-3 px-5 px-sm-3" key={index}>
+                  <SkeletonBookItem />
+                </div>
+              ))}
+            </div>
+            {!loading &&
               <>
                 <div className="row justify-content-start">
                   {nontextbooks.length < 1 ? (
@@ -481,7 +479,7 @@ const BukuNonteks = () => {
                   </div>
                 )}
               </>
-            )}
+            }
           </div>
         </div>
         {/* End of Main Content */}

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import CounterSection from "../../components/CounterSection/CounterSection";
 import Hero from "../../components/Hero/Hero";
-import Loader from "react-loader-spinner";
 import LatestBooksSection from "../../components/LatestBooksSection/LatestBooksSection";
 import PanduanSection from "../../components/PanduanSection/PanduanSection";
 import RelatedSiteSection from "../../components/RelatedSiteSection/RelatedSiteSection";
@@ -40,7 +39,7 @@ const Home = () => {
             <h1 className="hero-title">
               Buku untuk semua, akses
               <br />
-              di manapun dan kapanpun
+              di mana pun dan kapan pun
             </h1>
             <p>Ayo baca buku sekarang!</p>
             <p className="mt-5 pt-3">Masuk sebagai:</p>
@@ -101,17 +100,7 @@ const Home = () => {
       </Hero>
       <PanduanSection image={panduanImg} />
       <ArticleSection />
-      {loading ? (
-        <Loader
-          className="d-flex justify-content-center align-items-center vh-100"
-          type="TailSpin"
-          color="#00BFFF"
-          height={80}
-          width={80}
-        />
-      ) : (
-        <LatestBooksSection data={latestbooks} seeMoreUrl="/buku-teks" />
-      )}
+      <LatestBooksSection loading={loading} data={latestbooks} seeMoreUrl="/buku-teks" />
       <TestimonySection testimonyData={data} />
       <RelatedSiteSection />
       <CounterSection />
