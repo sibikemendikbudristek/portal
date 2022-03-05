@@ -19,18 +19,18 @@ const ArticleSection = () => {
         <div className="row justify-content-between pb-5">
           <div className="col-md-6 mb-3">
             <ArticleItem
-              thumbnail="https://i.ibb.co/2706hFB/penilaian.webp"
-              title="Pengumuman Hasil Penilaian"
-              description="Pengumuman hasil penilaian dan Kepmendikbud Buku Non Teks Pelajaran tahun 2020"
-              link="https://penilaian.buku.kemdikbud.go.id"
-            />
-          </div>
-          <div className="col-md-6 mb-3">
-            <ArticleItem
               thumbnail="https://i.ibb.co/b6FkPKN/images-35.webp"
               title="Pengumuman HET"
               description="Pengumuman tentang penghitungan harga eceran tertinggi (HET) buku nonteks pelajaran gelombang I tahun 2022"
               link="https://drive.google.com/file/d/1z4QNcdA5dbFnL21okAHnvUodKtFP5Xbu/view"
+            />
+          </div>
+          <div className="col-md-6 mb-3">
+            <ArticleItem
+              thumbnail="https://i.ibb.co/2706hFB/penilaian.webp"
+              title="Pengumuman Hasil Penilaian"
+              description="Pengumuman hasil penilaian dan Kepmendikbud Buku Non Teks Pelajaran tahun 2020"
+              link="https://penilaian.buku.kemdikbud.go.id"
             />
           </div>
           {/* <div className="col-md-6 mb-3">
