@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import kemendikbudLogo from '../../assets/img/kemendikbud.webp';
 import './Footer.scss';
 
@@ -35,7 +35,7 @@ const Footer = () => {
                             <Link className="nav-link" to="/artikel">Berita Terbaru</Link>
                             <Link className="nav-link" to="/buku-teks">Buku Teks K13</Link>
                             <Link className="nav-link" to="/buku-nonteks">Buku Nonteks</Link>
-                            <Link className="nav-link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                            <Link className="nav-link" to="/buku-sekolah-penggerak">Buku Kurikulum Merdeka</Link>
                             <a className="nav-link" href="https://app.buku.kemdikbud.go.id/penilaian">Penilaian</a>
                             <a className="nav-link" href="https://app.buku.kemdikbud.go.id/kebijakan">Kebijakan</a>
                             <Link className="nav-link" to="/panduan">Panduan</Link>

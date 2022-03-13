@@ -55,7 +55,7 @@ const Panduan = () => {
                         <h2 className="section-title">Pelaku Perbukuan</h2>
                         <p className="my-3">Jika Anda sebagai Pelaku Perbukuan (Penulis, Penerjemah, Penyadur, Editor, Desainer, Ilustrator, Pencetak, Pengembang Buku Elektronik, Penerbit, dan Toko Buku), disarankan masuk akun Pelaku Perbukuan.  Di sini Anda dapat mengakses:</p>
                         <ul>
-                            <li>Buku teks Kurikulum 2013, buku teks Sekolah Penggerak, dan buku nonteks</li>
+                            <li>Buku teks Kurikulum 2013, buku teks Kurikulum Merdeka, dan buku nonteks</li>
                             <li>Data buku yang telah lolos Penilaian</li>
                             <li>Data tentang Pelaku Perbukuan </li>
                             <li>Pembinaan Pelaku Perbukuan</li>
@@ -73,7 +73,7 @@ const Panduan = () => {
                     </div>
                     <div className="col-md-6 text-center text-md-start">
                         <h2 className="section-title">Mengakses Buku</h2>
-                        <p className="my-3">Saat Anda mengakes Buku, akan ada 3 pilihan jenis Buku, yaitu Buku Teks K-13, Buku Non Teks, dan Buku Sekolah Penggerak.</p>
+                        <p className="my-3">Saat Anda mengakes Buku, akan ada 3 pilihan jenis Buku, yaitu Buku Teks K-13, Buku Non Teks, dan Buku Kurikulum Merdeka.</p>
                     </div>
                 </div>
                 <div className="row my-5">
@@ -93,8 +93,8 @@ const Panduan = () => {
                         <img className="img-fluid d-block mx-auto" src={panduanImg5} alt="Buka halaman SIBI" />
                     </div>
                     <div className="col-md-6 text-center text-md-start">
-                        <h2 className="section-title">Fitur Buku Sekolah Penggerak</h2>
-                        <p className="my-3">Dalam Fitur Buku Sekolah Penggerak, ada 2 versi buku yang dapat anda akses, yaitu buku PDF dan buku Audio.</p>
+                        <h2 className="section-title">Fitur Buku Kurikulum Merdeka</h2>
+                        <p className="my-3">Dalam Fitur Buku Kurikulum Merdeka, ada 2 versi buku yang dapat anda akses, yaitu buku PDF dan buku Audio.</p>
                     </div>
                 </div>
                 <div className="row my-5">

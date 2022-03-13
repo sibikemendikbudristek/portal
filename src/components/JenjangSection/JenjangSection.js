@@ -20,7 +20,7 @@ const JenjangSection = () => {
                             description="Pendidikan Anak Usia Dini"
                             links={
                                 <>
-                                <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                                    <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Kurikulum Merdeka</Link>
                                 </>
                             }
                         />
@@ -31,7 +31,7 @@ const JenjangSection = () => {
                             description="Sekolah Dasar"
                             links={
                                 <>
-                                <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                                    <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Kurikulum Merdeka</Link>
                                 </>
                             }
                         />
@@ -42,7 +42,7 @@ const JenjangSection = () => {
                             description="Sekolah Menengah Pertama"
                             links={
                                 <>
-                                <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                                    <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Kurikulum Merdeka</Link>
                                 </>
                             }
                         />
@@ -53,7 +53,7 @@ const JenjangSection = () => {
                             description="Sekolah Menengah Atas/Kejuruan"
                             links={
                                 <>
-                                <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Sekolah Penggerak</Link>
+                                    <Link className="link" to="/buku-teks">Buku Teks K-13</Link> | <Link className="link" to="/buku-sekolah-penggerak">Buku Kurikulum Merdeka</Link>
                                 </>
                             }
                         />

@@ -52,8 +52,8 @@ const ArticleSection = () => {
           <div className="col-md-6 mb-3">
             <ArticleItem
               thumbnail="https://i.ibb.co/JvjKRJc/buku-sekolah-penggerak.webp"
-              title="Buku Sekolah Penggerak"
-              description="Buku Sekolah Penggerak adalah buku yang disusun berdasarkan capaian pembelajaran dengan mengusung sem..."
+              title="Buku Kurikulum Merdeka"
+              description="Buku Kurikulum Merdeka adalah buku yang disusun berdasarkan capaian pembelajaran dengan mengusung sem..."
               link="/buku-sekolah-penggerak?role=siswa"
             />
           </div>

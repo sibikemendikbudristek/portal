@@ -345,8 +345,8 @@ const BukuSekolahPenggerak = () => {
   return (
     <main style={{ minHeight: "100vh" }}>
       <Banner
-        bannerTitle="Buku Sekolah Penggerak"
-        bannerDescription="Buku Sekolah Penggerak adalah buku yang disusun berdasarkan Capaian Pembelajaran dengan mengusung semangat merdeka belajar. Buku sekolah penggerak diimplementasikan secara terbatas di Sekolah Penggerak dan SMK Pusat Keunggulan."
+        bannerTitle="Buku Kurikulum Merdeka"
+        bannerDescription="Buku Kurikulum Merdeka adalah buku yang disusun berdasarkan Capaian Pembelajaran dengan mengusung semangat merdeka belajar. Buku Kurikulum Merdeka diimplementasikan secara terbatas di Kurikulum Merdeka dan SMK Pusat Keunggulan."
         bannerImg={bukuPelajaranImgBanner}
       />
       <section className="container my-5" style={{ minHeight: "100vh" }}>

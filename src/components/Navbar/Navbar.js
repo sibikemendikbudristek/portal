@@ -11,16 +11,16 @@ const Navbar = () => {
   // Menangkap parameter role dari siswa
   const queryParams = new URLSearchParams(window.location.search);
   const role = queryParams.get("role");
-  if(role !== null){
+  if (role !== null) {
     // save ke session storage
     sessionStorage.setItem('user-role', JSON.stringify(role));
   }
-  
+
   // Hapus user role dari session storage saat berada di halaman home
   let userRole = JSON.parse(sessionStorage.getItem('user-role'));
-  if(window.location.pathname === '/') {
+  if (window.location.pathname === '/') {
     sessionStorage.clear();
-    if(userRole){
+    if (userRole) {
       window.location.reload();
     }
   }
@@ -167,7 +167,7 @@ const Navbar = () => {
                         className="dropdown-item"
                         to="/buku-sekolah-penggerak?role=siswa"
                       >
-                        Buku Sekolah Penggerak
+                        Buku Kurikulum Merdeka
                       </NavLink>
                     </li>
                   </ul>
@@ -222,7 +222,7 @@ const Navbar = () => {
                         className="dropdown-item"
                         to="/buku-sekolah-penggerak?role=guru"
                       >
-                        Buku Sekolah Penggerak
+                        Buku Kurikulum Merdeka
                       </NavLink>
                     </li>
                   </ul>
@@ -252,66 +252,66 @@ const Navbar = () => {
 
             {userRole === "umum" && (
               <>
-              <li className="nav-item">
-              <a className="nav-link mx-1" href="/">
-                Beranda
-              </a>
-            </li>
-            <li className="nav-item dropdown mx-1">
-              <a
-                className="nav-link dropdown-toggle"
-                href="!#"
-                id="booksDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Buku
-              </a>
-              <ul
-                className="dropdown-menu text-center text-xl-start"
-                aria-labelledby="booksDropdown"
-              >
-                <li>
-                  <NavLink className="dropdown-item" to="/buku-teks?role=umum">
-                    Buku Teks K-13
-                  </NavLink>
+                <li className="nav-item">
+                  <a className="nav-link mx-1" href="/">
+                    Beranda
+                  </a>
                 </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/buku-nonteks?role=umum">
-                    Buku Nonteks
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    className="dropdown-item"
-                    to="/buku-sekolah-penggerak?role=umum"
+                <li className="nav-item dropdown mx-1">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="!#"
+                    id="booksDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
-                    Buku Sekolah Penggerak
+                    Buku
+                  </a>
+                  <ul
+                    className="dropdown-menu text-center text-xl-start"
+                    aria-labelledby="booksDropdown"
+                  >
+                    <li>
+                      <NavLink className="dropdown-item" to="/buku-teks?role=umum">
+                        Buku Teks K-13
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/buku-nonteks?role=umum">
+                        Buku Nonteks
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item"
+                        to="/buku-sekolah-penggerak?role=umum"
+                      >
+                        Buku Kurikulum Merdeka
+                      </NavLink>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link mx-1" href="https://app.buku.kemdikbud.go.id/penilaian">
+                    Penilaian
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link mx-1" href="https://app.buku.kemdikbud.go.id/kebijakan">
+                    Kebijakan
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-1" exact to="/panduan?role=umum">
+                    Panduan
                   </NavLink>
                 </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link mx-1" href="https://app.buku.kemdikbud.go.id/penilaian">
-                Penilaian
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link mx-1" href="https://app.buku.kemdikbud.go.id/kebijakan">
-                Kebijakan
-              </a>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link mx-1" exact to="/panduan?role=umum">
-                Panduan
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link mx-1" exact to="/tentang-kami?role=umum">
-                Tentang Kami
-              </NavLink>
-            </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link mx-1" exact to="/tentang-kami?role=umum">
+                    Tentang Kami
+                  </NavLink>
+                </li>
               </>
             )}
           </ul>
