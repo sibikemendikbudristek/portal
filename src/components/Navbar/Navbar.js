@@ -165,7 +165,7 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         className="dropdown-item"
-                        to="/buku-sekolah-penggerak?role=siswa"
+                        to="/buku-kurikulum-merdeka?role=siswa"
                       >
                         Buku Kurikulum Merdeka
                       </NavLink>
@@ -220,7 +220,7 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         className="dropdown-item"
-                        to="/buku-sekolah-penggerak?role=guru"
+                        to="/buku-kurikulum-merdeka?role=guru"
                       >
                         Buku Kurikulum Merdeka
                       </NavLink>
@@ -285,7 +285,7 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         className="dropdown-item"
-                        to="/buku-sekolah-penggerak?role=umum"
+                        to="/buku-kurikulum-merdeka?role=umum"
                       >
                         Buku Kurikulum Merdeka
                       </NavLink>

@@ -30,7 +30,7 @@ const ArticleSection = () => {
               thumbnail="https://i.ibb.co/2706hFB/penilaian.webp"
               title="Pengumuman Hasil Penilaian"
               description="Pengumuman hasil penilaian dan Kepmendikbud Buku Non Teks Pelajaran tahun 2020"
-              link="https://penilaian.buku.kemdikbud.go.id"
+              link="https://app.buku.kemdikbud.go.id/kebijakan"
             />
           </div>
           {/* <div className="col-md-6 mb-3">
@@ -54,13 +54,13 @@ const ArticleSection = () => {
               thumbnail="https://i.ibb.co/JvjKRJc/buku-sekolah-penggerak.webp"
               title="Buku Kurikulum Merdeka"
               description="Buku Kurikulum Merdeka adalah buku yang disusun berdasarkan capaian pembelajaran dengan mengusung sem..."
-              link="/buku-sekolah-penggerak?role=siswa"
+              link="/buku-kurikulum-merdeka?role=siswa"
             />
           </div>
           <div className="col-md-6 mb-3">
             <ArticleItem
               thumbnail="https://i.ibb.co/MVYnhFQ/manfaat-bergabung-dengan-sibi.webp"
-              title="Manfaat Bergabung dengan SIBI"
+              title="Pelaku Perbukuan"
               description="Mari berkolaborasi dan dapatkan berbagai peluang dalam ekosistem SIBI"
               link="https://app.buku.kemdikbud.go.id/"
             />
@@ -70,7 +70,7 @@ const ArticleSection = () => {
               thumbnail="https://i.ibb.co/b6FkPKN/images-35.webp"
               title="Pembinaan Terbaru"
               description="Salah satu upaya yang dilakukan oleh Pusat Kurikulum dan Perbukuan untuk mewujudkan buku bermutu dan me..."
-              link="https://app.buku.kemdikbud.go.id/pembinaan"
+              link="https://app.buku.kemdikbud.go.id/pelaku/pembinaan"
             />
           </div>
         </div>

@@ -20,7 +20,7 @@ import Faq from '../pages/FAQ/Faq';
 
 const Routes = () => {
     const isLoggin = JSON.parse(localStorage.getItem('user-info'));
-    
+
     return (
         <Switch>
             <Route exact path="/" component={Home} />
@@ -29,7 +29,7 @@ const Routes = () => {
             <Route exact path="/umum" component={GeneralPage} />
             <Route exact path="/buku-teks" component={BukuTeks} />
             <Route exact path="/buku-nonteks" component={BukuNonteks} />
-            <Route exact path="/buku-sekolah-penggerak" component={BukuSekolahPenggerak} />
+            <Route exact path="/buku-kurikulum-merdeka" component={BukuSekolahPenggerak} />
             <Route exact path="/book/detail/:slug" component={BookDetail} />
             <Route exact path="/book/tag/:tag" component={BookByTag} />
             <Route path="/panduan" component={Panduan} />
