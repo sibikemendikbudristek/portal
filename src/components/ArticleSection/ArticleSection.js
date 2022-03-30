@@ -20,6 +20,14 @@ const ArticleSection = () => {
           <div className="col-md-6 mb-3">
             <ArticleItem
               thumbnail="https://i.ibb.co/b6FkPKN/images-35.webp"
+              title="Pengumuman pendaftaran penilaian buku nonteks"
+              description="Salah satu upaya yang dilakukan oleh Pusat Kurikulum dan Perbukuan untuk mewujudkan buku bermutu dan me..."
+              link="Dokumen_13100_1648196632.pdf"
+            />
+          </div>
+          <div className="col-md-6 mb-3">
+            <ArticleItem
+              thumbnail="https://i.ibb.co/b6FkPKN/images-35.webp"
               title="Pengumuman HET"
               description="Pengumuman tentang penghitungan harga eceran tertinggi (HET) buku nonteks pelajaran gelombang I tahun 2022"
               link="https://drive.google.com/file/d/1z4QNcdA5dbFnL21okAHnvUodKtFP5Xbu/view"
@@ -63,14 +71,6 @@ const ArticleSection = () => {
               title="Pelaku Perbukuan"
               description="Mari berkolaborasi dan dapatkan berbagai peluang dalam ekosistem SIBI"
               link="https://app.buku.kemdikbud.go.id/"
-            />
-          </div>
-          <div className="col-md-6 mb-3">
-            <ArticleItem
-              thumbnail="https://i.ibb.co/b6FkPKN/images-35.webp"
-              title="Pembinaan Terbaru"
-              description="Salah satu upaya yang dilakukan oleh Pusat Kurikulum dan Perbukuan untuk mewujudkan buku bermutu dan me..."
-              link="https://app.buku.kemdikbud.go.id/pelaku/pembinaan"
             />
           </div>
         </div>
