@@ -92,6 +92,19 @@ const DetailBanner = ({
                     </a>
                   )
                 }
+                {
+                  listTags == undefined && (
+                    <a
+                      className="btn btn-light btn-md px-4 mx-2"
+                      href={attachment}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={onClickDownload}
+                    >
+                      <i className="fas fa-fw fa-download" /> Unduh
+                    </a>
+                  )
+                }
               </>
               )}
               <button
