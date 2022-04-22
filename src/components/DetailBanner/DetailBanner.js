@@ -2,6 +2,7 @@ import placeholderImg from "../../assets/img/book-placeholder.jpg";
 import "./DetailBanner.scss";
 
 const DetailBanner = ({
+  listTags,
   bookImg,
   title,
   writer,
@@ -76,18 +77,22 @@ const DetailBanner = ({
                   rel="noopener noreferrer"
                   onClick={onClickRead}
                 >
-                <i className="fab fa-fw fa-readme" /> Baca
+                  <i className="fab fa-fw fa-readme" /> Baca
                 </a>
-                <a
-                  className="btn btn-light btn-md px-4 mx-2"
-                  href={attachment}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={onClickDownload}
-                >
-                  <i className="fas fa-fw fa-download" /> Unduh
-                </a>
-                </>
+                {
+                  listTags != undefined && !listTags.includes('modebaca') && (
+                    <a
+                      className="btn btn-light btn-md px-4 mx-2"
+                      href={attachment}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={onClickDownload}
+                    >
+                      <i className="fas fa-fw fa-download" /> Unduh
+                    </a>
+                  )
+                }
+              </>
               )}
               <button
                 className="btn btn-danger btn-md px-4 mx-2"

@@ -107,8 +107,8 @@ const BookDetail = () => {
     }
   };
 
-   // Post Read History
-   const postDownload = async () => {
+  // Post Read History
+  const postDownload = async () => {
     setIsSubmitting(true);
 
     let data = { slug };
@@ -213,12 +213,13 @@ const BookDetail = () => {
       ) : (
         <>
           <DetailBanner
+            listTags={book.tags}
             bookImg={book.image}
             title={book.title}
             writer={book.writer}
             description={book.description}
             tags={tags?.map((tag, index) => {
-              return(
+              return (
                 <Link key={index} to={`/book/tag/${tag}`}>
                   <span className="badge bg-primary bg-gradient me-1">{tag}</span>
                 </Link>
@@ -233,9 +234,9 @@ const BookDetail = () => {
           />
           <BookInfoSection data={book} />
           {book.type === 'audio' && <PlaylistSection data={book.audio_attachment} />}
-          <RelatedBooksSection 
-            data={relatedBooks} 
-            onClickRead={postRead}  
+          <RelatedBooksSection
+            data={relatedBooks}
+            onClickRead={postRead}
           />
           <section className="bg-light">
             <div className="container py-5">
@@ -306,17 +307,17 @@ const BookDetail = () => {
                   <p className="text-center">Belum ada review untuk buku ini</p>
                 ) : (
                   reviews?.map((review, index) => {
-                      return (
-                        <div className="col-12 my-2" key={index}>
-                          <ReviewItem
-                            profileImg={review.avatar}
-                            name={review.name}
-                            feedbackStar={review.feedback_star}
-                            message={review.message}
-                          />
-                        </div>
-                      );
-                    })
+                    return (
+                      <div className="col-12 my-2" key={index}>
+                        <ReviewItem
+                          profileImg={review.avatar}
+                          name={review.name}
+                          feedbackStar={review.feedback_star}
+                          message={review.message}
+                        />
+                      </div>
+                    );
+                  })
                     .reverse()
                 )}
               </div>
@@ -343,7 +344,7 @@ const BookDetail = () => {
               aria-label={book.title}
             >
               <p>Silahkan klik tombol unduh untuk membaca</p>
-              <a className="btn btn-light" onClick={postDownload} href={book.attachment}><i className="fas fa-fw fa-download" /> Unduh</a>
+              <a className="btn btn-light" onClick={postDownload} href={book.attachment}><i className="fas fa-fw fa-download" /> Unduh</a>)
             </object>
           </Modal>
           <Modal id="reportModal" title="Lapor">
