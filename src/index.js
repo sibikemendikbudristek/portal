@@ -4,8 +4,6 @@ import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import swConfig from './swConfig';
 import { RecoilRoot } from 'recoil';
 import Loader from 'react-loader-spinner';
 
@@ -26,23 +24,7 @@ ReactDOM.render(
     </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root'),
-  serviceWorkerRegistration.register(swConfig)
 );
-
-// serviceWorkerRegistration.register({
-//   onUpdate: registration => {
-//     const waitingServiceWorker = registration.waiting
-
-//     if (waitingServiceWorker) {
-//       waitingServiceWorker.addEventListener("statechange", event => {
-//         if (event.target.state === "activated") {
-//           window.location.reload()
-//         }
-//       });
-//       waitingServiceWorker.postMessage({ type: "SKIP_WAITING" });
-//     }
-//   }
-// });
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.ready.then(registration => {
